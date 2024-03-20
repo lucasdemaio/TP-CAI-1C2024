@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o2WaPHGUCL7l0qahOwVxON03cagI2rq8InLjheLOXPo2I/XvEGNRbNwgByfrQalIEQN+FDfjI6iCOa3HB8Njcw==",
+  "dgSpecHash": "Kpn3SAS9RCRh5NxQGYzGKdJnHRnnICEEK1+S+VQqyTV78mt6g/nZR14CnHxjyFtfzjHt/ly6WLn1u7X9zYVP7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\NegocioLayer\\NegocioLayer.csproj",
+  "projectFilePath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\NegocioLayer\\NegocioLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

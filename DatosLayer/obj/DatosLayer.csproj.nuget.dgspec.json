@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\DatosLayer\\DatosLayer.csproj": {}
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\DatosLayer\\DatosLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\DatosLayer\\DatosLayer.csproj": {
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\DatosLayer\\DatosLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\DatosLayer\\DatosLayer.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\DatosLayer\\DatosLayer.csproj",
         "projectName": "DatosLayer",
-        "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\DatosLayer\\DatosLayer.csproj",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\DatosLayer\\DatosLayer.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\DatosLayer\\obj\\",
+        "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\DatosLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",

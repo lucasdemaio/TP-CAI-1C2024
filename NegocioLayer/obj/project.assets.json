@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\NegocioLayer\\NegocioLayer.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\NegocioLayer\\NegocioLayer.csproj",
       "projectName": "NegocioLayer",
-      "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\NegocioLayer\\NegocioLayer.csproj",
+      "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\NegocioLayer\\NegocioLayer.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\TP-CAI-1C2024\\NegocioLayer\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\NegocioLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
