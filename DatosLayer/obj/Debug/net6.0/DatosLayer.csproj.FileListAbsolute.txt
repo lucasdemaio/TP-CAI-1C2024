@@ -1,0 +1,12 @@
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\bin\Debug\net6.0\DatosLayer.deps.json
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\bin\Debug\net6.0\DatosLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\bin\Debug\net6.0\DatosLayer.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.sourcelink.json
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\refint\DatosLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\DatosLayer.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\DatosLayer\obj\Debug\net6.0\ref\DatosLayer.dll

@@ -1,0 +1,12 @@
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\bin\Debug\net6.0\NegocioLayer.deps.json
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\bin\Debug\net6.0\NegocioLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\bin\Debug\net6.0\NegocioLayer.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.sourcelink.json
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\refint\NegocioLayer.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\NegocioLayer.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\NegocioLayer\obj\Debug\net6.0\ref\NegocioLayer.dll
