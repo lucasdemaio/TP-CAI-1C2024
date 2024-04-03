@@ -29,5 +29,19 @@ namespace PresentacionLayer
             frmMain.Show();
             this.Hide();
         }
+
+        private void strpAltaUsuariosMenu_Click(object sender, EventArgs e)
+        {
+            FrmAltaUsuario frmAlta = new FrmAltaUsuario();
+            frmAlta.Show();
+            this.Hide();
+        }
+
+        private void strpBajaUsuariosMenu_Click(object sender, EventArgs e)
+        {
+            FrmBajaUsuario frmBaja = new FrmBajaUsuario();
+            frmBaja.Show();
+            this.Hide();
+        }
     }
 }   

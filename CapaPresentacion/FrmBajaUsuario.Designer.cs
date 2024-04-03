@@ -49,17 +49,19 @@
             strpAltaUsuariosMenu = new ToolStripMenuItem();
             strpBajaUsuariosMenu = new ToolStripMenuItem();
             btnVolverInicio = new Button();
+            lstBoxUsuarios = new ListBox();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(339, 53);
+            textBox1.Location = new Point(231, 56);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Ingrese ID del usuario";
             textBox1.Size = new Size(207, 27);
             textBox1.TabIndex = 0;
+            textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDNI
             // 
@@ -69,6 +71,7 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(253, 30);
             txtDNI.TabIndex = 18;
+            txtDNI.TextAlign = HorizontalAlignment.Center;
             // 
             // txtApellido
             // 
@@ -78,6 +81,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(253, 30);
             txtApellido.TabIndex = 17;
+            txtApellido.TextAlign = HorizontalAlignment.Center;
             // 
             // txtNombre
             // 
@@ -87,6 +91,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(253, 30);
             txtNombre.TabIndex = 16;
+            txtNombre.TextAlign = HorizontalAlignment.Center;
             // 
             // lblDNI
             // 
@@ -133,7 +138,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(236, 53);
+            label2.Location = new Point(128, 56);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(62, 23);
@@ -148,7 +153,7 @@
             groupBox1.Controls.Add(lblDNI);
             groupBox1.Controls.Add(lblApellido);
             groupBox1.Controls.Add(lblNombre);
-            groupBox1.Location = new Point(142, 126);
+            groupBox1.Location = new Point(34, 129);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(534, 218);
             groupBox1.TabIndex = 20;
@@ -160,7 +165,7 @@
             btnBajaUsuario.BackColor = Color.Red;
             btnBajaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnBajaUsuario.ForeColor = Color.White;
-            btnBajaUsuario.Location = new Point(327, 369);
+            btnBajaUsuario.Location = new Point(219, 372);
             btnBajaUsuario.Margin = new Padding(4, 3, 4, 3);
             btnBajaUsuario.Name = "btnBajaUsuario";
             btnBajaUsuario.Size = new Size(201, 53);
@@ -173,7 +178,7 @@
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(118, 369);
+            button1.Location = new Point(10, 372);
             button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new Size(201, 53);
@@ -191,7 +196,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(10, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(800, 36);
+            menuStrip1.Size = new Size(1091, 36);
             menuStrip1.TabIndex = 23;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -247,29 +252,43 @@
             strpAltaUsuariosMenu.Name = "strpAltaUsuariosMenu";
             strpAltaUsuariosMenu.Size = new Size(241, 32);
             strpAltaUsuariosMenu.Text = "ALTA USUARIO";
+            strpAltaUsuariosMenu.Click += strpAltaUsuariosMenu_Click;
             // 
             // strpBajaUsuariosMenu
             // 
             strpBajaUsuariosMenu.Name = "strpBajaUsuariosMenu";
             strpBajaUsuariosMenu.Size = new Size(241, 32);
             strpBajaUsuariosMenu.Text = "BAJA USUARIO";
+            strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
             // 
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(535, 369);
+            btnVolverInicio.Location = new Point(427, 372);
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(179, 51);
             btnVolverInicio.TabIndex = 24;
-            btnVolverInicio.Text = "Regresar";
+            btnVolverInicio.Text = "REGRESAR";
             btnVolverInicio.UseVisualStyleBackColor = false;
             btnVolverInicio.Click += btnVolverInicio_Click;
+            // 
+            // lstBoxUsuarios
+            // 
+            lstBoxUsuarios.FormattingEnabled = true;
+            lstBoxUsuarios.ItemHeight = 20;
+            lstBoxUsuarios.Location = new Point(633, 72);
+            lstBoxUsuarios.Name = "lstBoxUsuarios";
+            lstBoxUsuarios.ScrollAlwaysVisible = true;
+            lstBoxUsuarios.Size = new Size(360, 384);
+            lstBoxUsuarios.TabIndex = 25;
             // 
             // FrmBajaUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1091, 494);
+            Controls.Add(lstBoxUsuarios);
             Controls.Add(btnVolverInicio);
             Controls.Add(menuStrip1);
             Controls.Add(button1);
@@ -277,6 +296,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(textBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmBajaUsuario";
             Text = "Baja Usuario";
             groupBox1.ResumeLayout(false);
@@ -309,5 +329,6 @@
         private ToolStripMenuItem strpAltaUsuariosMenu;
         private ToolStripMenuItem strpBajaUsuariosMenu;
         private Button btnVolverInicio;
+        private ListBox lstBoxUsuarios;
     }
 }

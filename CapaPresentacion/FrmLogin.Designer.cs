@@ -134,7 +134,6 @@
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmLogin";
-            Opacity = 0.9D;
             Text = "ElectroHogar SA - Login";
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();

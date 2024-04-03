@@ -197,6 +197,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(253, 30);
             txtNombre.TabIndex = 10;
+            txtNombre.TextAlign = HorizontalAlignment.Center;
             // 
             // txtApellido
             // 
@@ -206,6 +207,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(253, 30);
             txtApellido.TabIndex = 11;
+            txtApellido.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDireccion
             // 
@@ -215,6 +217,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(253, 30);
             txtDireccion.TabIndex = 13;
+            txtDireccion.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDNI
             // 
@@ -224,6 +227,7 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(253, 30);
             txtDNI.TabIndex = 12;
+            txtDNI.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
             // 
@@ -233,6 +237,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(253, 30);
             txtEmail.TabIndex = 15;
+            txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtTelefono
             // 
@@ -242,6 +247,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(253, 30);
             txtTelefono.TabIndex = 14;
+            txtTelefono.TextAlign = HorizontalAlignment.Center;
             // 
             // txtContraseña
             // 
@@ -251,6 +257,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(253, 30);
             txtContraseña.TabIndex = 17;
+            txtContraseña.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
             // 
@@ -260,6 +267,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(253, 30);
             txtUsuario.TabIndex = 16;
+            txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // btnAltaUsuario
             // 
@@ -340,12 +348,14 @@
             strpAltaUsuariosMenu.Name = "strpAltaUsuariosMenu";
             strpAltaUsuariosMenu.Size = new Size(241, 32);
             strpAltaUsuariosMenu.Text = "ALTA USUARIO";
+            strpAltaUsuariosMenu.Click += strpAltaUsuariosMenu_Click;
             // 
             // strpBajaUsuariosMenu
             // 
             strpBajaUsuariosMenu.Name = "strpBajaUsuariosMenu";
             strpBajaUsuariosMenu.Size = new Size(241, 32);
             strpBajaUsuariosMenu.Text = "BAJA USUARIO";
+            strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
             // 
             // btnVolverInicio
             // 
@@ -354,7 +364,7 @@
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(179, 51);
             btnVolverInicio.TabIndex = 20;
-            btnVolverInicio.Text = "Regresar";
+            btnVolverInicio.Text = "REGRESAR";
             btnVolverInicio.UseVisualStyleBackColor = false;
             btnVolverInicio.Click += btnVolverInicio_Click;
             // 
@@ -362,6 +372,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1000, 518);
             Controls.Add(btnVolverInicio);
@@ -387,6 +398,7 @@
             Controls.Add(lblNombre);
             Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             ForeColor = Color.Black;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmAltaUsuario";
             Text = "Nuevo Usuario";
