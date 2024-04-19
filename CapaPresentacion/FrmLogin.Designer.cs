@@ -135,6 +135,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmLogin";
             Text = "ElectroHogar SA - Login";
+            Load += FrmLogin_Load;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgPerfil).EndInit();

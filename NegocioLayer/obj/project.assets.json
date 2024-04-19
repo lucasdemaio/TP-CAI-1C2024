@@ -1,11 +1,59 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Datos/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Datos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Datos.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Negocio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Negocio.dll": {}
+        }
+      },
+      "Persistencia/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Persistencia.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Persistencia.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Datos/1.0.0": {
+      "type": "project",
+      "path": "../Datos/Datos.csproj",
+      "msbuildProject": "../Datos/Datos.csproj"
+    },
+    "Negocio/1.0.0": {
+      "type": "project",
+      "path": "../Negocio/Negocio.csproj",
+      "msbuildProject": "../Negocio/Negocio.csproj"
+    },
+    "Persistencia/1.0.0": {
+      "type": "project",
+      "path": "../Persistencia/Persistencia.csproj",
+      "msbuildProject": "../Persistencia/Persistencia.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Datos >= 1.0.0",
+      "Negocio >= 1.0.0",
+      "Persistencia >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lucas\\.nuget\\packages\\": {}
@@ -33,7 +81,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj": {
+              "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj"
+            },
+            "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj"
+            },
+            "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Persistencia\\Persistencia.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

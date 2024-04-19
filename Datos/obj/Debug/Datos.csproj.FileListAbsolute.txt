@@ -1,0 +1,6 @@
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Datos.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Datos.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.pdb

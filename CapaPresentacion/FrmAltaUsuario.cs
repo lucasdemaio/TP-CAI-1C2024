@@ -1,4 +1,5 @@
-﻿using CapaPresentacion;
+﻿using Datos;
+using Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,19 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Datos.Usuario;
+using Negocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
 
-namespace PresentacionLayer
+namespace Presentacion
 {
     public partial class FrmAltaUsuario : Form
     {
+        private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+
         public FrmAltaUsuario()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            InitializeComboBox();
         }
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
@@ -42,6 +45,62 @@ namespace PresentacionLayer
             FrmBajaUsuario frmBaja = new FrmBajaUsuario();
             frmBaja.Show();
             this.Hide();
+        }
+
+
+        
+        private void btnAltaUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {  
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                int dni = Int32.Parse(txtDNI.Text);
+                string direccion = txtDireccion.Text;
+                string telefono = txtTelefono.Text;
+                string email = txtEmail.Text;
+                DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
+                string nombreUsuario = txtUsuario.Text;
+                string contraseña = txtContraseña.Text;
+                int valorPerfil = (int)Enum.Parse(typeof(Usuario.Host), cbPerfiles.Text);
+
+                ValidadorUtilis validador = new ValidadorUtilis();
+
+                string errorMensaje = validador.ValidarDatosUsuario(nombreUsuario, contraseña, dni, nombre, apellido);
+                
+                if (string.IsNullOrEmpty(errorMensaje))
+                {
+                    // Si todas las validaciones son exitosas, agregar el usuario
+                    usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
+                    MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(errorMensaje, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void InitializeComboBox()
+        {
+            {
+                cbPerfiles.DropDownStyle = ComboBoxStyle.DropDownList;
+                Host[] perfiles = (Host[])Enum.GetValues(typeof(Host));
+                cbPerfiles.Items.AddRange(perfiles.Select(x => (object)x).ToArray());
+                if (cbPerfiles.Items.Count > 0)
+                {
+                    cbPerfiles.SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void FrmAltaUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }   

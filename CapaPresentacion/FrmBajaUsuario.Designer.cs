@@ -1,4 +1,4 @@
-﻿namespace PresentacionLayer
+﻿namespace Presentacion
 {
     partial class FrmBajaUsuario
     {
@@ -56,40 +56,41 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(231, 56);
+            textBox1.Location = new Point(202, 42);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Ingrese ID del usuario";
-            textBox1.Size = new Size(207, 27);
+            textBox1.Size = new Size(182, 23);
             textBox1.TabIndex = 0;
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDNI
             // 
             txtDNI.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDNI.Location = new Point(197, 164);
-            txtDNI.Margin = new Padding(4, 3, 4, 3);
+            txtDNI.Location = new Point(172, 123);
+            txtDNI.Margin = new Padding(4, 2, 4, 2);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(253, 30);
+            txtDNI.Size = new Size(222, 26);
             txtDNI.TabIndex = 18;
             txtDNI.TextAlign = HorizontalAlignment.Center;
             // 
             // txtApellido
             // 
             txtApellido.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtApellido.Location = new Point(197, 106);
-            txtApellido.Margin = new Padding(4, 3, 4, 3);
+            txtApellido.Location = new Point(172, 80);
+            txtApellido.Margin = new Padding(4, 2, 4, 2);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(253, 30);
+            txtApellido.Size = new Size(222, 26);
             txtApellido.TabIndex = 17;
             txtApellido.TextAlign = HorizontalAlignment.Center;
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(197, 54);
-            txtNombre.Margin = new Padding(4, 3, 4, 3);
+            txtNombre.Location = new Point(172, 40);
+            txtNombre.Margin = new Padding(4, 2, 4, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(253, 30);
+            txtNombre.Size = new Size(222, 26);
             txtNombre.TabIndex = 16;
             txtNombre.TextAlign = HorizontalAlignment.Center;
             // 
@@ -99,10 +100,10 @@
             lblDNI.BackColor = Color.Transparent;
             lblDNI.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblDNI.ForeColor = Color.Black;
-            lblDNI.Location = new Point(83, 167);
+            lblDNI.Location = new Point(73, 125);
             lblDNI.Margin = new Padding(4, 0, 4, 0);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(40, 23);
+            lblDNI.Size = new Size(33, 19);
             lblDNI.TabIndex = 15;
             lblDNI.Text = "DNI";
             // 
@@ -112,10 +113,10 @@
             lblApellido.BackColor = Color.Transparent;
             lblApellido.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblApellido.ForeColor = Color.Black;
-            lblApellido.Location = new Point(83, 109);
+            lblApellido.Location = new Point(73, 82);
             lblApellido.Margin = new Padding(4, 0, 4, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(72, 23);
+            lblApellido.Size = new Size(58, 19);
             lblApellido.TabIndex = 14;
             lblApellido.Text = "Apellido";
             // 
@@ -125,10 +126,10 @@
             lblNombre.BackColor = Color.Transparent;
             lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(83, 57);
+            lblNombre.Location = new Point(73, 43);
             lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(73, 23);
+            lblNombre.Size = new Size(59, 19);
             lblNombre.TabIndex = 13;
             lblNombre.Text = "Nombre";
             // 
@@ -138,10 +139,10 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(128, 56);
+            label2.Location = new Point(112, 42);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 23);
+            label2.Size = new Size(53, 19);
             label2.TabIndex = 19;
             label2.Text = "Buscar";
             // 
@@ -153,9 +154,11 @@
             groupBox1.Controls.Add(lblDNI);
             groupBox1.Controls.Add(lblApellido);
             groupBox1.Controls.Add(lblNombre);
-            groupBox1.Location = new Point(34, 129);
+            groupBox1.Location = new Point(30, 97);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(534, 218);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(467, 164);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Resultado Busqueda";
@@ -165,10 +168,10 @@
             btnBajaUsuario.BackColor = Color.Red;
             btnBajaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnBajaUsuario.ForeColor = Color.White;
-            btnBajaUsuario.Location = new Point(219, 372);
-            btnBajaUsuario.Margin = new Padding(4, 3, 4, 3);
+            btnBajaUsuario.Location = new Point(192, 279);
+            btnBajaUsuario.Margin = new Padding(4, 2, 4, 2);
             btnBajaUsuario.Name = "btnBajaUsuario";
-            btnBajaUsuario.Size = new Size(201, 53);
+            btnBajaUsuario.Size = new Size(176, 40);
             btnBajaUsuario.TabIndex = 21;
             btnBajaUsuario.Text = "ELIMINAR";
             btnBajaUsuario.UseVisualStyleBackColor = false;
@@ -178,10 +181,10 @@
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(10, 372);
-            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Location = new Point(9, 279);
+            button1.Margin = new Padding(4, 2, 4, 2);
             button1.Name = "button1";
-            button1.Size = new Size(201, 53);
+            button1.Size = new Size(176, 40);
             button1.TabIndex = 22;
             button1.Text = "NUEVA BUSQUEDA";
             button1.UseVisualStyleBackColor = false;
@@ -194,9 +197,9 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { strpProductosMenu, strpVentasMenu, strpProveedoresMenu, strpReportesMenu, strpUsuariosMenu });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(10, 2, 0, 2);
+            menuStrip1.Padding = new Padding(9, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(1091, 36);
+            menuStrip1.Size = new Size(955, 29);
             menuStrip1.TabIndex = 23;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -206,7 +209,7 @@
             strpProductosMenu.ForeColor = Color.White;
             strpProductosMenu.Name = "strpProductosMenu";
             strpProductosMenu.RightToLeft = RightToLeft.Yes;
-            strpProductosMenu.Size = new Size(145, 32);
+            strpProductosMenu.Size = new Size(118, 25);
             strpProductosMenu.Text = "PRODUCTOS";
             // 
             // strpVentasMenu
@@ -215,7 +218,7 @@
             strpVentasMenu.ForeColor = Color.White;
             strpVentasMenu.Name = "strpVentasMenu";
             strpVentasMenu.RightToLeft = RightToLeft.Yes;
-            strpVentasMenu.Size = new Size(103, 32);
+            strpVentasMenu.Size = new Size(84, 25);
             strpVentasMenu.Text = "VENTAS";
             // 
             // strpProveedoresMenu
@@ -224,7 +227,7 @@
             strpProveedoresMenu.ForeColor = Color.White;
             strpProveedoresMenu.Name = "strpProveedoresMenu";
             strpProveedoresMenu.RightToLeft = RightToLeft.Yes;
-            strpProveedoresMenu.Size = new Size(166, 32);
+            strpProveedoresMenu.Size = new Size(135, 25);
             strpProveedoresMenu.Text = "PROVEEDORES";
             // 
             // strpReportesMenu
@@ -233,7 +236,7 @@
             strpReportesMenu.ForeColor = Color.White;
             strpReportesMenu.Name = "strpReportesMenu";
             strpReportesMenu.RightToLeft = RightToLeft.Yes;
-            strpReportesMenu.Size = new Size(124, 32);
+            strpReportesMenu.Size = new Size(100, 25);
             strpReportesMenu.Text = "REPORTES";
             // 
             // strpUsuariosMenu
@@ -244,29 +247,30 @@
             strpUsuariosMenu.ForeColor = Color.White;
             strpUsuariosMenu.Name = "strpUsuariosMenu";
             strpUsuariosMenu.RightToLeft = RightToLeft.Yes;
-            strpUsuariosMenu.Size = new Size(124, 32);
+            strpUsuariosMenu.Size = new Size(102, 25);
             strpUsuariosMenu.Text = "USUARIOS";
             // 
             // strpAltaUsuariosMenu
             // 
             strpAltaUsuariosMenu.Name = "strpAltaUsuariosMenu";
-            strpAltaUsuariosMenu.Size = new Size(241, 32);
+            strpAltaUsuariosMenu.Size = new Size(194, 26);
             strpAltaUsuariosMenu.Text = "ALTA USUARIO";
             strpAltaUsuariosMenu.Click += strpAltaUsuariosMenu_Click;
             // 
             // strpBajaUsuariosMenu
             // 
             strpBajaUsuariosMenu.Name = "strpBajaUsuariosMenu";
-            strpBajaUsuariosMenu.Size = new Size(241, 32);
+            strpBajaUsuariosMenu.Size = new Size(194, 26);
             strpBajaUsuariosMenu.Text = "BAJA USUARIO";
             strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
             // 
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(427, 372);
+            btnVolverInicio.Location = new Point(374, 279);
+            btnVolverInicio.Margin = new Padding(3, 2, 3, 2);
             btnVolverInicio.Name = "btnVolverInicio";
-            btnVolverInicio.Size = new Size(179, 51);
+            btnVolverInicio.Size = new Size(157, 38);
             btnVolverInicio.TabIndex = 24;
             btnVolverInicio.Text = "REGRESAR";
             btnVolverInicio.UseVisualStyleBackColor = false;
@@ -275,19 +279,20 @@
             // lstBoxUsuarios
             // 
             lstBoxUsuarios.FormattingEnabled = true;
-            lstBoxUsuarios.ItemHeight = 20;
-            lstBoxUsuarios.Location = new Point(633, 72);
+            lstBoxUsuarios.ItemHeight = 15;
+            lstBoxUsuarios.Location = new Point(554, 54);
+            lstBoxUsuarios.Margin = new Padding(3, 2, 3, 2);
             lstBoxUsuarios.Name = "lstBoxUsuarios";
             lstBoxUsuarios.ScrollAlwaysVisible = true;
-            lstBoxUsuarios.Size = new Size(360, 384);
+            lstBoxUsuarios.Size = new Size(316, 289);
             lstBoxUsuarios.TabIndex = 25;
             // 
             // FrmBajaUsuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1091, 494);
+            ClientSize = new Size(955, 523);
             Controls.Add(lstBoxUsuarios);
             Controls.Add(btnVolverInicio);
             Controls.Add(menuStrip1);
@@ -297,8 +302,10 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmBajaUsuario";
             Text = "Baja Usuario";
+            Load += FrmBajaUsuario_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             menuStrip1.ResumeLayout(false);

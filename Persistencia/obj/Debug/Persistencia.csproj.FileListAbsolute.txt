@@ -1,0 +1,11 @@
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Datos.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Datos.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\obj\Debug\Persistencia.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Persistencia\obj\Debug\Persistencia.pdb

@@ -1,4 +1,4 @@
-﻿using CapaPresentacion;
+﻿using Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentacionLayer
+namespace Presentacion
 {
     public partial class FrmBajaUsuario : Form
     {
@@ -37,6 +37,11 @@ namespace PresentacionLayer
             FrmBajaUsuario frmBaja = new FrmBajaUsuario();
             frmBaja.Show();
             this.Hide();
+        }
+
+        private void FrmBajaUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

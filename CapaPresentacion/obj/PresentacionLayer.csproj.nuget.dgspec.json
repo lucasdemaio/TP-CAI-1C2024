@@ -27,7 +27,14 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj": {
+                "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj"
+              },
+              "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj": {
+                "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,6 +67,36 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj",
+        "projectName": "Datos",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Datos\\Datos.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj",
+        "projectName": "Negocio",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Facultad\\1C 2024\\CAI\\Practica\\TP\\Negocio\\Negocio.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NegocioLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f034fd97b25a1dd6e8c234b5ab77985ac56bb099")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NegocioLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NegocioLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
