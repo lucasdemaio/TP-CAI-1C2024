@@ -4,7 +4,7 @@
     <Compile Update="FrmAltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmBajaUsuario.cs">
+    <Compile Update="FrmBajaModUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmCliente.cs">

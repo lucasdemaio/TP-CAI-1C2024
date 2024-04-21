@@ -1,6 +1,17 @@
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\Datos.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\Datos.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\Newtonsoft.Json.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\Newtonsoft.Json.xml
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\DBLocal\Datos.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\DBLocal\Datos.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\DBLocal\Newtonsoft.Json.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\DBLocal\Newtonsoft.Json.xml
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Datos.dll
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Datos.pdb
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\bin\Debug\Newtonsoft.Json.xml
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.dll
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\Datos\obj\Debug\Datos.pdb

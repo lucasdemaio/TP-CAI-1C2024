@@ -14,17 +14,18 @@ namespace Persistencia
 {
     public class UsuarioService
     {
-        public List<Usuario> GetUsuarios()
+        public List<UsuarioAlta> GetUsuarios(string idAdministrador)
         {
-            String path = "/api/Usuario/TraerUsuariosActivos";
-            List<Usuario> usuarios = new List<Usuario>();
+            String path = $"/api/Usuario/TraerUsuariosActivos?id={idAdministrador}";
+            
+            List<UsuarioAlta> usuarios = new List<UsuarioAlta>();
             try
             {
                 HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<Usuario> listadoUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(contentStream);
+                    List<UsuarioAlta> listadoUsuarios = JsonConvert.DeserializeObject<List<UsuarioAlta>>(contentStream);
                     return listadoUsuarios;
                 }
                 else
@@ -40,36 +41,7 @@ namespace Persistencia
 
         }
 
-        /*public void ModificarUsuario(Guid idCliente, String direccion, String telefono, String email)
-        {
-            String path = "/api/Usuario/CambiarContraseña";
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idCliente.ToString());
-            map.Add("direccion", direccion);
-            map.Add("telefono", telefono);
-            map.Add("email", email);
-
-            var jsonRequest = JsonConvert.SerializeObject(map);
-
-            try
-            {
-                HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
-                if (response.IsSuccessStatusCode)
-                {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Exception: {ex.Message}");
-            }
-        }*/
-
+        
         public void AgregarUsuario(UsuarioAlta altaUsuario)
         {
             String path = "/api/Usuario/AgregarUsuario";
@@ -97,27 +69,6 @@ namespace Persistencia
             }
         }
 
-        public void BorrarUsuario(Guid idCliente)
-        {
-            String path = "/api/Usuario/BajaUsuario?id=" + idCliente;
-
-            try
-            {
-                HttpResponseMessage response = WebHelper.Delete(path);
-                if (response.IsSuccessStatusCode)
-                {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Exception: {ex.Message}");
-            }
-        }
+       
     }
 }

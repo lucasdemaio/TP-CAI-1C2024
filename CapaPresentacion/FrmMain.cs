@@ -54,7 +54,7 @@ namespace Presentacion
 
         private void strpBajaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmBajaUsuario frmBaja = new FrmBajaUsuario();
+            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario();
             frmBaja.Show();
             this.Hide();
         }

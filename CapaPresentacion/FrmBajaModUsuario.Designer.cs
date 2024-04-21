@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class FrmBajaUsuario
+    partial class FrmBajaModUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBajaUsuario));
-            textBox1 = new TextBox();
-            txtDNI = new TextBox();
-            txtApellido = new TextBox();
-            txtNombre = new TextBox();
-            lblDNI = new Label();
-            lblApellido = new Label();
-            lblNombre = new Label();
-            label2 = new Label();
-            groupBox1 = new GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBajaModUsuario));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnBajaUsuario = new Button();
-            button1 = new Button();
             menuStrip1 = new MenuStrip();
             strpProductosMenu = new ToolStripMenuItem();
             strpVentasMenu = new ToolStripMenuItem();
@@ -49,145 +40,32 @@
             strpAltaUsuariosMenu = new ToolStripMenuItem();
             strpBajaUsuariosMenu = new ToolStripMenuItem();
             btnVolverInicio = new Button();
-            lstBoxUsuarios = new ListBox();
-            groupBox1.SuspendLayout();
+            dataGridViewUsuario = new DataGridView();
+            lblDNI = new Label();
+            lblApellido = new Label();
+            lblNombre = new Label();
+            lblDireccion = new Label();
+            txtNombre = new TextBox();
+            txtDNI = new TextBox();
+            txtApellido = new TextBox();
+            txtDireccion = new TextBox();
+            btnModificarCliente = new Button();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsuario).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(202, 42);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Ingrese ID del usuario";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 0;
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtDNI
-            // 
-            txtDNI.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDNI.Location = new Point(172, 123);
-            txtDNI.Margin = new Padding(4, 2, 4, 2);
-            txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(222, 26);
-            txtDNI.TabIndex = 18;
-            txtDNI.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtApellido
-            // 
-            txtApellido.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtApellido.Location = new Point(172, 80);
-            txtApellido.Margin = new Padding(4, 2, 4, 2);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(222, 26);
-            txtApellido.TabIndex = 17;
-            txtApellido.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(172, 40);
-            txtNombre.Margin = new Padding(4, 2, 4, 2);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(222, 26);
-            txtNombre.TabIndex = 16;
-            txtNombre.TextAlign = HorizontalAlignment.Center;
-            // 
-            // lblDNI
-            // 
-            lblDNI.AutoSize = true;
-            lblDNI.BackColor = Color.Transparent;
-            lblDNI.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDNI.ForeColor = Color.Black;
-            lblDNI.Location = new Point(73, 125);
-            lblDNI.Margin = new Padding(4, 0, 4, 0);
-            lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(33, 19);
-            lblDNI.TabIndex = 15;
-            lblDNI.Text = "DNI";
-            // 
-            // lblApellido
-            // 
-            lblApellido.AutoSize = true;
-            lblApellido.BackColor = Color.Transparent;
-            lblApellido.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblApellido.ForeColor = Color.Black;
-            lblApellido.Location = new Point(73, 82);
-            lblApellido.Margin = new Padding(4, 0, 4, 0);
-            lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(58, 19);
-            lblApellido.TabIndex = 14;
-            lblApellido.Text = "Apellido";
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.Transparent;
-            lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(73, 43);
-            lblNombre.Margin = new Padding(4, 0, 4, 0);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(59, 19);
-            lblNombre.TabIndex = 13;
-            lblNombre.Text = "Nombre";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(112, 42);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 19);
-            label2.TabIndex = 19;
-            label2.Text = "Buscar";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(txtDNI);
-            groupBox1.Controls.Add(txtApellido);
-            groupBox1.Controls.Add(txtNombre);
-            groupBox1.Controls.Add(lblDNI);
-            groupBox1.Controls.Add(lblApellido);
-            groupBox1.Controls.Add(lblNombre);
-            groupBox1.Location = new Point(30, 97);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(467, 164);
-            groupBox1.TabIndex = 20;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Resultado Busqueda";
             // 
             // btnBajaUsuario
             // 
             btnBajaUsuario.BackColor = Color.Red;
             btnBajaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnBajaUsuario.ForeColor = Color.White;
-            btnBajaUsuario.Location = new Point(192, 279);
+            btnBajaUsuario.Location = new Point(563, 362);
             btnBajaUsuario.Margin = new Padding(4, 2, 4, 2);
             btnBajaUsuario.Name = "btnBajaUsuario";
             btnBajaUsuario.Size = new Size(176, 40);
             btnBajaUsuario.TabIndex = 21;
             btnBajaUsuario.Text = "ELIMINAR";
             btnBajaUsuario.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
-            button1.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(9, 279);
-            button1.Margin = new Padding(4, 2, 4, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(176, 40);
-            button1.TabIndex = 22;
-            button1.Text = "NUEVA BUSQUEDA";
-            button1.UseVisualStyleBackColor = false;
             // 
             // menuStrip1
             // 
@@ -267,66 +145,162 @@
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(374, 279);
+            btnVolverInicio.Location = new Point(786, 365);
             btnVolverInicio.Margin = new Padding(3, 2, 3, 2);
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(157, 38);
             btnVolverInicio.TabIndex = 24;
-            btnVolverInicio.Text = "REGRESAR";
+            btnVolverInicio.Text = "VOLVER MENU PRINCIPAL";
             btnVolverInicio.UseVisualStyleBackColor = false;
             btnVolverInicio.Click += btnVolverInicio_Click;
             // 
-            // lstBoxUsuarios
+            // dataGridViewUsuario
             // 
-            lstBoxUsuarios.FormattingEnabled = true;
-            lstBoxUsuarios.ItemHeight = 15;
-            lstBoxUsuarios.Location = new Point(554, 54);
-            lstBoxUsuarios.Margin = new Padding(3, 2, 3, 2);
-            lstBoxUsuarios.Name = "lstBoxUsuarios";
-            lstBoxUsuarios.ScrollAlwaysVisible = true;
-            lstBoxUsuarios.Size = new Size(316, 289);
-            lstBoxUsuarios.TabIndex = 25;
+            dataGridViewUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewUsuario.BackgroundColor = SystemColors.ActiveCaption;
+            dataGridViewUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridViewUsuario.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewUsuario.Location = new Point(350, 62);
+            dataGridViewUsuario.MultiSelect = false;
+            dataGridViewUsuario.Name = "dataGridViewUsuario";
+            dataGridViewUsuario.ReadOnly = true;
+            dataGridViewUsuario.RowTemplate.Height = 25;
+            dataGridViewUsuario.Size = new Size(593, 295);
+            dataGridViewUsuario.TabIndex = 25;
             // 
-            // FrmBajaUsuario
+            // lblDNI
+            // 
+            lblDNI.AutoSize = true;
+            lblDNI.BackColor = Color.Transparent;
+            lblDNI.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDNI.ForeColor = Color.Black;
+            lblDNI.Location = new Point(13, 143);
+            lblDNI.Margin = new Padding(4, 0, 4, 0);
+            lblDNI.Name = "lblDNI";
+            lblDNI.Size = new Size(34, 19);
+            lblDNI.TabIndex = 28;
+            lblDNI.Text = "DNI";
+            // 
+            // lblApellido
+            // 
+            lblApellido.AutoSize = true;
+            lblApellido.BackColor = Color.Transparent;
+            lblApellido.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblApellido.ForeColor = Color.Black;
+            lblApellido.Location = new Point(13, 103);
+            lblApellido.Margin = new Padding(4, 0, 4, 0);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(66, 19);
+            lblApellido.TabIndex = 27;
+            lblApellido.Text = "Apellido";
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.BackColor = Color.Transparent;
+            lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNombre.ForeColor = Color.Black;
+            lblNombre.Location = new Point(13, 62);
+            lblNombre.Margin = new Padding(4, 0, 4, 0);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(65, 19);
+            lblNombre.TabIndex = 26;
+            lblNombre.Text = "Nombre";
+            // 
+            // lblDireccion
+            // 
+            lblDireccion.AutoSize = true;
+            lblDireccion.BackColor = Color.Transparent;
+            lblDireccion.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDireccion.ForeColor = Color.Black;
+            lblDireccion.Location = new Point(12, 188);
+            lblDireccion.Margin = new Padding(4, 0, 4, 0);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(72, 19);
+            lblDireccion.TabIndex = 29;
+            lblDireccion.Text = "Direccion";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(102, 62);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(208, 23);
+            txtNombre.TabIndex = 30;
+            // 
+            // txtDNI
+            // 
+            txtDNI.Location = new Point(102, 143);
+            txtDNI.Name = "txtDNI";
+            txtDNI.Size = new Size(208, 23);
+            txtDNI.TabIndex = 31;
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(102, 103);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(208, 23);
+            txtApellido.TabIndex = 31;
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(102, 188);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(208, 23);
+            txtDireccion.TabIndex = 32;
+            // 
+            // btnModificarCliente
+            // 
+            btnModificarCliente.BackColor = SystemColors.ActiveCaptionText;
+            btnModificarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificarCliente.ForeColor = Color.White;
+            btnModificarCliente.Location = new Point(78, 250);
+            btnModificarCliente.Margin = new Padding(4, 3, 4, 3);
+            btnModificarCliente.Name = "btnModificarCliente";
+            btnModificarCliente.Size = new Size(160, 50);
+            btnModificarCliente.TabIndex = 45;
+            btnModificarCliente.Text = "MODIFICAR";
+            btnModificarCliente.UseVisualStyleBackColor = false;
+            // 
+            // FrmBajaModUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(955, 523);
-            Controls.Add(lstBoxUsuarios);
+            ClientSize = new Size(955, 411);
+            Controls.Add(btnModificarCliente);
+            Controls.Add(txtDireccion);
+            Controls.Add(txtApellido);
+            Controls.Add(txtDNI);
+            Controls.Add(txtNombre);
+            Controls.Add(lblDireccion);
+            Controls.Add(lblDNI);
+            Controls.Add(lblApellido);
+            Controls.Add(lblNombre);
+            Controls.Add(dataGridViewUsuario);
             Controls.Add(btnVolverInicio);
             Controls.Add(menuStrip1);
-            Controls.Add(button1);
             Controls.Add(btnBajaUsuario);
-            Controls.Add(groupBox1);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "FrmBajaUsuario";
-            Text = "Baja Usuario";
-            Load += FrmBajaUsuario_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Name = "FrmBajaModUsuario";
+            Text = "Baja-Modificacion Usuario";
+            Load += FrmBajaModUsuario_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsuario).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox txtDNI;
-        private TextBox txtApellido;
-        private TextBox txtNombre;
-        private Label lblDNI;
-        private Label lblApellido;
-        private Label lblNombre;
-        private Label label2;
-        private GroupBox groupBox1;
         private Button btnBajaUsuario;
-        private Button button1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem strpProductosMenu;
         private ToolStripMenuItem strpVentasMenu;
@@ -336,6 +310,15 @@
         private ToolStripMenuItem strpAltaUsuariosMenu;
         private ToolStripMenuItem strpBajaUsuariosMenu;
         private Button btnVolverInicio;
-        private ListBox lstBoxUsuarios;
+        private DataGridView dataGridViewUsuario;
+        private Label lblDNI;
+        private Label lblApellido;
+        private Label lblNombre;
+        private Label lblDireccion;
+        private TextBox txtNombre;
+        private TextBox txtDNI;
+        private TextBox txtApellido;
+        private TextBox txtDireccion;
+        private Button btnModificarCliente;
     }
 }

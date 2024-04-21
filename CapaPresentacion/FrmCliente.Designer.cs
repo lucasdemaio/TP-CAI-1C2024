@@ -62,6 +62,7 @@
             dataGridViewCliente.RowTemplate.Height = 25;
             dataGridViewCliente.Size = new Size(962, 236);
             dataGridViewCliente.TabIndex = 0;
+            
             // 
             // lblDatos
             // 
@@ -69,11 +70,11 @@
             lblDatos.BackColor = Color.Transparent;
             lblDatos.Font = new Font("Ebrima", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblDatos.ForeColor = Color.Black;
-            lblDatos.Location = new Point(57, 19);
+            lblDatos.Location = new Point(56, 9);
             lblDatos.Name = "lblDatos";
-            lblDatos.Size = new Size(73, 30);
+            lblDatos.Size = new Size(95, 30);
             lblDatos.TabIndex = 1;
-            lblDatos.Text = "Datos";
+            lblDatos.Text = "Clientes";
             // 
             // dateTimeFechaNacimiento
             // 
@@ -150,7 +151,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(141, 69);
+            txtNombre.Location = new Point(141, 57);
             txtNombre.Margin = new Padding(4, 3, 4, 3);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(253, 26);
@@ -228,7 +229,7 @@
             lblNombre.BackColor = Color.Transparent;
             lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(57, 71);
+            lblNombre.Location = new Point(57, 64);
             lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(65, 19);
@@ -282,7 +283,7 @@
             btnModificarCliente.Name = "btnModificarCliente";
             btnModificarCliente.Size = new Size(160, 50);
             btnModificarCliente.TabIndex = 44;
-            btnModificarCliente.Text = "DAR DE ALTA";
+            btnModificarCliente.Text = "MODIFICAR";
             btnModificarCliente.UseVisualStyleBackColor = false;
             // 
             // FrmCliente

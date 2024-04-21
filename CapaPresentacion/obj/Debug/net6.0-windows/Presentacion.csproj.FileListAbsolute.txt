@@ -1,6 +1,6 @@
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.csproj.AssemblyReference.cache
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmAltaUsuario.resources
-C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmBajaUsuario.resources
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmBajaModUsuario.resources
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmCliente.resources
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\PresentacionLayer.FrmLogin.resources
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmMain.resources

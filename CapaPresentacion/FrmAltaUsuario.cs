@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Datos.Usuario;
+using static Datos.UsuarioDBLocal;
+using static Datos.Json;
 using Negocio;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Net;
@@ -42,7 +44,7 @@ namespace Presentacion
 
         private void strpBajaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmBajaUsuario frmBaja = new FrmBajaUsuario();
+            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario();
             frmBaja.Show();
             this.Hide();
         }
@@ -63,6 +65,7 @@ namespace Presentacion
                 string nombreUsuario = txtUsuario.Text;
                 string contraseña = txtContraseña.Text;
                 int valorPerfil = (int)Enum.Parse(typeof(Usuario.Host), cbPerfiles.Text);
+                DateTime fechaAlta = DateTime.Now;
 
                 ValidadorUtilis validador = new ValidadorUtilis();
 
@@ -72,6 +75,7 @@ namespace Presentacion
                 {
                     // Si todas las validaciones son exitosas, agregar el usuario
                     usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
+                    usuarioNegocio.agregarUsuarioDBLocal(nombre, apellido, email, fechaAlta, fechaNacimiento, null, nombreUsuario, valorPerfil, dni, contraseña, "INACTIVO");
                     MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
