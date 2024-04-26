@@ -49,6 +49,7 @@
             btnAltaCliente = new Button();
             btnEliminarCliente = new Button();
             btnModificarCliente = new Button();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             dataGridViewCliente.RowTemplate.Height = 25;
             dataGridViewCliente.Size = new Size(962, 236);
             dataGridViewCliente.TabIndex = 0;
-            
+            dataGridViewCliente.CellContentClick += dataGridViewCliente_CellContentClick;
             // 
             // lblDatos
             // 
@@ -259,6 +260,7 @@
             btnAltaCliente.TabIndex = 42;
             btnAltaCliente.Text = "DAR DE ALTA";
             btnAltaCliente.UseVisualStyleBackColor = false;
+            btnAltaCliente.Click += btnAltaCliente_Click;
             // 
             // btnEliminarCliente
             // 
@@ -272,6 +274,7 @@
             btnEliminarCliente.TabIndex = 43;
             btnEliminarCliente.Text = "ELIMINAR";
             btnEliminarCliente.UseVisualStyleBackColor = false;
+            btnEliminarCliente.Click += btnEliminarCliente_Click;
             // 
             // btnModificarCliente
             // 
@@ -285,6 +288,20 @@
             btnModificarCliente.TabIndex = 44;
             btnModificarCliente.Text = "MODIFICAR";
             btnModificarCliente.UseVisualStyleBackColor = false;
+            btnModificarCliente.Click += btnModificarCliente_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = SystemColors.Highlight;
+            btnLimpiar.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(599, 145);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(179, 33);
+            btnLimpiar.TabIndex = 45;
+            btnLimpiar.Text = "Limpiar Campos";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // FrmCliente
             // 
@@ -292,6 +309,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(986, 525);
+            Controls.Add(btnLimpiar);
             Controls.Add(btnModificarCliente);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnAltaCliente);
@@ -313,7 +331,7 @@
             Controls.Add(lblDatos);
             Controls.Add(dataGridViewCliente);
             Name = "FrmCliente";
-            Text = "FrmCliente";
+            Text = "Clientes";
             Load += FrmCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).EndInit();
             ResumeLayout(false);
@@ -342,5 +360,6 @@
         private Button btnAltaCliente;
         private Button btnEliminarCliente;
         private Button btnModificarCliente;
+        private Button btnLimpiar;
     }
 }

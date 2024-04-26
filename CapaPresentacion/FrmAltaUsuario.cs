@@ -10,8 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Datos.Usuario;
-using static Datos.UsuarioDBLocal;
-using static Datos.Json;
 using Negocio;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Net;
@@ -21,30 +19,32 @@ namespace Presentacion
     public partial class FrmAltaUsuario : Form
     {
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+        private int perfilUsuario;
 
-        public FrmAltaUsuario()
+        public FrmAltaUsuario(int perfilUsuario)
         {
             InitializeComponent();
             InitializeComboBox();
+            this.perfilUsuario = perfilUsuario;
         }
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
-            FrmMain frmMain = new FrmMain();
+            FrmMain frmMain = new FrmMain(perfilUsuario);
             frmMain.Show();
             this.Hide();
         }
 
         private void strpAltaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmAltaUsuario frmAlta = new FrmAltaUsuario();
+            FrmAltaUsuario frmAlta = new FrmAltaUsuario(perfilUsuario);
             frmAlta.Show();
             this.Hide();
         }
 
         private void strpBajaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario();
+            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario(perfilUsuario);
             frmBaja.Show();
             this.Hide();
         }
@@ -63,19 +63,18 @@ namespace Presentacion
                 string email = txtEmail.Text;
                 DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
                 string nombreUsuario = txtUsuario.Text;
-                string contraseña = txtContraseña.Text;
+                string contraseña = "CAI20232";
                 int valorPerfil = (int)Enum.Parse(typeof(Usuario.Host), cbPerfiles.Text);
                 DateTime fechaAlta = DateTime.Now;
 
                 ValidadorUtilis validador = new ValidadorUtilis();
 
-                string errorMensaje = validador.ValidarDatosUsuario(nombreUsuario, contraseña, dni, nombre, apellido);
+                string errorMensaje = validador.ValidarDatosUsuario(nombreUsuario, contraseña, dni, nombre, apellido, fechaNacimiento, valorPerfil);
                 
                 if (string.IsNullOrEmpty(errorMensaje))
                 {
                     // Si todas las validaciones son exitosas, agregar el usuario
                     usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
-                    usuarioNegocio.agregarUsuarioDBLocal(nombre, apellido, email, fechaAlta, fechaNacimiento, null, nombreUsuario, valorPerfil, dni, contraseña, "INACTIVO");
                     MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

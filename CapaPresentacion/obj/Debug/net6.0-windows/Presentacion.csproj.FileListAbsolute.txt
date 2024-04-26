@@ -31,3 +31,7 @@ C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresenta
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.pdb
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\ref\Presentacion.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmProducto.resources
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmProveedores.resources
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmVenta.resources
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmContraseña.resources

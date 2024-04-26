@@ -17,44 +17,38 @@ namespace Presentacion
     public partial class FrmBajaModUsuario : Form
     {
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-        public FrmBajaModUsuario()
+        private int perfilUsuario;
+
+        public FrmBajaModUsuario(int perfilUsuario)
         {
             InitializeComponent();
+            this.perfilUsuario = perfilUsuario;
         }
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
-            FrmMain frmMain = new FrmMain();
+            FrmMain frmMain = new FrmMain(perfilUsuario);
             frmMain.Show();
             this.Hide();
         }
 
         private void strpAltaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmAltaUsuario frmAlta = new FrmAltaUsuario();
+            FrmAltaUsuario frmAlta = new FrmAltaUsuario(perfilUsuario);
             frmAlta.Show();
             this.Hide();
         }
 
         private void strpBajaUsuariosMenu_Click(object sender, EventArgs e)
         {
-            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario();
+            FrmBajaModUsuario frmBaja = new FrmBajaModUsuario(perfilUsuario);
             frmBaja.Show();
             this.Hide();
         }
 
-        //private void FrmBajaModUsuario_Load(object sender, EventArgs e)
-        //{
-        //    cargarUsuarios();
-        //}
-
-
         private void cargarUsuarios()
         {
-            string idAdministrador = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
-
-            List<UsuarioAlta> usuario = usuarioNegocio.listarUsuarios(idAdministrador);
-
+            List<UsuarioAlta> usuario = usuarioNegocio.listarUsuarios();
 
             usuario = usuario.OrderBy(u => u.Apellido).ToList();
 
@@ -68,8 +62,6 @@ namespace Presentacion
             dataGridViewUsuario.Columns["Email"].Visible = false;
             dataGridViewUsuario.Columns["FechaNacimiento"].Visible = false;
             dataGridViewUsuario.Columns["Contraseña"].Visible = false;
-
-
         }
 
         private void FrmBajaModUsuario_Load_1(object sender, EventArgs e)
@@ -77,6 +69,27 @@ namespace Presentacion
             cargarUsuarios();
         }
 
- 
+        private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UsuarioAlta usuarioSeleccionado = (UsuarioAlta)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+            txtNombre.Text = usuarioSeleccionado.Nombre;
+            txtApellido.Text = usuarioSeleccionado.Apellido;
+            txtDNI.Text = usuarioSeleccionado.Dni.ToString();
+            txtUsername.Text = usuarioSeleccionado.NombreUsuario;
+        }
+
+        private void btnBajaUsuario_Click(object sender, EventArgs e)
+        {
+            UsuarioAlta usuarioSeleccionado = (UsuarioAlta)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+            string idUsuario = usuarioSeleccionado.IdUsuario;
+
+            //usuarioNegocio.borrarUsuario(idUsuario);
+
+            cargarUsuarios();
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtDNI.Text = "";
+            txtUsername.Text = "";
+        }
     }
 }

@@ -18,68 +18,69 @@ namespace PresentacionLayer
     {
         private UsuarioNegocio usuarioNegocio;
 
+
+
         public FrmLogin()
         {
             InitializeComponent();
-            usuarioNegocio = new UsuarioNegocio(); // Inicialización de la variable usuarioNegocio
+            usuarioNegocio = new UsuarioNegocio();
+            this.FormClosing += FrmLogin_FormClosing;
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {                
+                Application.Exit();
+            }
+        }
 
-        //    string usuario = txtUsuario.Text;
-        //    string clave = txtClave.Text;
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuario.Text;
+                string clave = txtClave.Text;
 
+                int perfilUsuario = usuarioNegocio.Login(usuario, clave);
 
-        //    bool loginExitoso = await usuarioNegocio.VerificarCredenciales(usuario, clave);
+                if (perfilUsuario != -1)
+                {
+                    FrmMain frmMain = new FrmMain(perfilUsuario);
+                    frmMain.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    lblLoginIncorrecto.Text = "Nombre de usuario o contraseña incorrectos";
+                    lblLoginIncorrecto.Visible = true;
+                    txtUsuario.Text = "";
+                    txtClave.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al iniciar sesión: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
 
-        //    //string Usuario1 = "admin";
-        //    //string Clave1 = "1234";
-        //    //string Usuario2 = "supervisor";
-        //    //string Clave2 = "1234";
-        //    //string Usuario3 = "Vendedor";
-        //    //string Clave3 = "1234";
+        private void linklblCambioClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmContraseña frmContraseña = new FrmContraseña();
+            frmContraseña.Show();
+            this.Hide();
+        }
 
-           
-        //    if (loginExitoso)
-        //    {
-        //        // Si el inicio de sesión es exitoso, puedes abrir el formulario principal de tu aplicación, por ejemplo:
-        //        FrmMain frmMain = new FrmMain();
-        //        frmMain.Show();
-
-        //        // También puedes cerrar el formulario de inicio de sesión si lo deseas
-        //        this.Hide();
-        //    }
-        //    else
-        //    {
-        //        // Si las credenciales son incorrectas, puedes mostrar un mensaje de error al usuario
-        //        MessageBox.Show("Credenciales incorrectas. Por favor, inténtelo de nuevo.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-
-
-            //if (txtUsuario.Text == Usuario1 && txtClave.Text == Clave1)
-            //{
-            //    string UsuarioLogueado = txtUsuario.Text;
-            //    //FrmMain frmMain = new FrmMain(this);
-            //    FrmMain frmMain = new FrmMain();
-            //    frmMain.Show();
-            //    this.Hide();
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Datos incorrectos");
-            //}
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
-
         }
-    }
 
+    }
 }

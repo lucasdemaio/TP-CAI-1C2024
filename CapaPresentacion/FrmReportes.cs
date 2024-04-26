@@ -12,9 +12,23 @@ namespace Presentacion
 {
     public partial class FrmReportes : Form
     {
-        public FrmReportes()
+        private int perfilUsuario;
+        public FrmReportes(int perfilUsuario)
         {
             InitializeComponent();
+            this.perfilUsuario = perfilUsuario;
+        }
+
+        private void btnVolverInicio_Click(object sender, EventArgs e)
+        {
+            FrmMain frmMain = new FrmMain(perfilUsuario);
+            frmMain.Show();
+            this.Hide();
+        }
+
+        private void FrmReportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

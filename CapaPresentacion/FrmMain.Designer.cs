@@ -35,10 +35,11 @@
             vENTASToolStripMenuItem = new ToolStripMenuItem();
             strpProveedoresMenu = new ToolStripMenuItem();
             strpReportesMenu = new ToolStripMenuItem();
+            strpClientesMenu = new ToolStripMenuItem();
             strpUsuariosMenu = new ToolStripMenuItem();
             strpAltaUsuariosMenu = new ToolStripMenuItem();
             strpBajaUsuariosMenu = new ToolStripMenuItem();
-            strpClientesMenu = new ToolStripMenuItem();
+            btnLogOut = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             strpProductosMenu.RightToLeft = RightToLeft.Yes;
             strpProductosMenu.Size = new Size(118, 25);
             strpProductosMenu.Text = "PRODUCTOS";
+            strpProductosMenu.Click += strpProductosMenu_Click;
             // 
             // strpVentasMenu
             // 
@@ -75,6 +77,7 @@
             strpVentasMenu.RightToLeft = RightToLeft.Yes;
             strpVentasMenu.Size = new Size(84, 25);
             strpVentasMenu.Text = "VENTAS";
+            strpVentasMenu.Click += strpVentasMenu_Click;
             // 
             // vENTASToolStripMenuItem
             // 
@@ -90,6 +93,7 @@
             strpProveedoresMenu.RightToLeft = RightToLeft.Yes;
             strpProveedoresMenu.Size = new Size(135, 25);
             strpProveedoresMenu.Text = "PROVEEDORES";
+            strpProveedoresMenu.Click += strpProveedoresMenu_Click;
             // 
             // strpReportesMenu
             // 
@@ -99,6 +103,16 @@
             strpReportesMenu.RightToLeft = RightToLeft.Yes;
             strpReportesMenu.Size = new Size(100, 25);
             strpReportesMenu.Text = "REPORTES";
+            strpReportesMenu.Click += strpReportesMenu_Click;
+            // 
+            // strpClientesMenu
+            // 
+            strpClientesMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            strpClientesMenu.ForeColor = Color.White;
+            strpClientesMenu.Name = "strpClientesMenu";
+            strpClientesMenu.Size = new Size(94, 25);
+            strpClientesMenu.Text = "CLIENTES";
+            strpClientesMenu.Click += strpClientesMenu_Click;
             // 
             // strpUsuariosMenu
             // 
@@ -125,14 +139,15 @@
             strpBajaUsuariosMenu.Text = "BAJA USUARIO";
             strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
             // 
-            // strpClientesMenu
+            // btnLogOut
             // 
-            strpClientesMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpClientesMenu.ForeColor = Color.White;
-            strpClientesMenu.Name = "strpClientesMenu";
-            strpClientesMenu.Size = new Size(94, 25);
-            strpClientesMenu.Text = "CLIENTES";
-            strpClientesMenu.Click += strpClientesMenu_Click;
+            btnLogOut.Location = new Point(1107, 32);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(75, 30);
+            btnLogOut.TabIndex = 1;
+            btnLogOut.Text = "Logout";
+            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // FrmMain
             // 
@@ -142,8 +157,10 @@
             BackColor = SystemColors.MenuBar;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1194, 595);
+            Controls.Add(btnLogOut);
             Controls.Add(menuStrip1);
             Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = Color.FromArgb(192, 0, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4);
@@ -168,5 +185,6 @@
         private ToolStripMenuItem strpBajaUsuariosMenu;
         private ToolStripMenuItem vENTASToolStripMenuItem;
         private ToolStripMenuItem strpClientesMenu;
+        private Button btnLogOut;
     }
 }

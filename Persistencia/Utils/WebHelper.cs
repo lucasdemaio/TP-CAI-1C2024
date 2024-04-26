@@ -13,6 +13,7 @@ namespace Persistencia.Utils
     {
         static HttpClient httpClient = new HttpClient();
         static String rutaBase = "https://cai-tp.azurewebsites.net";
+
         public static HttpResponseMessage Get(string url)
         {
             var uri = rutaBase + url;

@@ -36,7 +36,6 @@
             lblEmail = new Label();
             lblUsuario = new Label();
             lblDNI = new Label();
-            lblContraseña = new Label();
             lblPerfil = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
@@ -44,7 +43,6 @@
             txtDNI = new TextBox();
             txtEmail = new TextBox();
             txtTelefono = new TextBox();
-            txtContraseña = new TextBox();
             txtUsuario = new TextBox();
             btnAltaUsuario = new Button();
             menuStrip1 = new MenuStrip();
@@ -153,19 +151,6 @@
             lblDNI.TabIndex = 6;
             lblDNI.Text = "DNI";
             // 
-            // lblContraseña
-            // 
-            lblContraseña.AutoSize = true;
-            lblContraseña.BackColor = Color.Transparent;
-            lblContraseña.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblContraseña.ForeColor = Color.Black;
-            lblContraseña.Location = new Point(522, 107);
-            lblContraseña.Margin = new Padding(4, 0, 4, 0);
-            lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new Size(84, 19);
-            lblContraseña.TabIndex = 7;
-            lblContraseña.Text = "Contraseña";
-            // 
             // lblPerfil
             // 
             lblPerfil.AutoSize = true;
@@ -238,16 +223,6 @@
             txtTelefono.Size = new Size(253, 26);
             txtTelefono.TabIndex = 14;
             txtTelefono.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtContraseña
-            // 
-            txtContraseña.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(648, 99);
-            txtContraseña.Margin = new Padding(4, 3, 4, 3);
-            txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(253, 26);
-            txtContraseña.TabIndex = 17;
-            txtContraseña.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
             // 
@@ -402,7 +377,6 @@
             Controls.Add(btnVolverInicio);
             Controls.Add(menuStrip1);
             Controls.Add(btnAltaUsuario);
-            Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
             Controls.Add(txtEmail);
             Controls.Add(txtTelefono);
@@ -411,7 +385,6 @@
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblPerfil);
-            Controls.Add(lblContraseña);
             Controls.Add(lblDNI);
             Controls.Add(lblUsuario);
             Controls.Add(lblEmail);
@@ -441,7 +414,6 @@
         private Label lblEmail;
         private Label lblUsuario;
         private Label lblDNI;
-        private Label lblContraseña;
         private Label lblPerfil;
         private TextBox txtNombre;
         private TextBox txtApellido;
@@ -449,7 +421,6 @@
         private TextBox txtDNI;
         private TextBox txtEmail;
         private TextBox txtTelefono;
-        private TextBox txtContraseña;
         private TextBox txtUsuario;
         private Button btnAltaUsuario;
         private MenuStrip menuStrip1;

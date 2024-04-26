@@ -9,7 +9,7 @@ namespace Presentacion
 {
     public class ValidadorUtilis
     {
-        public string ValidarDatosUsuario(string nombreUsuario, string contraseña, int dni, string nombre, string apellido)
+        public string ValidarDatosUsuario(string nombreUsuario, string contraseña, int dni, string nombre, string apellido, DateTime fechaNacimiento, int valorPerfil)
         {
             nombreUsuario = nombreUsuario.ToLower();
             nombre = nombre.ToLower();
@@ -44,6 +44,60 @@ namespace Presentacion
             // Si todas las validaciones pasan, devolver mensaje vacío
             return string.Empty;
         }
+
+
+        public string ValidarCamposCompletos(Form form, Dictionary<Control, string> controlEtiquetaMap)
+        {
+            StringBuilder camposIncompletos = new StringBuilder();
+
+            foreach (Control control in form.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    string etiqueta = "";
+                    if (controlEtiquetaMap.TryGetValue(control, out etiqueta))
+                    {
+                        camposIncompletos.AppendLine($"El campo '{etiqueta}' no puede estar vacío.");
+                    }
+                    else
+                    {
+                        camposIncompletos.AppendLine($"El campo '{control.Name}' no puede estar vacío.");
+                    }
+                }
+            }
+
+            return camposIncompletos.ToString();
+        }
+
+
+        public string ValidarContraseña(string contraseñaActual, string nuevaContraseña)
+        {
+            if (contraseñaActual == nuevaContraseña)
+            {
+                return "Error: La nueva contraseña no puede ser igual a la contraseña actual.";
+            }
+
+            // Verificar si la nueva contraseña coincide con la contraseña actual
+            if (contraseñaActual == nuevaContraseña)
+            {
+                return "Error: La nueva contraseña no puede ser igual a la contraseña actual.";
+            }
+
+            // Verificar si la contraseña cumple con los requisitos de longitud y caracteres
+            if (nuevaContraseña.Length < 8 || nuevaContraseña.Length > 15)
+            {
+                return "Error: La contraseña debe tener entre 8 y 15 caracteres.";
+            }
+            if (!nuevaContraseña.Any(char.IsDigit) || !nuevaContraseña.Any(char.IsUpper))
+            {
+                return "Error: La contraseña debe contener al menos una letra mayúscula y un número.";
+            }
+
+            // Si la contraseña cumple con todos los requisitos, retornar una cadena vacía
+            return "";
+        }
+
+
 
 
 

@@ -20,9 +20,10 @@ namespace Datos
         DateTime _fechaNacimiento;
         string _nombreUsuario;
         string _contraseña;
-        
+        DateTime? _fechaBaja;
 
-        public UsuarioAlta(string idUsuario, int valorPerfil, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string nombreUsuario, string contraseña)
+
+        public UsuarioAlta(string idUsuario,int valorPerfil, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string nombreUsuario, string contraseña, DateTime? fechaBaja)
         {
             _idUsuario = idUsuario;
             _valorPerfil = valorPerfil;
@@ -35,9 +36,10 @@ namespace Datos
             _fechaNacimiento = fechaNacimiento;
             _nombreUsuario = nombreUsuario;
             _contraseña = contraseña;
-            
+            _fechaBaja = fechaBaja;
         }
 
+        
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public int Host { get => _valorPerfil; set => _valorPerfil = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -49,11 +51,7 @@ namespace Datos
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
         public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
         public string Contraseña { get => _contraseña; set => _contraseña = value; }
-        
-
-
-
-
+        public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
 
     }
 }

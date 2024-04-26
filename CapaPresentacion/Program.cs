@@ -1,3 +1,4 @@
+using Negocio;
 using Presentacion;
 using PresentacionLayer;
 using System.Security.Cryptography;
@@ -16,17 +17,13 @@ namespace Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //FrmLogin frm = new FrmLogin();
-            //Application.Run(frm);
+            FrmLogin frm = new FrmLogin();
+            Application.Run(frm);
 
-            //FrmBajaUsuario frm3 = new FrmBajaUsuario();
-            //Application.Run(frm3);
+            //FrmMain frmMain = new FrmMain();
+            //Application.Run(frmMain);
 
-            //FrmAltaUsuario frm4 = new FrmAltaUsuario();
-            //Application.Run(frm4);
-
-            FrmMain frmMain = new FrmMain();
-            Application.Run(frmMain);
+            UsuarioNegocio usuario = new UsuarioNegocio();
 
         }
     }

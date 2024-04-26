@@ -44,12 +44,12 @@
             lblDNI = new Label();
             lblApellido = new Label();
             lblNombre = new Label();
-            lblDireccion = new Label();
             txtNombre = new TextBox();
             txtDNI = new TextBox();
             txtApellido = new TextBox();
-            txtDireccion = new TextBox();
             btnModificarCliente = new Button();
+            lblusuario = new Label();
+            txtUsername = new TextBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsuario).BeginInit();
             SuspendLayout();
@@ -66,6 +66,7 @@
             btnBajaUsuario.TabIndex = 21;
             btnBajaUsuario.Text = "ELIMINAR";
             btnBajaUsuario.UseVisualStyleBackColor = false;
+            btnBajaUsuario.Click += btnBajaUsuario_Click;
             // 
             // menuStrip1
             // 
@@ -174,6 +175,7 @@
             dataGridViewUsuario.RowTemplate.Height = 25;
             dataGridViewUsuario.Size = new Size(593, 295);
             dataGridViewUsuario.TabIndex = 25;
+            dataGridViewUsuario.CellContentClick += dataGridViewUsuario_CellContentClick;
             // 
             // lblDNI
             // 
@@ -214,19 +216,6 @@
             lblNombre.TabIndex = 26;
             lblNombre.Text = "Nombre";
             // 
-            // lblDireccion
-            // 
-            lblDireccion.AutoSize = true;
-            lblDireccion.BackColor = Color.Transparent;
-            lblDireccion.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDireccion.ForeColor = Color.Black;
-            lblDireccion.Location = new Point(12, 188);
-            lblDireccion.Margin = new Padding(4, 0, 4, 0);
-            lblDireccion.Name = "lblDireccion";
-            lblDireccion.Size = new Size(72, 19);
-            lblDireccion.TabIndex = 29;
-            lblDireccion.Text = "Direccion";
-            // 
             // txtNombre
             // 
             txtNombre.Location = new Point(102, 62);
@@ -248,19 +237,12 @@
             txtApellido.Size = new Size(208, 23);
             txtApellido.TabIndex = 31;
             // 
-            // txtDireccion
-            // 
-            txtDireccion.Location = new Point(102, 188);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(208, 23);
-            txtDireccion.TabIndex = 32;
-            // 
             // btnModificarCliente
             // 
             btnModificarCliente.BackColor = SystemColors.ActiveCaptionText;
             btnModificarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarCliente.ForeColor = Color.White;
-            btnModificarCliente.Location = new Point(78, 250);
+            btnModificarCliente.Location = new Point(75, 290);
             btnModificarCliente.Margin = new Padding(4, 3, 4, 3);
             btnModificarCliente.Name = "btnModificarCliente";
             btnModificarCliente.Size = new Size(160, 50);
@@ -268,18 +250,38 @@
             btnModificarCliente.Text = "MODIFICAR";
             btnModificarCliente.UseVisualStyleBackColor = false;
             // 
+            // lblusuario
+            // 
+            lblusuario.AutoSize = true;
+            lblusuario.BackColor = Color.Transparent;
+            lblusuario.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblusuario.ForeColor = Color.Black;
+            lblusuario.Location = new Point(13, 190);
+            lblusuario.Margin = new Padding(4, 0, 4, 0);
+            lblusuario.Name = "lblusuario";
+            lblusuario.Size = new Size(76, 19);
+            lblusuario.TabIndex = 46;
+            lblusuario.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(102, 190);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(208, 23);
+            txtUsername.TabIndex = 47;
+            // 
             // FrmBajaModUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(955, 411);
+            Controls.Add(txtUsername);
+            Controls.Add(lblusuario);
             Controls.Add(btnModificarCliente);
-            Controls.Add(txtDireccion);
             Controls.Add(txtApellido);
             Controls.Add(txtDNI);
             Controls.Add(txtNombre);
-            Controls.Add(lblDireccion);
             Controls.Add(lblDNI);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
@@ -314,11 +316,11 @@
         private Label lblDNI;
         private Label lblApellido;
         private Label lblNombre;
-        private Label lblDireccion;
         private TextBox txtNombre;
         private TextBox txtDNI;
         private TextBox txtApellido;
-        private TextBox txtDireccion;
         private Button btnModificarCliente;
+        private Label lblusuario;
+        private TextBox txtUsername;
     }
 }
