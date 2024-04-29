@@ -17,7 +17,16 @@ namespace Presentacion
         public FrmProducto(int perfilUsuario)
         {
             InitializeComponent();
+            this.FormClosing += FrmProducto_FormClosing;
             this.perfilUsuario = perfilUsuario;
+        }
+
+        private void FrmProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnVolverInicio_Click(object sender, EventArgs e)

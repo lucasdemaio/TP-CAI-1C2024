@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 
 
@@ -41,7 +42,7 @@ namespace Persistencia
             }
             return usuarios;
 
-        }
+        }       
 
 
         public void AgregarUsuario(UsuarioAlta altaUsuario)
@@ -70,6 +71,135 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
+
+
+        public void EscribirUsuarioDBLocal(UsuarioDBLocal usuario)
+        {
+            String docpath = @"/ElectroHogarDB/Usuario.txt";
+
+            using (StreamWriter writer = new StreamWriter(docpath, true))
+            {
+                //foreach (UsuarioDBLocal usuario in usuarios)
+                writer.WriteLine(usuario.NombreUsuario + ";" + usuario.Contraseña + ";" + usuario.Estado + ";" + usuario.FechaCambioClave);
+            }
+        }
+
+        public void LeerDBUsuarioLocal()
+        {
+            String docpath = @"/ElectroHogarDB/Usuario.txt";
+
+            using (StreamReader file = new StreamReader(docpath))
+            {
+                string ln;
+                while ((ln = file.ReadLine()) != null)
+                {
+                    string[] datos = ln.Split(';');
+                    string nombreUsuario = datos[0];
+                    string contraseña = datos[1];
+                    bool estado = Convert.ToBoolean(datos[2]);
+                    DateTime fechaCambioClave = Convert.ToDateTime(datos[3]);
+                  
+                }
+                file.Close();
+            }
+        }
+
+        public void ActualizarDBLocal(string usuario, string nuevaContraseña)
+        {
+            String docpath = @"/ElectroHogarDB/Usuario.txt";
+            String tempFile = Path.GetTempFileName();
+
+            using (StreamReader reader = new StreamReader(docpath))
+            using (StreamWriter writer = new StreamWriter(tempFile))
+            {
+                string ln;
+                while ((ln = reader.ReadLine()) != null)
+                {
+                    string[] datos = ln.Split(';');
+                    string usuarioArchivo = datos[0].Trim(); // El primer elemento es el nombre de usuario
+                    string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña
+
+                    if (usuarioArchivo == usuario)
+                    {
+                        // Si encontramos el usuario, actualizamos los datos
+                        writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now.ToString()}");
+                    }
+                    else
+                    {
+                        // Mantenemos los datos como estaban
+                        writer.WriteLine(ln);
+                    }
+                }
+            }
+
+            // Reemplazamos el archivo original con el temporal
+            File.Delete(docpath);
+            File.Move(tempFile, docpath);
+        }
+
+        public bool VerificarPrimerLogin(string nombreUsuario)
+        {
+            String docpath = @"/ElectroHogarDB/Usuario.txt";
+
+            if (File.Exists(docpath)) // Verifica si el archivo existe
+            {
+                using (StreamReader file = new StreamReader(docpath))
+                {
+                    string ln;
+                    while ((ln = file.ReadLine()) != null)
+                    {
+                        string[] datos = ln.Split(';');
+                        if (datos.Length >= 2) // Verifica si hay al menos dos elementos en la línea
+                        {
+                            string usuario = datos[0].Trim(); // El primer elemento es el nombre de usuario
+                            string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña                                                       
+                              
+                            if (usuario == nombreUsuario && contraseña == "CAI20232")
+                            {
+                                return true;                                    
+                            }                          
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool VerificarExpiracionContraseña(string nombreUsuario)
+        {
+            String docpath = @"/ElectroHogarDB/Usuario.txt";
+
+            if (File.Exists(docpath)) // Verifica si el archivo existe
+            {
+                using (StreamReader file = new StreamReader(docpath))
+                {
+                    string ln;
+                    while ((ln = file.ReadLine()) != null)
+                    {
+                        string[] datos = ln.Split(';');
+                        if (datos.Length >= 4) // Verifica si hay al menos dos elementos en la línea
+                        {
+                            string usuario = datos[0].Trim(); // El primer elemento es el nombre de usuario
+                            string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña
+                            bool estado = Convert.ToBoolean(datos[2].Trim()); // El tercer elemento es el estado
+                            DateTime fechaCambioClave;
+
+                            if (DateTime.TryParse(datos[3].Trim(), out fechaCambioClave)) // El cuarto elemento es la fecha de cambio de clave
+                            {
+                                // Si han pasado más de 30 días desde la última fecha de cambio de contraseña
+                                if ((DateTime.Now - fechaCambioClave).TotalDays > 30)
+                                {
+                                    // Se debe cambiar la contraseña
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
 
         public int Login(string usuario, string clave, string idAdministrador)
         {
@@ -133,9 +263,9 @@ namespace Persistencia
             }
         }
 
-        public void BajaUsuario(string idAdministrador, Guid idUsuario)
+        public void BajaUsuario(UsuarioBaja usuarioBaja)
         {
-            String path = "/api/Usuario/BajaUsuario?id=" + idUsuario;
+            String path = "/api/Usuario/BajaUsuario?id=" + usuarioBaja;
 
             try
             {

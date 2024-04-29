@@ -22,8 +22,19 @@ namespace Presentacion
         public FrmBajaModUsuario(int perfilUsuario)
         {
             InitializeComponent();
+            this.FormClosing += FrmBajaModUsuario_FormClosing;
             this.perfilUsuario = perfilUsuario;
         }
+
+        private void FrmBajaModUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+        }
+
+
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
@@ -56,13 +67,14 @@ namespace Presentacion
             var source = new BindingSource(bindingList, null);
             dataGridViewUsuario.DataSource = source;
             dataGridViewUsuario.Columns["Host"].Visible = false;
-            dataGridViewUsuario.Columns["IdUsuario"].Visible = false;
+            //dataGridViewUsuario.Columns["IdUsuario"].Visible = false;
             dataGridViewUsuario.Columns["Direccion"].Visible = false;
             dataGridViewUsuario.Columns["Telefono"].Visible = false;
             dataGridViewUsuario.Columns["Email"].Visible = false;
             dataGridViewUsuario.Columns["FechaNacimiento"].Visible = false;
             dataGridViewUsuario.Columns["Contraseña"].Visible = false;
         }
+
 
         private void FrmBajaModUsuario_Load_1(object sender, EventArgs e)
         {
@@ -78,12 +90,21 @@ namespace Presentacion
             txtUsername.Text = usuarioSeleccionado.NombreUsuario;
         }
 
+        //private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    Usuario usuarioSeleccionado = (Usuario)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+        //    txtNombre.Text = usuarioSeleccionado.nombre;
+        //    txtApellido.Text = usuarioSeleccionado.apellido;
+        //    txtDNI.Text = usuarioSeleccionado.dni.ToString();
+        //    txtUsername.Text = usuarioSeleccionado.nombreUsuario;
+        //}
+
         private void btnBajaUsuario_Click(object sender, EventArgs e)
         {
-            UsuarioAlta usuarioSeleccionado = (UsuarioAlta)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
-            string idUsuario = usuarioSeleccionado.IdUsuario;
+            UsuarioBaja usuarioSeleccionado = (UsuarioBaja)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+            Guid idUsuario = usuarioSeleccionado.IdUsuario;
 
-            //usuarioNegocio.borrarUsuario(idUsuario);
+            usuarioNegocio.borrarUsuario(idUsuario);
 
             cargarUsuarios();
             txtNombre.Text = "";

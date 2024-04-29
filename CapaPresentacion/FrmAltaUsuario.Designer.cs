@@ -233,6 +233,7 @@
             txtUsuario.Size = new Size(253, 26);
             txtUsuario.TabIndex = 16;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
+            
             // 
             // btnAltaUsuario
             // 

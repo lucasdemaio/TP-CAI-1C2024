@@ -23,12 +23,12 @@ namespace Datos
         DateTime _fechaNacimiento;
         DateTime? _fechaBaja;
         string _nombreUsuario;
-        string _perfil;
+        Host _perfil;
         int _dni;
 
 
         public Usuario(Guid id, string nombre, string apellido, string direccion, string telefono, string mail, DateTime fechaAlta,
-                        DateTime fechaNacimiento, DateTime? fechaBaja, string nombreUsuario, Host _perfil, int dni, string contrasena, string estado)
+                        DateTime fechaNacimiento, DateTime? fechaBaja, string nombreUsuario, Host _perfil, int dni, string contrasena)
         {
             _id = id;
             _nombre = nombre;
@@ -59,7 +59,7 @@ namespace Datos
         public string nombreUsuario { get; set; }
         public Host perfil { get; set; }
         public int dni { get; set; }
-        public string estado { get; set; }
+        
 
     }    
 }

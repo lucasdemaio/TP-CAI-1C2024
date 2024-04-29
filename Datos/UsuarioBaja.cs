@@ -8,13 +8,16 @@ namespace Datos
 {
     public class UsuarioBaja
     {
-        Guid _idUsuario;
-        
-        public UsuarioBaja(Guid idUsuario)
+        string _id;
+        Guid _idUsuario;        
+
+        public UsuarioBaja(string id, Guid idUsuario)
         {
+            _id = id;
             _idUsuario = idUsuario;
         }
 
+        public string Id { get => _id; set => _id = value; }
         public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }       
 
     }

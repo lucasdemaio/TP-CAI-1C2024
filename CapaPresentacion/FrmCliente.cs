@@ -21,7 +21,17 @@ namespace Presentacion
         {
             InitializeComponent();
             this.perfilUsuario = perfilUsuario;
+            this.FormClosing += FrmCliente_FormClosing;
         }
+
+        private void FrmCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+        }
+              
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {

@@ -47,12 +47,14 @@
   <ItemGroup>
     <Compile Include="ClienteAlta.cs" />
     <Compile Include="ClienteDatos.cs" />
+    <Compile Include="ProductoCategoria.cs" />
     <Compile Include="ProductoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresDatos.cs" />
     <Compile Include="UsuarioAlta.cs" />
     <Compile Include="UsuarioBaja.cs" />
     <Compile Include="UsuarioDatos.cs" />
+    <Compile Include="UsuarioDBLocal.cs" />
     <Compile Include="VentaDatos.cs" />
   </ItemGroup>
   <ItemGroup>

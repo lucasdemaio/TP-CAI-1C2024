@@ -25,7 +25,16 @@ namespace Presentacion
         {
             InitializeComponent();
             InitializeComboBox();
-            this.perfilUsuario = perfilUsuario;
+            this.FormClosing += FrmAltaUsuario_FormClosing;
+            this.perfilUsuario = perfilUsuario;            
+        }
+
+        private void FrmAltaUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
@@ -50,11 +59,11 @@ namespace Presentacion
         }
 
 
-        
+
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
             try
-            {  
+            {
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 int dni = Int32.Parse(txtDNI.Text);
@@ -70,11 +79,12 @@ namespace Presentacion
                 ValidadorUtilis validador = new ValidadorUtilis();
 
                 string errorMensaje = validador.ValidarDatosUsuario(nombreUsuario, contraseña, dni, nombre, apellido, fechaNacimiento, valorPerfil);
-                
+
                 if (string.IsNullOrEmpty(errorMensaje))
                 {
                     // Si todas las validaciones son exitosas, agregar el usuario
                     usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
+                    usuarioNegocio.agregarUsuarioDBLocal(nombreUsuario, contraseña);
                     MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -105,5 +115,7 @@ namespace Presentacion
         {
 
         }
+
+       
     }
 }   

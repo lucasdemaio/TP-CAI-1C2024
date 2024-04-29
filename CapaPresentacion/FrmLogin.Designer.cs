@@ -38,7 +38,6 @@
             linklblCambioClave = new LinkLabel();
             btnLogin = new Button();
             imgPerfil = new PictureBox();
-            button1 = new Button();
             panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgPerfil).BeginInit();
             SuspendLayout();
@@ -93,7 +92,6 @@
             // 
             panelLogin.AutoSize = true;
             panelLogin.BackColor = Color.Transparent;
-            panelLogin.Controls.Add(button1);
             panelLogin.Controls.Add(lblLoginIncorrecto);
             panelLogin.Controls.Add(linklblCambioClave);
             panelLogin.Controls.Add(btnLogin);
@@ -107,6 +105,7 @@
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(446, 332);
             panelLogin.TabIndex = 4;
+            panelLogin.Paint += panelLogin_Paint;
             // 
             // lblLoginIncorrecto
             // 
@@ -115,11 +114,10 @@
             lblLoginIncorrecto.ForeColor = Color.Red;
             lblLoginIncorrecto.Location = new Point(52, 176);
             lblLoginIncorrecto.Name = "lblLoginIncorrecto";
-            lblLoginIncorrecto.Size = new Size(45, 19);
+            lblLoginIncorrecto.Size = new Size(119, 19);
             lblLoginIncorrecto.TabIndex = 6;
-            lblLoginIncorrecto.Text = "label1";
+            lblLoginIncorrecto.Text = "lblLoginIncorrecto";
             lblLoginIncorrecto.Visible = false;
-            lblLoginIncorrecto.Click += label1_Click;
             // 
             // linklblCambioClave
             // 
@@ -159,18 +157,6 @@
             imgPerfil.TabIndex = 5;
             imgPerfil.TabStop = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Red;
-            button1.Font = new Font("Ebrima", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(115, 301);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 29);
-            button1.TabIndex = 7;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -205,6 +191,5 @@
         private PictureBox imgPerfil;
         private LinkLabel linklblCambioClave;
         private Label lblLoginIncorrecto;
-        private Button button1;
     }
 }

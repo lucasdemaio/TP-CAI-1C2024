@@ -15,7 +15,6 @@ namespace Presentacion
             nombre = nombre.ToLower();
             apellido = apellido.ToLower();
 
-            // Verificar longitud y caracteres inválidos del nombre de usuario
             if (nombreUsuario.Length < 8 || nombreUsuario.Length > 15)
             {
                 return "Error: El nombre de usuario debe tener entre 8 y 15 caracteres.";
@@ -24,8 +23,7 @@ namespace Presentacion
             {
                 return "Error: El nombre de usuario no puede contener el nombre o apellido del usuario.";
             }
-
-            // Verificar longitud y composición de la contraseña
+                        
             if (contraseña.Length < 8 || contraseña.Length > 15)
             {
                 return "Error: La contraseña debe tener entre 8 y 15 caracteres.";
@@ -34,15 +32,12 @@ namespace Presentacion
             {
                 return "Error: La contraseña debe contener al menos una letra mayúscula y un número.";
             }
-
-            // Verificar rango válido del DNI
+            
             if (dni < 0 || dni > 99999999)
             {
                 return "Error: El DNI debe estar entre 0 y 99999999.";
             }
-
-            // Si todas las validaciones pasan, devolver mensaje vacío
-            return string.Empty;
+           return string.Empty;
         }
 
 
@@ -65,7 +60,6 @@ namespace Presentacion
                     }
                 }
             }
-
             return camposIncompletos.ToString();
         }
 

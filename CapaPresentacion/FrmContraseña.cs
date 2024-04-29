@@ -19,9 +19,18 @@ namespace Presentacion
         public FrmContraseña()
         {
             InitializeComponent();
+            this.FormClosing += FrmContraseña_FormClosing;
             controlEtiquetaMap.Add(txtUsername, "Usuario");
             controlEtiquetaMap.Add(txtContraseñaActual, "Contraseña Actual");
             controlEtiquetaMap.Add(txtContraseñaNueva, "Nueva Contraseña");
+        }
+
+        private void FrmContraseña_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
 
         private void FrmContraseña_Load(object sender, EventArgs e)

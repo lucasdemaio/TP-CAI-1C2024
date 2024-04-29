@@ -23,9 +23,18 @@ namespace Negocio
             usuarioService.AgregarUsuario(altaUsuario);           
         }
 
+        public void agregarUsuarioDBLocal(string nombreUsuario, string contraseña)
+        {
+            UsuarioDBLocal altaUsuarioDBLocal = new UsuarioDBLocal(nombreUsuario, contraseña, false, null);
+            usuarioService.EscribirUsuarioDBLocal(altaUsuarioDBLocal);
+        }
+
+
+
         public void borrarUsuario(Guid idUsuario)
         {
-            usuarioService.BajaUsuario(idAdministrador, idUsuario);
+            UsuarioBaja bajausuario = new UsuarioBaja(idAdministrador, idUsuario);
+            usuarioService.BajaUsuario(bajausuario);
         }
 
 
@@ -34,10 +43,11 @@ namespace Negocio
             return usuarioService.GetUsuarios(idAdministrador);
         }
 
+
         public int Login(string usuario, string clave)
-        {
+        {   
             try
-            {
+            {                
                 return usuarioService.Login(usuario, clave, idAdministrador);
             }
             catch (Exception ex)
@@ -45,6 +55,17 @@ namespace Negocio
                 throw new Exception("Error al intentar iniciar sesión: " + ex.Message);
             }
         }
+
+        public bool VerificarPrimerLogin(string nombreUsuario)
+        {
+            return usuarioService.VerificarPrimerLogin(nombreUsuario);
+        }
+
+        public bool VerificarExpiracionContraseña(string nombreUsuario)
+        {
+            return usuarioService.VerificarExpiracionContraseña(nombreUsuario);
+        }
+
 
         public void CambiarContraseña(string usuario, string contraseñaActual, string nuevaContraseña)
         {
@@ -61,6 +82,7 @@ namespace Negocio
 
                 // Llamar al método en UsuarioService para cambiar la contraseña
                 usuarioService.CambiarContraseña(usuario, contraseñaActual, nuevaContraseña);
+                usuarioService.ActualizarDBLocal(usuario, nuevaContraseña);
             }
             else
             {

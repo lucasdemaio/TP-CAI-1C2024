@@ -9,14 +9,24 @@ namespace Presentacion
     public partial class FrmMain : Form
     {
         private UsuarioNegocio usuarioNegocio;
+        
         private int perfilUsuario;
 
         public FrmMain(int perfilUsuario)
         {
             InitializeComponent();
             usuarioNegocio = new UsuarioNegocio();
+            this.FormClosing += FrmMain_FormClosing;
             this.perfilUsuario = perfilUsuario;
             ConfigurarMenu();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
 
         private void ConfigurarMenu()
