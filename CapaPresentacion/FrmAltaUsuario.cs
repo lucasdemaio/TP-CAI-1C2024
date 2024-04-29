@@ -82,7 +82,6 @@ namespace Presentacion
 
                 if (string.IsNullOrEmpty(errorMensaje))
                 {
-                    // Si todas las validaciones son exitosas, agregar el usuario
                     usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
                     usuarioNegocio.agregarUsuarioDBLocal(nombreUsuario, contraseña);
                     MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -79,7 +79,6 @@ namespace Persistencia
 
             using (StreamWriter writer = new StreamWriter(docpath, true))
             {
-                //foreach (UsuarioDBLocal usuario in usuarios)
                 writer.WriteLine(usuario.NombreUsuario + ";" + usuario.Contraseña + ";" + usuario.Estado + ";" + usuario.FechaCambioClave);
             }
         }
@@ -116,23 +115,19 @@ namespace Persistencia
                 while ((ln = reader.ReadLine()) != null)
                 {
                     string[] datos = ln.Split(';');
-                    string usuarioArchivo = datos[0].Trim(); // El primer elemento es el nombre de usuario
-                    string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña
+                    string usuarioArchivo = datos[0].Trim();
+                    string contraseña = datos[1].Trim();
 
                     if (usuarioArchivo == usuario)
                     {
-                        // Si encontramos el usuario, actualizamos los datos
                         writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now.ToString()}");
                     }
                     else
                     {
-                        // Mantenemos los datos como estaban
                         writer.WriteLine(ln);
                     }
                 }
             }
-
-            // Reemplazamos el archivo original con el temporal
             File.Delete(docpath);
             File.Move(tempFile, docpath);
         }
@@ -141,7 +136,7 @@ namespace Persistencia
         {
             String docpath = @"/ElectroHogarDB/Usuario.txt";
 
-            if (File.Exists(docpath)) // Verifica si el archivo existe
+            if (File.Exists(docpath))
             {
                 using (StreamReader file = new StreamReader(docpath))
                 {
@@ -149,10 +144,10 @@ namespace Persistencia
                     while ((ln = file.ReadLine()) != null)
                     {
                         string[] datos = ln.Split(';');
-                        if (datos.Length >= 2) // Verifica si hay al menos dos elementos en la línea
+                        if (datos.Length >= 2)
                         {
-                            string usuario = datos[0].Trim(); // El primer elemento es el nombre de usuario
-                            string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña                                                       
+                            string usuario = datos[0].Trim();
+                            string contraseña = datos[1].Trim();                                                      
                               
                             if (usuario == nombreUsuario && contraseña == "CAI20232")
                             {
@@ -169,7 +164,7 @@ namespace Persistencia
         {
             String docpath = @"/ElectroHogarDB/Usuario.txt";
 
-            if (File.Exists(docpath)) // Verifica si el archivo existe
+            if (File.Exists(docpath))
             {
                 using (StreamReader file = new StreamReader(docpath))
                 {
@@ -177,19 +172,17 @@ namespace Persistencia
                     while ((ln = file.ReadLine()) != null)
                     {
                         string[] datos = ln.Split(';');
-                        if (datos.Length >= 4) // Verifica si hay al menos dos elementos en la línea
+                        if (datos.Length >= 4)
                         {
-                            string usuario = datos[0].Trim(); // El primer elemento es el nombre de usuario
-                            string contraseña = datos[1].Trim(); // El segundo elemento es la contraseña
-                            bool estado = Convert.ToBoolean(datos[2].Trim()); // El tercer elemento es el estado
+                            string usuario = datos[0].Trim();
+                            string contraseña = datos[1].Trim();
+                            bool estado = Convert.ToBoolean(datos[2].Trim());
                             DateTime fechaCambioClave;
 
-                            if (DateTime.TryParse(datos[3].Trim(), out fechaCambioClave)) // El cuarto elemento es la fecha de cambio de clave
+                            if (DateTime.TryParse(datos[3].Trim(), out fechaCambioClave))
                             {
-                                // Si han pasado más de 30 días desde la última fecha de cambio de contraseña
                                 if ((DateTime.Now - fechaCambioClave).TotalDays > 30)
                                 {
-                                    // Se debe cambiar la contraseña
                                     return true;
                                 }
                             }

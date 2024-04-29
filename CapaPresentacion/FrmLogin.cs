@@ -92,10 +92,5 @@ namespace PresentacionLayer
         {
 
         }
-
-        private void panelLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

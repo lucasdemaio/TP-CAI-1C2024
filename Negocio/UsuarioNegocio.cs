@@ -69,18 +69,14 @@ namespace Negocio
 
         public void CambiarContraseña(string usuario, string contraseñaActual, string nuevaContraseña)
         {
-            // Verificar si la contraseña actual es correcta
             int loginResult = Login(usuario, contraseñaActual);
             if (loginResult != -1)
             {
-                // La contraseña actual es correcta, validar la nueva contraseña
                 string validacionContraseña = ValidarContraseña(contraseñaActual, nuevaContraseña);
                 if (validacionContraseña != "")
                 {
                     throw new Exception(validacionContraseña);
                 }
-
-                // Llamar al método en UsuarioService para cambiar la contraseña
                 usuarioService.CambiarContraseña(usuario, contraseñaActual, nuevaContraseña);
                 usuarioService.ActualizarDBLocal(usuario, nuevaContraseña);
             }
@@ -92,13 +88,11 @@ namespace Negocio
 
         internal string ValidarContraseña(string contraseñaActual, string nuevaContraseña)
         {
-            // Verificar si la nueva contraseña coincide con la contraseña actual
             if (contraseñaActual == nuevaContraseña)
             {
                 return "Error: La nueva contraseña no puede ser igual a la contraseña actual.";
             }
 
-            // Verificar si la contraseña cumple con los requisitos de longitud y caracteres
             if (nuevaContraseña.Length < 8 || nuevaContraseña.Length > 15)
             {
                 return "Error: La contraseña debe tener entre 8 y 15 caracteres.";
@@ -108,7 +102,6 @@ namespace Negocio
                 return "Error: La contraseña debe contener al menos una letra mayúscula y un número.";
             }
 
-            // Si la contraseña cumple con todos los requisitos, retornar una cadena vacía
             return "";
         }
 

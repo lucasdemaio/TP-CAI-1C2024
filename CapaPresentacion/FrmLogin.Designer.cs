@@ -105,7 +105,7 @@
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(446, 332);
             panelLogin.TabIndex = 4;
-            panelLogin.Paint += panelLogin_Paint;
+            
             // 
             // lblLoginIncorrecto
             // 
