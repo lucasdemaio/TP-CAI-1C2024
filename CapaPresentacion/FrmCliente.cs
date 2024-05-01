@@ -16,7 +16,7 @@ namespace Presentacion
     {
         private ClienteNegocio clienteNegocio = new ClienteNegocio();
         private int perfilUsuario;
-
+        
         public FrmCliente(int perfilUsuario)
         {
             InitializeComponent();

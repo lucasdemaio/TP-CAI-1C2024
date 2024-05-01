@@ -6,60 +6,49 @@ namespace Datos
 {
     public class Usuario
     {
-        public enum Host
-        {
-            Vendedor = 1,
-            Supervisor = 2,
-            Administrador = 3
-        }
-
         Guid _id;
         string _nombre;
         string _apellido;
         string _direccion;
         string _telefono;
-        string _mail;
+        string _email;
         DateTime _fechaAlta;
         DateTime _fechaNacimiento;
         DateTime? _fechaBaja;
         string _nombreUsuario;
-        Host _perfil;
+        int _host;
         int _dni;
 
-
-        public Usuario(Guid id, string nombre, string apellido, string direccion, string telefono, string mail, DateTime fechaAlta,
-                        DateTime fechaNacimiento, DateTime? fechaBaja, string nombreUsuario, Host _perfil, int dni, string contrasena)
+        public Usuario(Guid id, string nombre, string apellido, string direccion, string telefono, string email, DateTime fechaAlta,
+                        DateTime fechaNacimiento, DateTime? fechaBaja, string nombreUsuario, int host, int dni, string contrasena)
         {
             _id = id;
             _nombre = nombre;
             _apellido = apellido;
             _direccion = direccion;
             _telefono = telefono;
-            _mail = mail;
+            _email = email;
             _fechaAlta = fechaAlta;
             _fechaNacimiento = fechaNacimiento;
             _fechaBaja = fechaBaja;
             _nombreUsuario = nombreUsuario;
-            _perfil = perfil;
+            _host = host;
             _dni = dni;           
-        }
+        }     
 
 
-
-
-        public Guid id { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string direccion { get; set; }
-        public string telefono { get; set; }
-        public string mail { get; set; }
-        public DateTime fechaAlta { get; set; }
-        public DateTime fechaNacimiento { get; set; }
-        public DateTime? fechaBaja { get; set; }
-        public string nombreUsuario { get; set; }
-        public Host perfil { get; set; }
-        public int dni { get; set; }
+        public Guid id { get => _id; set => _id = value; }
+        public int Host { get => _host; set => _host = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public string Apellido { get => _apellido; set => _apellido = value; }
+        public int Dni { get => _dni; set => _dni = value; }
+        public string Direccion { get => _direccion; set => _direccion = value; }
+        public string Telefono { get => _telefono; set => _telefono = value; }
+        public string Email { get => _email; set => _email = value; }
+        public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
+        public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
         
-
-    }    
+        public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
+    }
 }
+

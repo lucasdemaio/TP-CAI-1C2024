@@ -47,7 +47,6 @@
             txtNombre = new TextBox();
             txtDNI = new TextBox();
             txtApellido = new TextBox();
-            btnModificarCliente = new Button();
             lblusuario = new Label();
             txtUsername = new TextBox();
             menuStrip1.SuspendLayout();
@@ -59,10 +58,10 @@
             btnBajaUsuario.BackColor = Color.Red;
             btnBajaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnBajaUsuario.ForeColor = Color.White;
-            btnBajaUsuario.Location = new Point(563, 362);
+            btnBajaUsuario.Location = new Point(127, 261);
             btnBajaUsuario.Margin = new Padding(4, 2, 4, 2);
             btnBajaUsuario.Name = "btnBajaUsuario";
-            btnBajaUsuario.Size = new Size(176, 40);
+            btnBajaUsuario.Size = new Size(140, 40);
             btnBajaUsuario.TabIndex = 21;
             btnBajaUsuario.Text = "ELIMINAR";
             btnBajaUsuario.UseVisualStyleBackColor = false;
@@ -78,7 +77,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(955, 29);
+            menuStrip1.Size = new Size(1540, 29);
             menuStrip1.TabIndex = 23;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -146,10 +145,11 @@
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(786, 365);
+            btnVolverInicio.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolverInicio.Location = new Point(1297, 796);
             btnVolverInicio.Margin = new Padding(3, 2, 3, 2);
             btnVolverInicio.Name = "btnVolverInicio";
-            btnVolverInicio.Size = new Size(157, 38);
+            btnVolverInicio.Size = new Size(211, 38);
             btnVolverInicio.TabIndex = 24;
             btnVolverInicio.Text = "VOLVER MENU PRINCIPAL";
             btnVolverInicio.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             dataGridViewUsuario.Name = "dataGridViewUsuario";
             dataGridViewUsuario.ReadOnly = true;
             dataGridViewUsuario.RowTemplate.Height = 25;
-            dataGridViewUsuario.Size = new Size(593, 295);
+            dataGridViewUsuario.Size = new Size(1158, 717);
             dataGridViewUsuario.TabIndex = 25;
             dataGridViewUsuario.CellContentClick += dataGridViewUsuario_CellContentClick;
             // 
@@ -181,12 +181,12 @@
             // 
             lblDNI.AutoSize = true;
             lblDNI.BackColor = Color.Transparent;
-            lblDNI.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDNI.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblDNI.ForeColor = Color.Black;
-            lblDNI.Location = new Point(13, 143);
+            lblDNI.Location = new Point(13, 146);
             lblDNI.Margin = new Padding(4, 0, 4, 0);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(34, 19);
+            lblDNI.Size = new Size(40, 21);
             lblDNI.TabIndex = 28;
             lblDNI.Text = "DNI";
             // 
@@ -194,12 +194,12 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.BackColor = Color.Transparent;
-            lblApellido.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblApellido.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblApellido.ForeColor = Color.Black;
-            lblApellido.Location = new Point(13, 103);
+            lblApellido.Location = new Point(13, 106);
             lblApellido.Margin = new Padding(4, 0, 4, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 19);
+            lblApellido.Size = new Size(75, 21);
             lblApellido.TabIndex = 27;
             lblApellido.Text = "Apellido";
             // 
@@ -207,67 +207,58 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.BackColor = Color.Transparent;
-            lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNombre.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(13, 62);
+            lblNombre.Location = new Point(13, 65);
             lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(65, 19);
+            lblNombre.Size = new Size(73, 21);
             lblNombre.TabIndex = 26;
             lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(102, 62);
+            txtNombre.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(102, 65);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(208, 23);
+            txtNombre.Size = new Size(208, 29);
             txtNombre.TabIndex = 30;
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(102, 143);
+            txtDNI.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDNI.Location = new Point(102, 146);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(208, 23);
+            txtDNI.Size = new Size(208, 29);
             txtDNI.TabIndex = 31;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(102, 103);
+            txtApellido.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Location = new Point(102, 106);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(208, 23);
+            txtApellido.Size = new Size(208, 29);
             txtApellido.TabIndex = 31;
-            // 
-            // btnModificarCliente
-            // 
-            btnModificarCliente.BackColor = SystemColors.ActiveCaptionText;
-            btnModificarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificarCliente.ForeColor = Color.White;
-            btnModificarCliente.Location = new Point(75, 290);
-            btnModificarCliente.Margin = new Padding(4, 3, 4, 3);
-            btnModificarCliente.Name = "btnModificarCliente";
-            btnModificarCliente.Size = new Size(160, 50);
-            btnModificarCliente.TabIndex = 45;
-            btnModificarCliente.Text = "MODIFICAR";
-            btnModificarCliente.UseVisualStyleBackColor = false;
             // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
             lblusuario.BackColor = Color.Transparent;
-            lblusuario.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblusuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblusuario.ForeColor = Color.Black;
-            lblusuario.Location = new Point(13, 190);
+            lblusuario.Location = new Point(13, 193);
             lblusuario.Margin = new Padding(4, 0, 4, 0);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(76, 19);
+            lblusuario.Size = new Size(87, 21);
             lblusuario.TabIndex = 46;
             lblusuario.Text = "Username";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(102, 190);
+            txtUsername.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.Location = new Point(102, 193);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(208, 23);
+            txtUsername.Size = new Size(208, 29);
             txtUsername.TabIndex = 47;
             // 
             // FrmBajaModUsuario
@@ -275,10 +266,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(955, 411);
+            ClientSize = new Size(1540, 845);
             Controls.Add(txtUsername);
             Controls.Add(lblusuario);
-            Controls.Add(btnModificarCliente);
             Controls.Add(txtApellido);
             Controls.Add(txtDNI);
             Controls.Add(txtNombre);
@@ -319,7 +309,6 @@
         private TextBox txtNombre;
         private TextBox txtDNI;
         private TextBox txtApellido;
-        private Button btnModificarCliente;
         private Label lblusuario;
         private TextBox txtUsername;
     }

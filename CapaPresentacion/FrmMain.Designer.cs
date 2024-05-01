@@ -40,6 +40,7 @@
             strpAltaUsuariosMenu = new ToolStripMenuItem();
             strpBajaUsuariosMenu = new ToolStripMenuItem();
             btnLogOut = new Button();
+            lblBienvenido = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(10, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(1194, 29);
+            menuStrip1.Size = new Size(1540, 29);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -141,7 +142,7 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(1107, 32);
+            btnLogOut.Location = new Point(1453, 32);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(75, 30);
             btnLogOut.TabIndex = 1;
@@ -149,14 +150,27 @@
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
             // 
+            // lblBienvenido
+            // 
+            lblBienvenido.AutoSize = true;
+            lblBienvenido.BackColor = Color.Transparent;
+            lblBienvenido.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBienvenido.ForeColor = Color.MidnightBlue;
+            lblBienvenido.Location = new Point(403, 259);
+            lblBienvenido.Name = "lblBienvenido";
+            lblBienvenido.Size = new Size(876, 65);
+            lblBienvenido.TabIndex = 2;
+            lblBienvenido.Text = "Bienvenido al Sistema de ElectroHogar";
+            lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = SystemColors.MenuBar;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1194, 595);
+            ClientSize = new Size(1540, 845);
+            Controls.Add(lblBienvenido);
             Controls.Add(btnLogOut);
             Controls.Add(menuStrip1);
             Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -186,5 +200,6 @@
         private ToolStripMenuItem vENTASToolStripMenuItem;
         private ToolStripMenuItem strpClientesMenu;
         private Button btnLogOut;
+        private Label lblBienvenido;
     }
 }

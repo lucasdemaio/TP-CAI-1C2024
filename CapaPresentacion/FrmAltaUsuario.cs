@@ -20,7 +20,7 @@ namespace Presentacion
     {
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
         private int perfilUsuario;
-
+        
         public FrmAltaUsuario(int perfilUsuario)
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace Presentacion
                 DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
                 string nombreUsuario = txtUsuario.Text;
                 string contraseña = "CAI20232";
-                int valorPerfil = (int)Enum.Parse(typeof(Usuario.Host), cbPerfiles.Text);
+                int valorPerfil = (int)cbPerfiles.SelectedValue;
                 DateTime fechaAlta = DateTime.Now;
 
                 ValidadorUtilis validador = new ValidadorUtilis();
@@ -99,15 +99,22 @@ namespace Presentacion
 
         private void InitializeComboBox()
         {
+            cbPerfiles.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            var perfiles = new[]
             {
-                cbPerfiles.DropDownStyle = ComboBoxStyle.DropDownList;
-                Host[] perfiles = (Host[])Enum.GetValues(typeof(Host));
-                cbPerfiles.Items.AddRange(perfiles.Select(x => (object)x).ToArray());
-                if (cbPerfiles.Items.Count > 0)
-                {
-                    cbPerfiles.SelectedIndex = -1;
-                }
-            }
+                new { Nombre = "Vendedor", Valor = 1 },
+                new { Nombre = "Supervisor", Valor = 2 },
+                new { Nombre = "Administrador", Valor = 3 }
+            };
+
+            cbPerfiles.DataSource = perfiles;
+
+            cbPerfiles.DisplayMember = "Nombre";
+            cbPerfiles.ValueMember = "Valor";
+
+            cbPerfiles.SelectedIndex = -1;
+
         }
 
         private void FrmAltaUsuario_Load(object sender, EventArgs e)
@@ -115,6 +122,6 @@ namespace Presentacion
 
         }
 
-       
+        
     }
 }   

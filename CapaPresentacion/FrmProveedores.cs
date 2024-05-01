@@ -17,7 +17,7 @@ namespace Presentacion
         private ProveedoresNegocio proveedorNegocio = new ProveedoresNegocio();
 
         private int perfilUsuario;
-
+        
         public FrmProveedores(int perfilUsuario)
         {
             InitializeComponent();

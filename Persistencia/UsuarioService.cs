@@ -16,19 +16,19 @@ using System.Web;
 namespace Persistencia
 {
     public class UsuarioService
-    {
-        public List<UsuarioAlta> GetUsuarios(string idAdministrador)
+    {     
+        public List<Usuario> GetUsuarios(string idAdministrador)
         {
             String path = $"/api/Usuario/TraerUsuariosActivos?id={idAdministrador}";
 
-            List<UsuarioAlta> usuarios = new List<UsuarioAlta>();
+            List<Usuario> usuarios = new List<Usuario>();
             try
             {
                 HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<UsuarioAlta> listadoUsuarios = JsonConvert.DeserializeObject<List<UsuarioAlta>>(contentStream);
+                    List<Usuario> listadoUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(contentStream);
                     return listadoUsuarios;
                 }
                 else
@@ -42,8 +42,7 @@ namespace Persistencia
             }
             return usuarios;
 
-        }       
-
+        }
 
         public void AgregarUsuario(UsuarioAlta altaUsuario)
         {
@@ -71,7 +70,6 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-
 
         public void EscribirUsuarioDBLocal(UsuarioDBLocal usuario)
         {
@@ -101,7 +99,7 @@ namespace Persistencia
                 }
                 file.Close();
             }
-        }
+        }        
 
         public void ActualizarDBLocal(string usuario, string nuevaContraseña)
         {
@@ -123,6 +121,31 @@ namespace Persistencia
                         writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now.ToString()}");
                     }
                     else
+                    {
+                        writer.WriteLine(ln);
+                    }
+                }
+            }
+            File.Delete(docpath);
+            File.Move(tempFile, docpath);
+        }
+
+
+        public void EliminarUsuarioDBLocal(string nombreUsuario)
+        {
+            string docpath = @"/ElectroHogarDB/Usuario.txt";
+            string tempFile = Path.GetTempFileName();
+
+            using (StreamReader reader = new StreamReader(docpath))
+            using (StreamWriter writer = new StreamWriter(tempFile))
+            {
+                string ln;
+                while ((ln = reader.ReadLine()) != null)
+                {
+                    string[] datos = ln.Split(';');
+                    string usuarioArchivo = datos[0].Trim();
+
+                    if (usuarioArchivo != nombreUsuario)
                     {
                         writer.WriteLine(ln);
                     }
@@ -193,7 +216,6 @@ namespace Persistencia
             return false;
         }
 
-
         public int Login(string usuario, string clave, string idAdministrador)
         {
             try
@@ -210,8 +232,8 @@ namespace Persistencia
 
                 if (response.IsSuccessStatusCode)
                 {
-                    List<UsuarioAlta> usuarios = GetUsuarios(idAdministrador);
-                    UsuarioAlta usuarioLogueado = usuarios.FirstOrDefault(u => u.NombreUsuario == usuario);
+                    List<Usuario> usuarios = GetUsuarios(idAdministrador);
+                    Usuario usuarioLogueado = usuarios.FirstOrDefault(u => u.NombreUsuario == usuario);
 
                     int perfilUsuario = usuarioLogueado.Host;
                     return perfilUsuario;
@@ -256,13 +278,16 @@ namespace Persistencia
             }
         }
 
-        public void BajaUsuario(UsuarioBaja usuarioBaja)
+        public void BajaUsuario(UsuarioBaja bajausuario)
         {
-            String path = "/api/Usuario/BajaUsuario?id=" + usuarioBaja;
+            //String path = "/api/Usuario/BajaUsuario?id=" + bajausuario;
+            String path = "/api/Usuario/BajaUsuario";
+
+            var jsonRequest = JsonConvert.SerializeObject(bajausuario);
 
             try
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
+                HttpResponseMessage response = WebHelper.DeleteWithBody(path, jsonRequest);
                 if (response.IsSuccessStatusCode)
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);

@@ -63,6 +63,10 @@ namespace Presentacion
                 lblContraseñaError.Text = "";
                 lblContraseñaCambiada.Text = "Contraseña cambiada exitosamente";
                 lblContraseñaCambiada.Visible = true;
+                txtUsername.Text = "";
+                txtContraseñaActual.Text = "";
+                txtContraseñaNueva.Text = "";
+                txtConfirmacionContraseña.Text = "";
                 //MessageBox.Show("Contraseña cambiada exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

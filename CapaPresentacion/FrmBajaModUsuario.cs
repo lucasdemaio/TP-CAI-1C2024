@@ -34,8 +34,6 @@ namespace Presentacion
             }
         }
 
-
-
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
             FrmMain frmMain = new FrmMain(perfilUsuario);
@@ -59,52 +57,42 @@ namespace Presentacion
 
         private void cargarUsuarios()
         {
-            List<UsuarioAlta> usuario = usuarioNegocio.listarUsuarios();
+            List<Usuario> usuario = usuarioNegocio.listarUsuarios();
 
             usuario = usuario.OrderBy(u => u.Apellido).ToList();
 
-            var bindingList = new BindingList<UsuarioAlta>(usuario);
+            var bindingList = new BindingList<Usuario>(usuario);
             var source = new BindingSource(bindingList, null);
             dataGridViewUsuario.DataSource = source;
             dataGridViewUsuario.Columns["Host"].Visible = false;
-            //dataGridViewUsuario.Columns["IdUsuario"].Visible = false;
             dataGridViewUsuario.Columns["Direccion"].Visible = false;
             dataGridViewUsuario.Columns["Telefono"].Visible = false;
             dataGridViewUsuario.Columns["Email"].Visible = false;
             dataGridViewUsuario.Columns["FechaNacimiento"].Visible = false;
-            dataGridViewUsuario.Columns["Contraseña"].Visible = false;
         }
-
 
         private void FrmBajaModUsuario_Load_1(object sender, EventArgs e)
         {
             cargarUsuarios();
-        }
+        }      
 
         private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            UsuarioAlta usuarioSeleccionado = (UsuarioAlta)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+            Usuario usuarioSeleccionado = (Usuario)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
             txtNombre.Text = usuarioSeleccionado.Nombre;
             txtApellido.Text = usuarioSeleccionado.Apellido;
             txtDNI.Text = usuarioSeleccionado.Dni.ToString();
             txtUsername.Text = usuarioSeleccionado.NombreUsuario;
         }
 
-        //private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    Usuario usuarioSeleccionado = (Usuario)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
-        //    txtNombre.Text = usuarioSeleccionado.nombre;
-        //    txtApellido.Text = usuarioSeleccionado.apellido;
-        //    txtDNI.Text = usuarioSeleccionado.dni.ToString();
-        //    txtUsername.Text = usuarioSeleccionado.nombreUsuario;
-        //}
-
         private void btnBajaUsuario_Click(object sender, EventArgs e)
         {
-            UsuarioBaja usuarioSeleccionado = (UsuarioBaja)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
-            Guid idUsuario = usuarioSeleccionado.IdUsuario;
+            Usuario usuarioSeleccionado = (Usuario)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
+            string idUsuario = usuarioSeleccionado.id.ToString();
+            string nombreUsuario = usuarioSeleccionado.NombreUsuario;
 
             usuarioNegocio.borrarUsuario(idUsuario);
+            usuarioNegocio.borrarUsuarioDBLocal(nombreUsuario);
 
             cargarUsuarios();
             txtNombre.Text = "";
@@ -112,5 +100,7 @@ namespace Presentacion
             txtDNI.Text = "";
             txtUsername.Text = "";
         }
+
+       
     }
 }

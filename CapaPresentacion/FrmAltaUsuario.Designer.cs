@@ -64,12 +64,12 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.BackColor = Color.Transparent;
-            lblNombre.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNombre.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Black;
             lblNombre.Location = new Point(60, 55);
             lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(65, 19);
+            lblNombre.Size = new Size(73, 21);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
@@ -77,12 +77,12 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.BackColor = Color.Transparent;
-            lblApellido.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblApellido.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblApellido.ForeColor = Color.Black;
             lblApellido.Location = new Point(60, 107);
             lblApellido.Margin = new Padding(4, 0, 4, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 19);
+            lblApellido.Size = new Size(75, 21);
             lblApellido.TabIndex = 1;
             lblApellido.Text = "Apellido";
             // 
@@ -90,12 +90,12 @@
             // 
             lblDireccion.AutoSize = true;
             lblDireccion.BackColor = Color.Transparent;
-            lblDireccion.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDireccion.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblDireccion.ForeColor = Color.Black;
             lblDireccion.Location = new Point(60, 218);
             lblDireccion.Margin = new Padding(4, 0, 4, 0);
             lblDireccion.Name = "lblDireccion";
-            lblDireccion.Size = new Size(72, 19);
+            lblDireccion.Size = new Size(83, 21);
             lblDireccion.TabIndex = 2;
             lblDireccion.Text = "Direccion";
             // 
@@ -103,12 +103,12 @@
             // 
             lblTelefono.AutoSize = true;
             lblTelefono.BackColor = Color.Transparent;
-            lblTelefono.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTelefono.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTelefono.ForeColor = Color.Black;
             lblTelefono.Location = new Point(60, 269);
             lblTelefono.Margin = new Padding(4, 0, 4, 0);
             lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(68, 19);
+            lblTelefono.Size = new Size(78, 21);
             lblTelefono.TabIndex = 3;
             lblTelefono.Text = "Telefono";
             // 
@@ -116,12 +116,12 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.BackColor = Color.Transparent;
-            lblEmail.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEmail.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblEmail.ForeColor = Color.Black;
             lblEmail.Location = new Point(60, 323);
             lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 19);
+            lblEmail.Size = new Size(53, 21);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "eMail";
             // 
@@ -129,12 +129,12 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.BackColor = Color.Transparent;
-            lblUsuario.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblUsuario.ForeColor = Color.Black;
-            lblUsuario.Location = new Point(522, 52);
+            lblUsuario.Location = new Point(60, 443);
             lblUsuario.Margin = new Padding(4, 0, 4, 0);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(60, 19);
+            lblUsuario.Size = new Size(69, 21);
             lblUsuario.TabIndex = 5;
             lblUsuario.Text = "Usuario";
             // 
@@ -142,12 +142,12 @@
             // 
             lblDNI.AutoSize = true;
             lblDNI.BackColor = Color.Transparent;
-            lblDNI.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDNI.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblDNI.ForeColor = Color.Black;
             lblDNI.Location = new Point(60, 165);
             lblDNI.Margin = new Padding(4, 0, 4, 0);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(34, 19);
+            lblDNI.Size = new Size(40, 21);
             lblDNI.TabIndex = 6;
             lblDNI.Text = "DNI";
             // 
@@ -155,92 +155,91 @@
             // 
             lblPerfil.AutoSize = true;
             lblPerfil.BackColor = Color.Transparent;
-            lblPerfil.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPerfil.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblPerfil.ForeColor = Color.Black;
-            lblPerfil.Location = new Point(522, 170);
+            lblPerfil.Location = new Point(60, 506);
             lblPerfil.Margin = new Padding(4, 0, 4, 0);
             lblPerfil.Name = "lblPerfil";
-            lblPerfil.Size = new Size(45, 19);
+            lblPerfil.Size = new Size(51, 21);
             lblPerfil.TabIndex = 8;
             lblPerfil.Text = "Perfil";
             // 
             // txtNombre
             // 
-            txtNombre.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre.Location = new Point(220, 55);
             txtNombre.Margin = new Padding(4, 3, 4, 3);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(253, 26);
+            txtNombre.Size = new Size(253, 29);
             txtNombre.TabIndex = 10;
             txtNombre.TextAlign = HorizontalAlignment.Center;
             // 
             // txtApellido
             // 
-            txtApellido.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtApellido.Location = new Point(220, 107);
             txtApellido.Margin = new Padding(4, 3, 4, 3);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(253, 26);
+            txtApellido.Size = new Size(253, 29);
             txtApellido.TabIndex = 11;
             txtApellido.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDireccion
             // 
-            txtDireccion.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDireccion.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDireccion.Location = new Point(220, 217);
             txtDireccion.Margin = new Padding(4, 3, 4, 3);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(253, 26);
+            txtDireccion.Size = new Size(253, 29);
             txtDireccion.TabIndex = 13;
             txtDireccion.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDNI
             // 
-            txtDNI.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDNI.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDNI.Location = new Point(220, 165);
             txtDNI.Margin = new Padding(4, 3, 4, 3);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(253, 26);
+            txtDNI.Size = new Size(253, 29);
             txtDNI.TabIndex = 12;
             txtDNI.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
             // 
-            txtEmail.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.Location = new Point(220, 320);
             txtEmail.Margin = new Padding(4, 3, 4, 3);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(253, 26);
+            txtEmail.Size = new Size(253, 29);
             txtEmail.TabIndex = 15;
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtTelefono
             // 
-            txtTelefono.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTelefono.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtTelefono.Location = new Point(220, 269);
             txtTelefono.Margin = new Padding(4, 3, 4, 3);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(253, 26);
+            txtTelefono.Size = new Size(253, 29);
             txtTelefono.TabIndex = 14;
             txtTelefono.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
             // 
-            txtUsuario.Font = new Font("Ebrima", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsuario.Location = new Point(648, 52);
+            txtUsuario.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsuario.Location = new Point(223, 441);
             txtUsuario.Margin = new Padding(4, 3, 4, 3);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(253, 26);
+            txtUsuario.Size = new Size(253, 29);
             txtUsuario.TabIndex = 16;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
-            
             // 
             // btnAltaUsuario
             // 
             btnAltaUsuario.BackColor = SystemColors.ActiveCaptionText;
             btnAltaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAltaUsuario.ForeColor = Color.White;
-            btnAltaUsuario.Location = new Point(617, 288);
+            btnAltaUsuario.Location = new Point(627, 212);
             btnAltaUsuario.Margin = new Padding(4, 3, 4, 3);
             btnAltaUsuario.Name = "btnAltaUsuario";
             btnAltaUsuario.Size = new Size(319, 86);
@@ -259,7 +258,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(10, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(1000, 29);
+            menuStrip1.Size = new Size(1540, 29);
             menuStrip1.TabIndex = 19;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -327,11 +326,12 @@
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(409, 455);
+            btnVolverInicio.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolverInicio.Location = new Point(667, 486);
             btnVolverInicio.Name = "btnVolverInicio";
-            btnVolverInicio.Size = new Size(179, 51);
+            btnVolverInicio.Size = new Size(225, 51);
             btnVolverInicio.TabIndex = 20;
-            btnVolverInicio.Text = "REGRESAR";
+            btnVolverInicio.Text = "VOLVER MENU PRINCIPAL";
             btnVolverInicio.UseVisualStyleBackColor = false;
             btnVolverInicio.Click += btnVolverInicio_Click;
             // 
@@ -339,30 +339,31 @@
             // 
             lblFechaNacimiento.AutoSize = true;
             lblFechaNacimiento.BackColor = Color.Transparent;
-            lblFechaNacimiento.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFechaNacimiento.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblFechaNacimiento.ForeColor = Color.Black;
             lblFechaNacimiento.Location = new Point(60, 382);
             lblFechaNacimiento.Margin = new Padding(4, 0, 4, 0);
             lblFechaNacimiento.Name = "lblFechaNacimiento";
-            lblFechaNacimiento.Size = new Size(128, 19);
+            lblFechaNacimiento.Size = new Size(148, 21);
             lblFechaNacimiento.TabIndex = 21;
             lblFechaNacimiento.Text = "Fecha Nacimiento";
             // 
             // dateTimeFechaNacimiento
             // 
-            dateTimeFechaNacimiento.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimeFechaNacimiento.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimeFechaNacimiento.Format = DateTimePickerFormat.Short;
             dateTimeFechaNacimiento.Location = new Point(223, 377);
             dateTimeFechaNacimiento.Name = "dateTimeFechaNacimiento";
-            dateTimeFechaNacimiento.Size = new Size(250, 26);
+            dateTimeFechaNacimiento.Size = new Size(250, 29);
             dateTimeFechaNacimiento.TabIndex = 23;
             // 
             // cbPerfiles
             // 
+            cbPerfiles.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbPerfiles.FormattingEnabled = true;
-            cbPerfiles.Location = new Point(648, 162);
+            cbPerfiles.Location = new Point(220, 498);
             cbPerfiles.Name = "cbPerfiles";
-            cbPerfiles.Size = new Size(121, 27);
+            cbPerfiles.Size = new Size(256, 29);
             cbPerfiles.TabIndex = 24;
             // 
             // FrmAltaUsuario
@@ -371,7 +372,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1000, 518);
+            ClientSize = new Size(1540, 703);
             Controls.Add(cbPerfiles);
             Controls.Add(dateTimeFechaNacimiento);
             Controls.Add(lblFechaNacimiento);

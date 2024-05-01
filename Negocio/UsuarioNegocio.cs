@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
@@ -31,14 +32,18 @@ namespace Negocio
 
 
 
-        public void borrarUsuario(Guid idUsuario)
+        public void borrarUsuario(string idUsuario)
         {
-            UsuarioBaja bajausuario = new UsuarioBaja(idAdministrador, idUsuario);
+            UsuarioBaja bajausuario = new UsuarioBaja(idUsuario, idAdministrador);
             usuarioService.BajaUsuario(bajausuario);
         }
 
+        public void borrarUsuarioDBLocal(string nombreUsuario)
+        {            
+            usuarioService.EliminarUsuarioDBLocal(nombreUsuario);
+        }
 
-        public List<UsuarioAlta> listarUsuarios()
+        public List<Usuario> listarUsuarios()
         {
             return usuarioService.GetUsuarios(idAdministrador);
         }
@@ -101,12 +106,9 @@ namespace Negocio
             {
                 return "Error: La contraseña debe contener al menos una letra mayúscula y un número.";
             }
-
             return "";
         }
-
-
-
+      
     }
 }
 

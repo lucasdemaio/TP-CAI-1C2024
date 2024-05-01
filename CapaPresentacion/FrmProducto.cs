@@ -13,12 +13,13 @@ namespace Presentacion
     public partial class FrmProducto : Form
     {
         private int perfilUsuario;
-
+        
         public FrmProducto(int perfilUsuario)
         {
             InitializeComponent();
             this.FormClosing += FrmProducto_FormClosing;
             this.perfilUsuario = perfilUsuario;
+           
         }
 
         private void FrmProducto_FormClosing(object sender, FormClosingEventArgs e)

@@ -13,7 +13,7 @@ namespace Presentacion
     public partial class FrmVenta : Form
     {
         private int perfilUsuario;
-
+        
         public FrmVenta(int perfilUsuario)
         {
             InitializeComponent();

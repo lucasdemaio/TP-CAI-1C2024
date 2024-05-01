@@ -2,6 +2,7 @@ using Negocio;
 using Datos;
 using Presentacion;
 using PresentacionLayer;
+using System.Windows.Forms;
 
 
 namespace Presentacion
@@ -9,7 +10,7 @@ namespace Presentacion
     public partial class FrmMain : Form
     {
         private UsuarioNegocio usuarioNegocio;
-        
+
         private int perfilUsuario;
 
         public FrmMain(int perfilUsuario)
@@ -35,6 +36,8 @@ namespace Presentacion
             {
                 case 1: // Vendedor
                     strpProductosMenu.Enabled = false;
+                    strpProveedoresMenu.Enabled = false;
+                    strpUsuariosMenu.Enabled = false;
                     break;
                 case 2: // Supervisor
                     strpUsuariosMenu.Enabled = false;
@@ -107,7 +110,7 @@ namespace Presentacion
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -116,5 +119,6 @@ namespace Presentacion
             frmLogin.Show();
             this.Hide();
         }
+                
     }
 }
