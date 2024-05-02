@@ -17,17 +17,17 @@ namespace Presentacion
     {
         private ProveedoresNegocio proveedorNegocio = new ProveedoresNegocio();
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-        
+
         private int perfilUsuario;
         private Guid guidUsuario;
 
         string userLogueado = UsuarioLogueado.NombreUsuario;
-        
+
         public FrmProveedores(int perfilUsuario)
         {
             InitializeComponent();
             this.FormClosing += FrmProveedores_FormClosing;
-            this.perfilUsuario = perfilUsuario;            
+            this.perfilUsuario = perfilUsuario;
         }
 
         private void FrmProveedores_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,20 +47,7 @@ namespace Presentacion
 
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
-            cargarProveedores();
-
-            //List<Usuario> usuarios = usuarioNegocio.listarUsuarios();
-
-            //Usuario usuario = usuarios.FirstOrDefault(u => u.NombreUsuario == userLogueado);
-
-            //if (userLogueado != null)
-            //{
-            //    Guid guidUsuario = usuario.id;
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Usuario no encontrado");
-            //}
+            cargarProveedores();                        
         }
 
         private void cargarProveedores()
@@ -97,10 +84,10 @@ namespace Presentacion
             else
             {
                 //agregar un label que muestre el error
-            }            
+            }
 
             cargarProveedores();
-            }
+        }
 
         private void groupBoxABMProveedor_Enter(object sender, EventArgs e)
         {
@@ -113,8 +100,45 @@ namespace Presentacion
             txtNombre.Text = proveedorSeleccionado.Nombre;
             txtApellido.Text = proveedorSeleccionado.Apellido;
             txtEmail.Text = proveedorSeleccionado.Email;
-            txtCUIT.Text = proveedorSeleccionado.CUIT.ToString();           
-            
+            txtCUIT.Text = proveedorSeleccionado.CUIT.ToString();
+
+        }
+
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            ProveedoresDatos proveedorSeleccionado = (ProveedoresDatos)dataGridViewProveedores.Rows[dataGridViewProveedores.CurrentCell.RowIndex].DataBoundItem;
+
+            Guid idProveedor = proveedorSeleccionado.Id;
+
+            proveedorNegocio.borrarProveedor(idProveedor);
+
+            cargarProveedores();
+
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEmail.Text = "";
+            txtCUIT.Text = "";
+        }
+
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            ProveedoresDatos proveedorSeleccionado = (ProveedoresDatos)dataGridViewProveedores.Rows[dataGridViewProveedores.CurrentCell.RowIndex].DataBoundItem;
+
+            Guid idProveedor = proveedorSeleccionado.Id;
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string email = txtEmail.Text;
+            string cuit = txtCUIT.Text;
+
+            proveedorNegocio.modificarProveedor(idProveedor, nombre, apellido, email, cuit);
+
+            cargarProveedores();
+
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEmail.Text = "";
+            txtCUIT.Text = "";
+
         }
     }
 }

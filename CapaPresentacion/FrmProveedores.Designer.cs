@@ -70,7 +70,6 @@
             dataGridViewProveedores.Location = new Point(7, 380);
             dataGridViewProveedores.MultiSelect = false;
             dataGridViewProveedores.Name = "dataGridViewProveedores";
-            dataGridViewProveedores.ReadOnly = true;
             dataGridViewProveedores.RowTemplate.Height = 25;
             dataGridViewProveedores.Size = new Size(1521, 453);
             dataGridViewProveedores.TabIndex = 44;
@@ -289,6 +288,7 @@
             btnEliminarProveedor.TabIndex = 61;
             btnEliminarProveedor.Text = "ELIMINAR";
             btnEliminarProveedor.UseVisualStyleBackColor = false;
+            btnEliminarProveedor.Click += btnEliminarProveedor_Click;
             // 
             // btnModificarProveedor
             // 
@@ -302,6 +302,7 @@
             btnModificarProveedor.TabIndex = 60;
             btnModificarProveedor.Text = "MODIFICAR";
             btnModificarProveedor.UseVisualStyleBackColor = false;
+            btnModificarProveedor.Click += btnModificarProveedor_Click;
             // 
             // FrmProveedores
             // 

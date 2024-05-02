@@ -280,7 +280,6 @@ namespace Persistencia
 
         public void BajaUsuario(UsuarioBaja bajausuario)
         {
-            //String path = "/api/Usuario/BajaUsuario?id=" + bajausuario;
             String path = "/api/Usuario/BajaUsuario";
 
             var jsonRequest = JsonConvert.SerializeObject(bajausuario);
