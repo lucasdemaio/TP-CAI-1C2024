@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
@@ -34,7 +34,7 @@ namespace Datos
             _nombreUsuario = nombreUsuario;
             _host = host;
             _dni = dni;           
-        }     
+        }
 
 
         public Guid id { get => _id; set => _id = value; }
@@ -49,6 +49,15 @@ namespace Datos
         public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
         
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
+
+
+        //public string ObtenerNombreUsuarioActual()
+        //{            
+        //    return this.NombreUsuario;
+        //}
+
+
+
     }
 }
 

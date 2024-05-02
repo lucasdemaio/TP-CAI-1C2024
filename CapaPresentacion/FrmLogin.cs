@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Persistencia;
+using Datos;
 
 
 
@@ -62,6 +63,7 @@ namespace PresentacionLayer
 
                 if (perfilUsuario != -1)
                 {
+                    UsuarioLogueado.SetNombreUsuario(usuario);
                     FrmMain frmMain = new FrmMain(perfilUsuario);
                     frmMain.Show();
                     this.Hide();

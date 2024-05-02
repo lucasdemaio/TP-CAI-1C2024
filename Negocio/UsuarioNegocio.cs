@@ -30,8 +30,6 @@ namespace Negocio
             usuarioService.EscribirUsuarioDBLocal(altaUsuarioDBLocal);
         }
 
-
-
         public void borrarUsuario(string idUsuario)
         {
             UsuarioBaja bajausuario = new UsuarioBaja(idUsuario, idAdministrador);

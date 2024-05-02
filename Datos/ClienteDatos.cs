@@ -20,9 +20,6 @@ namespace Datos
         DateTime? _fechaBaja;
         String _host;
 
-        public Cliente()
-        {
-        }
 
         public Cliente(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
         {

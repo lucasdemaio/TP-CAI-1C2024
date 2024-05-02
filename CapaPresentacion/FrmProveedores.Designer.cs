@@ -55,7 +55,7 @@
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
-            btnVolverInicio.Location = new Point(840, 405);
+            btnVolverInicio.Location = new Point(1349, 19);
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(179, 33);
             btnVolverInicio.TabIndex = 43;
@@ -67,10 +67,12 @@
             // 
             dataGridViewProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProveedores.Location = new Point(558, 12);
+            dataGridViewProveedores.Location = new Point(7, 380);
+            dataGridViewProveedores.MultiSelect = false;
             dataGridViewProveedores.Name = "dataGridViewProveedores";
+            dataGridViewProveedores.ReadOnly = true;
             dataGridViewProveedores.RowTemplate.Height = 25;
-            dataGridViewProveedores.Size = new Size(491, 370);
+            dataGridViewProveedores.Size = new Size(1521, 453);
             dataGridViewProveedores.TabIndex = 44;
             dataGridViewProveedores.CellContentClick += dataGridViewProveedores_CellContentClick;
             // 
@@ -172,7 +174,7 @@
             lblCategorias.BackColor = Color.Transparent;
             lblCategorias.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblCategorias.ForeColor = Color.Black;
-            lblCategorias.Location = new Point(6, 242);
+            lblCategorias.Location = new Point(479, 34);
             lblCategorias.Margin = new Padding(4, 0, 4, 0);
             lblCategorias.Name = "lblCategorias";
             lblCategorias.Size = new Size(95, 19);
@@ -183,7 +185,7 @@
             // 
             checkBoxAudio.AutoSize = true;
             checkBoxAudio.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxAudio.Location = new Point(166, 238);
+            checkBoxAudio.Location = new Point(639, 30);
             checkBoxAudio.Name = "checkBoxAudio";
             checkBoxAudio.Size = new Size(64, 23);
             checkBoxAudio.TabIndex = 54;
@@ -194,7 +196,7 @@
             // 
             checkBoxCelulares.AutoSize = true;
             checkBoxCelulares.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxCelulares.Location = new Point(166, 263);
+            checkBoxCelulares.Location = new Point(639, 55);
             checkBoxCelulares.Name = "checkBoxCelulares";
             checkBoxCelulares.Size = new Size(83, 23);
             checkBoxCelulares.TabIndex = 55;
@@ -205,7 +207,7 @@
             // 
             checkBoxElectro.AutoSize = true;
             checkBoxElectro.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxElectro.Location = new Point(166, 288);
+            checkBoxElectro.Location = new Point(639, 80);
             checkBoxElectro.Name = "checkBoxElectro";
             checkBoxElectro.Size = new Size(111, 23);
             checkBoxElectro.TabIndex = 56;
@@ -216,7 +218,7 @@
             // 
             checkBoxInformatica.AutoSize = true;
             checkBoxInformatica.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxInformatica.Location = new Point(166, 313);
+            checkBoxInformatica.Location = new Point(639, 105);
             checkBoxInformatica.Name = "checkBoxInformatica";
             checkBoxInformatica.Size = new Size(97, 23);
             checkBoxInformatica.TabIndex = 57;
@@ -227,7 +229,7 @@
             // 
             checkBoxSmartTv.AutoSize = true;
             checkBoxSmartTv.Font = new Font("Ebrima", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxSmartTv.Location = new Point(166, 338);
+            checkBoxSmartTv.Location = new Point(639, 130);
             checkBoxSmartTv.Name = "checkBoxSmartTv";
             checkBoxSmartTv.Size = new Size(84, 23);
             checkBoxSmartTv.TabIndex = 58;
@@ -239,7 +241,7 @@
             btnAltaProveedor.BackColor = SystemColors.ActiveCaptionText;
             btnAltaProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAltaProveedor.ForeColor = Color.White;
-            btnAltaProveedor.Location = new Point(7, 382);
+            btnAltaProveedor.Location = new Point(101, 249);
             btnAltaProveedor.Margin = new Padding(4, 3, 4, 3);
             btnAltaProveedor.Name = "btnAltaProveedor";
             btnAltaProveedor.Size = new Size(160, 50);
@@ -269,7 +271,7 @@
             groupBoxABMProveedor.Controls.Add(lblNombre);
             groupBoxABMProveedor.Location = new Point(7, 6);
             groupBoxABMProveedor.Name = "groupBoxABMProveedor";
-            groupBoxABMProveedor.Size = new Size(533, 440);
+            groupBoxABMProveedor.Size = new Size(780, 349);
             groupBoxABMProveedor.TabIndex = 60;
             groupBoxABMProveedor.TabStop = false;
             groupBoxABMProveedor.Text = "ABM Proveedor";
@@ -280,7 +282,7 @@
             btnEliminarProveedor.BackColor = Color.FromArgb(192, 0, 0);
             btnEliminarProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarProveedor.ForeColor = Color.White;
-            btnEliminarProveedor.Location = new Point(366, 382);
+            btnEliminarProveedor.Location = new Point(460, 249);
             btnEliminarProveedor.Margin = new Padding(4, 3, 4, 3);
             btnEliminarProveedor.Name = "btnEliminarProveedor";
             btnEliminarProveedor.Size = new Size(160, 50);
@@ -293,7 +295,7 @@
             btnModificarProveedor.BackColor = SystemColors.ActiveCaptionText;
             btnModificarProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarProveedor.ForeColor = Color.White;
-            btnModificarProveedor.Location = new Point(185, 382);
+            btnModificarProveedor.Location = new Point(279, 249);
             btnModificarProveedor.Margin = new Padding(4, 3, 4, 3);
             btnModificarProveedor.Name = "btnModificarProveedor";
             btnModificarProveedor.Size = new Size(160, 50);
@@ -305,7 +307,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1061, 450);
+            ClientSize = new Size(1540, 845);
             Controls.Add(groupBoxABMProveedor);
             Controls.Add(dataGridViewProveedores);
             Controls.Add(btnVolverInicio);

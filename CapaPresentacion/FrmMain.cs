@@ -13,6 +13,7 @@ namespace Presentacion
 
         private int perfilUsuario;
 
+        
         public FrmMain(int perfilUsuario)
         {
             InitializeComponent();
@@ -119,6 +120,8 @@ namespace Presentacion
             frmLogin.Show();
             this.Hide();
         }
-                
+
+        
+
     }
 }
