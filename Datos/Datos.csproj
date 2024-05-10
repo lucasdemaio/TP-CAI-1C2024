@@ -47,8 +47,10 @@
   <ItemGroup>
     <Compile Include="ClienteAlta.cs" />
     <Compile Include="ClienteDatos.cs" />
-    <Compile Include="ProductoCategoria.cs" />
+    <Compile Include="ProductoAlta.cs" />
+    <Compile Include="ProductoBaja.cs" />
     <Compile Include="ProductoDatos.cs" />
+    <Compile Include="ProductoModificacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresAlta.cs" />
     <Compile Include="ProveedoresBaja.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="UsuarioDatos.cs" />
     <Compile Include="UsuarioDBLocal.cs" />
     <Compile Include="UsuarioLogueado.cs" />
+    <Compile Include="VentaAlta.cs" />
     <Compile Include="VentaDatos.cs" />
   </ItemGroup>
   <ItemGroup>

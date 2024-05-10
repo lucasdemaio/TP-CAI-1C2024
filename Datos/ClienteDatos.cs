@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,9 +45,10 @@ namespace Datos
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
         public string Host { get => _host; set => _host = value; }
 
-        public String ToString()
+
+        public string NombreCompleto
         {
-            return this.Apellido + ", " + this.Nombre + " (" + this.Dni + ")";
+            get { return $"{Apellido}, {Nombre} - DNI: {Dni}"; }
         }
 
     }

@@ -32,7 +32,8 @@
             menuStrip1 = new MenuStrip();
             strpProductosMenu = new ToolStripMenuItem();
             strpVentasMenu = new ToolStripMenuItem();
-            vENTASToolStripMenuItem = new ToolStripMenuItem();
+            strpNuevaVenta = new ToolStripMenuItem();
+            strpDevolucionVenta = new ToolStripMenuItem();
             strpProveedoresMenu = new ToolStripMenuItem();
             strpReportesMenu = new ToolStripMenuItem();
             strpClientesMenu = new ToolStripMenuItem();
@@ -71,7 +72,7 @@
             // 
             // strpVentasMenu
             // 
-            strpVentasMenu.DropDownItems.AddRange(new ToolStripItem[] { vENTASToolStripMenuItem });
+            strpVentasMenu.DropDownItems.AddRange(new ToolStripItem[] { strpNuevaVenta, strpDevolucionVenta });
             strpVentasMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             strpVentasMenu.ForeColor = Color.White;
             strpVentasMenu.Name = "strpVentasMenu";
@@ -80,11 +81,18 @@
             strpVentasMenu.Text = "VENTAS";
             strpVentasMenu.Click += strpVentasMenu_Click;
             // 
-            // vENTASToolStripMenuItem
+            // strpNuevaVenta
             // 
-            vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            vENTASToolStripMenuItem.Size = new Size(142, 26);
-            vENTASToolStripMenuItem.Text = "VENTAS";
+            strpNuevaVenta.Name = "strpNuevaVenta";
+            strpNuevaVenta.Size = new Size(193, 26);
+            strpNuevaVenta.Text = "NUEVA VENTA";
+            strpNuevaVenta.Click += strpNuevaVenta_Click;
+            // 
+            // strpDevolucionVenta
+            // 
+            strpDevolucionVenta.Name = "strpDevolucionVenta";
+            strpDevolucionVenta.Size = new Size(193, 26);
+            strpDevolucionVenta.Text = "DEVOLUCION";
             // 
             // strpProveedoresMenu
             // 
@@ -179,7 +187,9 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4);
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
+            WindowState = FormWindowState.Maximized;
             Load += FrmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -201,5 +211,7 @@
         private ToolStripMenuItem strpClientesMenu;
         private Button btnLogOut;
         private Label lblBienvenido;
+        private ToolStripMenuItem strpNuevaVenta;
+        private ToolStripMenuItem strpDevolucionVenta;
     }
 }

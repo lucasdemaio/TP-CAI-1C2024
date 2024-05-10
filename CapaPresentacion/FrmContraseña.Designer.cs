@@ -205,7 +205,9 @@
             Controls.Add(txtContraseñaActual);
             Controls.Add(txtUsername);
             Controls.Add(lblRestablecerContraseña);
+            MaximizeBox = false;
             Name = "FrmContraseña";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Cambio de Contraseña";
             Load += FrmContraseña_Load;
             ResumeLayout(false);

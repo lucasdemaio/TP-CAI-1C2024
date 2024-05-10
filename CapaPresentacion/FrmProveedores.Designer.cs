@@ -313,7 +313,9 @@
             Controls.Add(dataGridViewProveedores);
             Controls.Add(btnVolverInicio);
             Name = "FrmProveedores";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Proveedores";
+            WindowState = FormWindowState.Maximized;
             Load += FrmProveedores_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProveedores).EndInit();
             groupBoxABMProveedor.ResumeLayout(false);

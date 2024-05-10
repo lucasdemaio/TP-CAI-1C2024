@@ -160,7 +160,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = Color.Navy;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(597, 378);
@@ -169,7 +168,9 @@
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ElectroHogar SA - Login";
             Load += FrmLogin_Load;
             panelLogin.ResumeLayout(false);

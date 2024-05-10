@@ -52,7 +52,9 @@
             Controls.Add(btnVolverInicio);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmReportes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Reportes";
+            WindowState = FormWindowState.Maximized;
             Load += FrmReportes_Load;
             ResumeLayout(false);
         }

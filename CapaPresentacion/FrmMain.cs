@@ -13,7 +13,7 @@ namespace Presentacion
 
         private int perfilUsuario;
 
-        
+
         public FrmMain(int perfilUsuario)
         {
             InitializeComponent();
@@ -90,9 +90,7 @@ namespace Presentacion
 
         private void strpVentasMenu_Click(object sender, EventArgs e)
         {
-            FrmVenta frmVenta = new FrmVenta(perfilUsuario);
-            frmVenta.Show();
-            this.Hide();
+           
         }
 
         private void strpProveedoresMenu_Click(object sender, EventArgs e)
@@ -111,7 +109,7 @@ namespace Presentacion
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -121,7 +119,11 @@ namespace Presentacion
             this.Hide();
         }
 
-        
-
+        private void strpNuevaVenta_Click(object sender, EventArgs e)
+        {
+            FrmVenta frmVenta = new FrmVenta(perfilUsuario);
+            frmVenta.Show();
+            this.Hide();
+        }
     }
 }

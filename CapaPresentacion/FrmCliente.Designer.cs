@@ -342,7 +342,9 @@
             Controls.Add(lblDatos);
             Controls.Add(dataGridViewCliente);
             Name = "FrmCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
+            WindowState = FormWindowState.Maximized;
             Load += FrmCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).EndInit();
             ResumeLayout(false);

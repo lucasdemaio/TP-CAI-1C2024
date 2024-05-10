@@ -399,7 +399,9 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmAltaUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Usuario";
+            WindowState = FormWindowState.Maximized;
             Load += FrmAltaUsuario_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

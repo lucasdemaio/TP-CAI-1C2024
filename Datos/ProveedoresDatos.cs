@@ -9,16 +9,16 @@ namespace Datos
 {
     public class ProveedoresDatos
     {
-        public Guid _id;
-        public Guid _idCategoriaProducto;
-        public string _nombre;
-        public string _apellido;
-        public DateTime _fechaAlta;
-        public DateTime? _fechaBaja;
-        public string _cuit;
-        public string _email;
-        public Guid _idUsuario;
-
+        Guid _id;
+        Guid _idCategoriaProducto;
+        string _nombre;
+        string _apellido;
+        DateTime _fechaAlta;
+        DateTime? _fechaBaja;
+        string _cuit;
+        string _email;
+        Guid _idUsuario;
+        
         public ProveedoresDatos(Guid id, string nombre, DateTime fechaAlta, DateTime? fechaBaja ,string cuit, string email, string apellido, Guid idCategoriaProducto, Guid idUsuario)
         {
             _id = id;
@@ -43,6 +43,7 @@ namespace Datos
         public string Email { get => _email; set => _email = value; }        
         public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
        
+
 
         //public List<ProductoCategoria> Categorias { get; set; } // Lista de categorías de productos
 
