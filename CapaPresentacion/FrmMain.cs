@@ -10,6 +10,7 @@ namespace Presentacion
     public partial class FrmMain : Form
     {
         private UsuarioNegocio usuarioNegocio;
+        private ProductoNegocio productoNegocio;
 
         private int perfilUsuario;
 
@@ -18,9 +19,11 @@ namespace Presentacion
         {
             InitializeComponent();
             usuarioNegocio = new UsuarioNegocio();
+            this.productoNegocio = new ProductoNegocio();
             this.FormClosing += FrmMain_FormClosing;
             this.perfilUsuario = perfilUsuario;
             ConfigurarMenu();
+            VerificarStockCritico();
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,25 +42,42 @@ namespace Presentacion
                     strpProductosMenu.Enabled = false;
                     strpProveedoresMenu.Enabled = false;
                     strpUsuariosMenu.Enabled = false;
+                    strpDevolucionVenta.Enabled = false;
+
                     break;
                 case 2: // Supervisor
                     strpUsuariosMenu.Enabled = false;
                     strpProveedoresMenu.Enabled = false;
-                    strpVentasMenu.Enabled = false;
+                    strpNuevaVenta.Enabled = false;
                     break;
                 case 3: // Administrador
                     strpVentasMenu.Enabled = false;
                     break;
                 default:
-                    // Perfil no reconocido
                     MessageBox.Show("Perfil de usuario no reconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void VerificarStockCritico()
         {
-
+            if (perfilUsuario == 2 || perfilUsuario == 3)
+            {
+                int cantidadProductosCriticos = productoNegocio.ContarProductosConStockCritico();
+                if (cantidadProductosCriticos > 0)
+                {
+                    lblStockCritico.Visible = true;
+                    lblStockCritico.Text = $"Hay {cantidadProductosCriticos} productos con stock crítico!!!";
+                }
+                else
+                {
+                    lblStockCritico.Visible = false;
+                }
+            }
+            else
+            {
+                lblStockCritico.Visible = false;
+            }
         }
 
         public void strpAltaUsuariosMenu_Click(object sender, EventArgs e)
@@ -88,10 +108,6 @@ namespace Presentacion
             this.Hide();
         }
 
-        private void strpVentasMenu_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void strpProveedoresMenu_Click(object sender, EventArgs e)
         {
@@ -121,8 +137,16 @@ namespace Presentacion
 
         private void strpNuevaVenta_Click(object sender, EventArgs e)
         {
-            FrmVenta frmVenta = new FrmVenta(perfilUsuario);
+            FrmComprobante frmComprobante = new FrmComprobante();
+            FrmVenta frmVenta = new FrmVenta(perfilUsuario, frmComprobante);
             frmVenta.Show();
+            this.Hide();
+        }
+
+        private void strpDevolucionVenta_Click(object sender, EventArgs e)
+        {
+            FrmDevolverVenta frmDevolverVenta = new FrmDevolverVenta(perfilUsuario);
+            frmDevolverVenta.Show();
             this.Hide();
         }
     }

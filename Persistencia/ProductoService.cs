@@ -31,12 +31,12 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
             }
         }
 
@@ -56,15 +56,14 @@ namespace Persistencia
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
             }
-        }
-    
+        }    
 
         public List<ProductoDatos> getProductos()
         {
@@ -78,6 +77,34 @@ namespace Persistencia
                     var contentStream = response.Content.ReadAsStringAsync().Result;
                     List<ProductoDatos> listadoProductos = JsonConvert.DeserializeObject<List<ProductoDatos>>(contentStream);
                     return listadoProductos;
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+            return productos;
+
+        }
+
+        public List<ProductoDatos> GetProductosporCategoria(int categoria)
+        {
+            String path = $"/api/Producto/TraerProductosPorCategoria?catnum={categoria}";
+                       
+
+            List <ProductoDatos> productos = new List<ProductoDatos>();
+            try
+            {
+                HttpResponseMessage response = WebHelper.Get(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var contentStream = response.Content.ReadAsStringAsync().Result;
+                    List<ProductoDatos> listadoproductos = JsonConvert.DeserializeObject<List<ProductoDatos>>(contentStream);
+                    return listadoproductos;
                 }
                 else
                 {
@@ -108,13 +135,39 @@ namespace Persistencia
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
             }
         }
+
+        public void ReactivarProducto(ProductoReactivar producto)
+        {
+            String path = "/api/Producto/ReactivarProducto";
+
+            var jsonRequest = JsonConvert.SerializeObject(producto);
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
+            }
+        }
+
     }
 }

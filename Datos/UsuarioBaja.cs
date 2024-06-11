@@ -15,8 +15,7 @@ namespace Datos
         public UsuarioBaja(string id, string idUsuario)
         {
             _id = id;
-            _idUsuario = idUsuario;
-            
+            _idUsuario = idUsuario;            
         }
 
         public string Id{ get => _id; set => _id = value; }

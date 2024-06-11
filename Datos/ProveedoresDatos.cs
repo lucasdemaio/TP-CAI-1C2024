@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
+    public enum CategoriaProducto
+    {
+        Audio = 1,
+        Celulares = 2,
+        ElectroHogar = 3,
+        Informatica = 4,
+        SmartTV = 5,
+        Desconocida = 6
+    }
+
     public class ProveedoresDatos
     {
         Guid _id;
-        Guid _idCategoriaProducto;
+        List<int> _categorias;
         string _nombre;
         string _apellido;
         DateTime _fechaAlta;
@@ -19,7 +29,7 @@ namespace Datos
         string _email;
         Guid _idUsuario;
         
-        public ProveedoresDatos(Guid id, string nombre, DateTime fechaAlta, DateTime? fechaBaja ,string cuit, string email, string apellido, Guid idCategoriaProducto, Guid idUsuario)
+        public ProveedoresDatos(Guid id, string nombre, DateTime fechaAlta, DateTime? fechaBaja ,string cuit, string email, string apellido, List<int> categorias, Guid idUsuario)
         {
             _id = id;
             _nombre = nombre;
@@ -28,15 +38,16 @@ namespace Datos
             _cuit = cuit;
             _fechaAlta = fechaAlta;
             _fechaBaja = fechaBaja;
-            _idCategoriaProducto = idCategoriaProducto;                      
+            _categorias = categorias;                 
             _idUsuario = idUsuario;            
         }
 
 
         public Guid Id { get => _id; set => _id = value; }
-        public Guid IdCategoriaProducto { get => _idCategoriaProducto; set => _idCategoriaProducto = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
+
+        public List<int> Categorias { get => _categorias; set => _categorias = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
         public string CUIT { get => _cuit; set => _cuit = value; }
@@ -44,17 +55,5 @@ namespace Datos
         public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
        
 
-
-        //public List<ProductoCategoria> Categorias { get; set; } // Lista de categorías de productos
-
-        //public ProveedoresDatos()
-        //{
-        //    Categorias = new List<ProductoCategoria>();
-        //}
-
-        //public void AgregarCategoriaProducto(Guid idCategoria, string descripcion)
-        //{
-        //    Categorias.Add(new ProductoCategoria { Id = idCategoria, Descripcion = descripcion });
-        //}
     }
 }

@@ -16,7 +16,6 @@ namespace Datos
         {
             _id = id;
             _idUsuario = idUsuario;
-
         }
 
         public Guid Id { get => _id; set => _id = value; }

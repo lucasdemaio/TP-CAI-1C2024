@@ -17,7 +17,6 @@ namespace Datos
         public Guid IdUsuario { get; set; }
 
 
-
-
+       
     }
 }

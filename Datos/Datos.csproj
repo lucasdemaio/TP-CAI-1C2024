@@ -51,19 +51,24 @@
     <Compile Include="ProductoBaja.cs" />
     <Compile Include="ProductoDatos.cs" />
     <Compile Include="ProductoModificacion.cs" />
+    <Compile Include="ProductoReactivar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresAlta.cs" />
     <Compile Include="ProveedoresBaja.cs" />
     <Compile Include="ProveedoresDatos.cs" />
     <Compile Include="UsuarioAlta.cs" />
     <Compile Include="UsuarioBaja.cs" />
+    <Compile Include="UsuarioBajaDBLocal.cs" />
     <Compile Include="UsuarioDatos.cs" />
     <Compile Include="UsuarioDBLocal.cs" />
     <Compile Include="UsuarioLogueado.cs" />
     <Compile Include="VentaAlta.cs" />
     <Compile Include="VentaDatos.cs" />
+    <Compile Include="VentaDevolucion.cs" />
+    <Compile Include="VentaGET.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Diagrama de Clases.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

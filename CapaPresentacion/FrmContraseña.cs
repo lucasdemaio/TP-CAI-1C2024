@@ -47,31 +47,31 @@ namespace Presentacion
 
             if (nuevaContraseña != confirmacionContraseña)
             {
+                lblContraseñaError.ForeColor = Color.Red;
                 lblContraseñaError.Text = "La nueva contraseña y la confirmación no coinciden";
                 lblContraseñaError.Visible = true;
-                txtUsername.Text = "";
                 txtContraseñaActual.Text = "";
                 txtContraseñaNueva.Text = "";
                 txtConfirmacionContraseña.Text = "";
-                //MessageBox.Show("La nueva contraseña y la confirmación no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
                 usuarioNegocio.CambiarContraseña(usuario, contraseñaActual, nuevaContraseña);
-                lblContraseñaError.Text = "";
+                lblContraseñaError.ForeColor = Color.White;
                 lblContraseñaCambiada.Text = "Contraseña cambiada exitosamente";
                 lblContraseñaCambiada.Visible = true;
                 txtUsername.Text = "";
                 txtContraseñaActual.Text = "";
                 txtContraseñaNueva.Text = "";
                 txtConfirmacionContraseña.Text = "";
-                //MessageBox.Show("Contraseña cambiada exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cambiar contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblContraseñaError.ForeColor = Color.OrangeRed;
+                lblContraseñaError.Text = "Error al cambiar la contraseña. Vuelva a intentarlo. \nSi persiste, contacte a su administrador del sistema.";
+                lblContraseñaError.Visible = true;                
             }
         }
 

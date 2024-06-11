@@ -19,6 +19,8 @@ namespace PresentacionLayer
     public partial class FrmLogin : Form
     {
         private UsuarioNegocio usuarioNegocio;
+        private int intentosFallidos = 0;
+        private string ultimoUsuarioIntentado = string.Empty;
 
 
         public FrmLogin()
@@ -42,6 +44,12 @@ namespace PresentacionLayer
             {
                 string usuario = txtUsuario.Text;
                 string clave = txtClave.Text;
+
+                if (usuario != ultimoUsuarioIntentado)
+                {                    
+                    intentosFallidos = 0;
+                    ultimoUsuarioIntentado = usuario;
+                }
 
                 bool primerlogueo = usuarioNegocio.VerificarPrimerLogin(usuario);
                 if (primerlogueo)
@@ -70,10 +78,16 @@ namespace PresentacionLayer
                 }
                 else
                 {
+                    intentosFallidos++;
                     lblLoginIncorrecto.Text = "Nombre de usuario o contraseña incorrectos";
                     lblLoginIncorrecto.Visible = true;
                     txtUsuario.Text = "";
                     txtClave.Text = "";
+                }
+                if (intentosFallidos >= 3)
+                {
+                    usuarioNegocio.borrarUsuarioPorLoginFallido(usuario);
+                    lblLoginIncorrecto.Text = $"Ha superado el limite de intentos. \nContacte a un Administrador para Reactivar su usuario";
                 }
             }
             catch (Exception ex)
@@ -82,7 +96,6 @@ namespace PresentacionLayer
             }
 
         }
-
         private void linklblCambioClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmContraseña frmContraseña = new FrmContraseña();
@@ -91,7 +104,7 @@ namespace PresentacionLayer
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
-        {
+        {   
 
         }
     }

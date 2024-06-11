@@ -51,14 +51,19 @@
             btnEliminarCliente = new Button();
             btnModificarCliente = new Button();
             btnLimpiar = new Button();
+            groupBox1 = new GroupBox();
+            btnReactivarCliente = new Button();
+            cbReactivarCliente = new ComboBox();
+            lblAlertaClientes = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewCliente
             // 
             dataGridViewCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCliente.Location = new Point(12, 277);
+            dataGridViewCliente.Location = new Point(12, 359);
             dataGridViewCliente.MultiSelect = false;
             dataGridViewCliente.Name = "dataGridViewCliente";
             dataGridViewCliente.ReadOnly = true;
@@ -71,7 +76,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCliente.RowTemplate.Height = 25;
-            dataGridViewCliente.Size = new Size(1516, 556);
+            dataGridViewCliente.Size = new Size(1516, 474);
             dataGridViewCliente.TabIndex = 0;
             dataGridViewCliente.CellContentClick += dataGridViewCliente_CellContentClick;
             // 
@@ -95,6 +100,7 @@
             dateTimeFechaNacimiento.Name = "dateTimeFechaNacimiento";
             dateTimeFechaNacimiento.Size = new Size(250, 29);
             dateTimeFechaNacimiento.TabIndex = 40;
+            dateTimeFechaNacimiento.Value = new DateTime(2006, 5, 30, 0, 0, 0, 0);
             // 
             // lblFechaNacimiento
             // 
@@ -264,7 +270,7 @@
             btnAltaCliente.BackColor = SystemColors.ActiveCaptionText;
             btnAltaCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAltaCliente.ForeColor = Color.White;
-            btnAltaCliente.Location = new Point(1001, 209);
+            btnAltaCliente.Location = new Point(205, 291);
             btnAltaCliente.Margin = new Padding(4, 3, 4, 3);
             btnAltaCliente.Name = "btnAltaCliente";
             btnAltaCliente.Size = new Size(160, 45);
@@ -278,7 +284,7 @@
             btnEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
             btnEliminarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarCliente.ForeColor = Color.White;
-            btnEliminarCliente.Location = new Point(1367, 204);
+            btnEliminarCliente.Location = new Point(571, 286);
             btnEliminarCliente.Margin = new Padding(4, 3, 4, 3);
             btnEliminarCliente.Name = "btnEliminarCliente";
             btnEliminarCliente.Size = new Size(160, 50);
@@ -292,7 +298,7 @@
             btnModificarCliente.BackColor = SystemColors.ActiveCaptionText;
             btnModificarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarCliente.ForeColor = Color.White;
-            btnModificarCliente.Location = new Point(1183, 209);
+            btnModificarCliente.Location = new Point(387, 291);
             btnModificarCliente.Margin = new Padding(4, 3, 4, 3);
             btnModificarCliente.Name = "btnModificarCliente";
             btnModificarCliente.Size = new Size(160, 45);
@@ -314,12 +320,60 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnReactivarCliente);
+            groupBox1.Controls.Add(cbReactivarCliente);
+            groupBox1.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(987, 130);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(541, 223);
+            groupBox1.TabIndex = 46;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Reactivar Clientes";
+            // 
+            // btnReactivarCliente
+            // 
+            btnReactivarCliente.BackColor = SystemColors.ActiveCaptionText;
+            btnReactivarCliente.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReactivarCliente.ForeColor = Color.White;
+            btnReactivarCliente.Location = new Point(208, 159);
+            btnReactivarCliente.Margin = new Padding(4, 3, 4, 3);
+            btnReactivarCliente.Name = "btnReactivarCliente";
+            btnReactivarCliente.Size = new Size(160, 45);
+            btnReactivarCliente.TabIndex = 47;
+            btnReactivarCliente.Text = "REACTIVAR";
+            btnReactivarCliente.UseVisualStyleBackColor = false;
+            btnReactivarCliente.Click += btnReactivarCliente_Click;
+            // 
+            // cbReactivarCliente
+            // 
+            cbReactivarCliente.FormattingEnabled = true;
+            cbReactivarCliente.Location = new Point(92, 58);
+            cbReactivarCliente.Name = "cbReactivarCliente";
+            cbReactivarCliente.Size = new Size(388, 29);
+            cbReactivarCliente.TabIndex = 0;
+            // 
+            // lblAlertaClientes
+            // 
+            lblAlertaClientes.AutoSize = true;
+            lblAlertaClientes.BackColor = Color.Transparent;
+            lblAlertaClientes.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlertaClientes.ForeColor = Color.Green;
+            lblAlertaClientes.Location = new Point(461, 209);
+            lblAlertaClientes.Name = "lblAlertaClientes";
+            lblAlertaClientes.Size = new Size(52, 21);
+            lblAlertaClientes.TabIndex = 51;
+            lblAlertaClientes.Text = "label1";
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1540, 845);
+            Controls.Add(lblAlertaClientes);
+            Controls.Add(groupBox1);
             Controls.Add(btnLimpiar);
             Controls.Add(btnModificarCliente);
             Controls.Add(btnEliminarCliente);
@@ -347,6 +401,7 @@
             WindowState = FormWindowState.Maximized;
             Load += FrmCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -374,5 +429,9 @@
         private Button btnEliminarCliente;
         private Button btnModificarCliente;
         private Button btnLimpiar;
+        private GroupBox groupBox1;
+        private Button btnReactivarCliente;
+        private ComboBox cbReactivarCliente;
+        private Label lblAlertaClientes;
     }
 }

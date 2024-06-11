@@ -50,14 +50,6 @@ namespace Datos
         
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
 
-
-        //public string ObtenerNombreUsuarioActual()
-        //{            
-        //    return this.NombreUsuario;
-        //}
-
-
-
     }
 }
 

@@ -45,19 +45,12 @@
             txtTelefono = new TextBox();
             txtUsuario = new TextBox();
             btnAltaUsuario = new Button();
-            menuStrip1 = new MenuStrip();
-            strpProductosMenu = new ToolStripMenuItem();
-            strpVentasMenu = new ToolStripMenuItem();
-            strpProveedoresMenu = new ToolStripMenuItem();
-            strpReportesMenu = new ToolStripMenuItem();
-            strpUsuariosMenu = new ToolStripMenuItem();
-            strpAltaUsuariosMenu = new ToolStripMenuItem();
-            strpBajaUsuariosMenu = new ToolStripMenuItem();
             btnVolverInicio = new Button();
             lblFechaNacimiento = new Label();
             dateTimeFechaNacimiento = new DateTimePicker();
             cbPerfiles = new ComboBox();
-            menuStrip1.SuspendLayout();
+            lblAltaUsuarios = new Label();
+            lblAlertaAltaUsuario = new Label();
             SuspendLayout();
             // 
             // lblNombre
@@ -248,81 +241,6 @@
             btnAltaUsuario.UseVisualStyleBackColor = false;
             btnAltaUsuario.Click += btnAltaUsuario_Click;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.Transparent;
-            menuStrip1.BackgroundImage = (Image)resources.GetObject("menuStrip1.BackgroundImage");
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { strpProductosMenu, strpVentasMenu, strpProveedoresMenu, strpReportesMenu, strpUsuariosMenu });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(10, 2, 0, 2);
-            menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(1540, 29);
-            menuStrip1.TabIndex = 19;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // strpProductosMenu
-            // 
-            strpProductosMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpProductosMenu.ForeColor = Color.White;
-            strpProductosMenu.Name = "strpProductosMenu";
-            strpProductosMenu.RightToLeft = RightToLeft.Yes;
-            strpProductosMenu.Size = new Size(118, 25);
-            strpProductosMenu.Text = "PRODUCTOS";
-            // 
-            // strpVentasMenu
-            // 
-            strpVentasMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpVentasMenu.ForeColor = Color.White;
-            strpVentasMenu.Name = "strpVentasMenu";
-            strpVentasMenu.RightToLeft = RightToLeft.Yes;
-            strpVentasMenu.Size = new Size(84, 25);
-            strpVentasMenu.Text = "VENTAS";
-            // 
-            // strpProveedoresMenu
-            // 
-            strpProveedoresMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpProveedoresMenu.ForeColor = Color.White;
-            strpProveedoresMenu.Name = "strpProveedoresMenu";
-            strpProveedoresMenu.RightToLeft = RightToLeft.Yes;
-            strpProveedoresMenu.Size = new Size(135, 25);
-            strpProveedoresMenu.Text = "PROVEEDORES";
-            // 
-            // strpReportesMenu
-            // 
-            strpReportesMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpReportesMenu.ForeColor = Color.White;
-            strpReportesMenu.Name = "strpReportesMenu";
-            strpReportesMenu.RightToLeft = RightToLeft.Yes;
-            strpReportesMenu.Size = new Size(100, 25);
-            strpReportesMenu.Text = "REPORTES";
-            // 
-            // strpUsuariosMenu
-            // 
-            strpUsuariosMenu.BackColor = Color.Transparent;
-            strpUsuariosMenu.DropDownItems.AddRange(new ToolStripItem[] { strpAltaUsuariosMenu, strpBajaUsuariosMenu });
-            strpUsuariosMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpUsuariosMenu.ForeColor = Color.White;
-            strpUsuariosMenu.Name = "strpUsuariosMenu";
-            strpUsuariosMenu.RightToLeft = RightToLeft.Yes;
-            strpUsuariosMenu.Size = new Size(102, 25);
-            strpUsuariosMenu.Text = "USUARIOS";
-            // 
-            // strpAltaUsuariosMenu
-            // 
-            strpAltaUsuariosMenu.Name = "strpAltaUsuariosMenu";
-            strpAltaUsuariosMenu.Size = new Size(194, 26);
-            strpAltaUsuariosMenu.Text = "ALTA USUARIO";
-            strpAltaUsuariosMenu.Click += strpAltaUsuariosMenu_Click;
-            // 
-            // strpBajaUsuariosMenu
-            // 
-            strpBajaUsuariosMenu.Name = "strpBajaUsuariosMenu";
-            strpBajaUsuariosMenu.Size = new Size(194, 26);
-            strpBajaUsuariosMenu.Text = "BAJA USUARIO";
-            strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
-            // 
             // btnVolverInicio
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
@@ -366,6 +284,32 @@
             cbPerfiles.Size = new Size(256, 29);
             cbPerfiles.TabIndex = 24;
             // 
+            // lblAltaUsuarios
+            // 
+            lblAltaUsuarios.AutoSize = true;
+            lblAltaUsuarios.BackColor = Color.Transparent;
+            lblAltaUsuarios.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAltaUsuarios.ForeColor = Color.Black;
+            lblAltaUsuarios.Location = new Point(615, 22);
+            lblAltaUsuarios.Margin = new Padding(4, 0, 4, 0);
+            lblAltaUsuarios.Name = "lblAltaUsuarios";
+            lblAltaUsuarios.Size = new Size(222, 32);
+            lblAltaUsuarios.TabIndex = 49;
+            lblAltaUsuarios.Text = "ALTA DE USUARIOS";
+            lblAltaUsuarios.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblAlertaAltaUsuario
+            // 
+            lblAlertaAltaUsuario.AutoSize = true;
+            lblAlertaAltaUsuario.BackColor = Color.Transparent;
+            lblAlertaAltaUsuario.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlertaAltaUsuario.ForeColor = Color.Green;
+            lblAlertaAltaUsuario.Location = new Point(627, 320);
+            lblAlertaAltaUsuario.Name = "lblAlertaAltaUsuario";
+            lblAlertaAltaUsuario.Size = new Size(52, 21);
+            lblAlertaAltaUsuario.TabIndex = 50;
+            lblAlertaAltaUsuario.Text = "label1";
+            // 
             // FrmAltaUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -373,11 +317,12 @@
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1540, 703);
+            Controls.Add(lblAlertaAltaUsuario);
+            Controls.Add(lblAltaUsuarios);
             Controls.Add(cbPerfiles);
             Controls.Add(dateTimeFechaNacimiento);
             Controls.Add(lblFechaNacimiento);
             Controls.Add(btnVolverInicio);
-            Controls.Add(menuStrip1);
             Controls.Add(btnAltaUsuario);
             Controls.Add(txtUsuario);
             Controls.Add(txtEmail);
@@ -403,8 +348,6 @@
             Text = "Nuevo Usuario";
             WindowState = FormWindowState.Maximized;
             Load += FrmAltaUsuario_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -427,17 +370,11 @@
         private TextBox txtTelefono;
         private TextBox txtUsuario;
         private Button btnAltaUsuario;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem strpProductosMenu;
-        private ToolStripMenuItem strpVentasMenu;
-        private ToolStripMenuItem strpProveedoresMenu;
-        private ToolStripMenuItem strpReportesMenu;
-        private ToolStripMenuItem strpUsuariosMenu;
-        private ToolStripMenuItem strpAltaUsuariosMenu;
-        private ToolStripMenuItem strpBajaUsuariosMenu;
         private Button btnVolverInicio;
         private Label lblFechaNacimiento;
         private DateTimePicker dateTimeFechaNacimiento;
         private ComboBox cbPerfiles;
+        private Label lblAltaUsuarios;
+        private Label lblAlertaAltaUsuario;
     }
 }

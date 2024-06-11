@@ -153,11 +153,11 @@
             // 
             lblContraseñaError.AutoSize = true;
             lblContraseñaError.BackColor = Color.Transparent;
-            lblContraseñaError.Font = new Font("Ebrima", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContraseñaError.Font = new Font("Ebrima", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblContraseñaError.ForeColor = Color.Red;
             lblContraseñaError.Location = new Point(31, 294);
             lblContraseñaError.Name = "lblContraseñaError";
-            lblContraseñaError.Size = new Size(64, 20);
+            lblContraseñaError.Size = new Size(69, 20);
             lblContraseñaError.TabIndex = 22;
             lblContraseñaError.Text = "msjerror";
             lblContraseñaError.Visible = false;
@@ -166,11 +166,11 @@
             // 
             lblContraseñaCambiada.AutoSize = true;
             lblContraseñaCambiada.BackColor = Color.Transparent;
-            lblContraseñaCambiada.Font = new Font("Ebrima", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContraseñaCambiada.Font = new Font("Ebrima", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblContraseñaCambiada.ForeColor = Color.White;
-            lblContraseñaCambiada.Location = new Point(196, 331);
+            lblContraseñaCambiada.Location = new Point(330, 208);
             lblContraseñaCambiada.Name = "lblContraseñaCambiada";
-            lblContraseñaCambiada.Size = new Size(81, 20);
+            lblContraseñaCambiada.Size = new Size(83, 20);
             lblContraseñaCambiada.TabIndex = 23;
             lblContraseñaCambiada.Text = "CambioOK";
             lblContraseñaCambiada.Visible = false;

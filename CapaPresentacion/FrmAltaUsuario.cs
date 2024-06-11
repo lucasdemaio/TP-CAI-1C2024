@@ -20,7 +20,9 @@ namespace Presentacion
     {
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
         private int perfilUsuario;
-        
+        private Guid guidUsuario;
+        string userLogueado = UsuarioLogueado.NombreUsuario;
+
         public FrmAltaUsuario(int perfilUsuario)
         {
             InitializeComponent();
@@ -58,42 +60,114 @@ namespace Presentacion
             this.Hide();
         }
 
-
-
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
             try
             {
+                var controlEtiquetaMap = new Dictionary<Control, string>
+                {
+                    { txtNombre, "Nombre" },
+                    { txtApellido, "Apellido" },
+                    { txtDNI, "DNI" },
+                    { txtDireccion, "Dirección" },
+                    { txtTelefono, "Teléfono" },
+                    { txtEmail, "Email" },
+                    { txtUsuario, "Nombre de Usuario" }
+                };
+
+                if (cbPerfiles.SelectedIndex == -1)
+                {
+                    lblAlertaAltaUsuario.Visible = true;
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = "Debe seleccionar un perfil.";
+                    return;
+                }
+
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
-                int dni = Int32.Parse(txtDNI.Text);
+                int dni;
+                if (!Int32.TryParse(txtDNI.Text, out dni))
+                {
+                    lblAlertaAltaUsuario.Visible = true;
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = "Debe completar el campo DNI con numeros validos";
+                    return;
+                }
                 string direccion = txtDireccion.Text;
                 string telefono = txtTelefono.Text;
                 string email = txtEmail.Text;
+                if (!email.Contains("@"))
+                {
+                    lblAlertaAltaUsuario.Visible= true;
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = "El campo 'Email' debe contener un '@'.";
+                    return;
+                }
                 DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
                 string nombreUsuario = txtUsuario.Text;
                 string contraseña = "CAI20232";
                 int valorPerfil = (int)cbPerfiles.SelectedValue;
+                
                 DateTime fechaAlta = DateTime.Now;
 
                 ValidadorUtilis validador = new ValidadorUtilis();
+
+                string errorCamposIncompletos = validador.ValidarCamposCompletos(this, controlEtiquetaMap);
+
+                if (!string.IsNullOrEmpty(errorCamposIncompletos))
+                {
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = errorCamposIncompletos;
+                    return;
+                }
+
+                int edad = DateTime.Now.Year - fechaNacimiento.Year;
+                if (fechaNacimiento > DateTime.Now.AddYears(-edad)) edad--;
+                if (edad < 18)
+                {
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = "El usuario debe tener al menos 18 años.";
+                    return;
+                }
 
                 string errorMensaje = validador.ValidarDatosUsuario(nombreUsuario, contraseña, dni, nombre, apellido, fechaNacimiento, valorPerfil);
 
                 if (string.IsNullOrEmpty(errorMensaje))
                 {
-                    usuarioNegocio.agregarUsuario(valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
+                    List<Usuario> usuarios = usuarioNegocio.listarUsuarios();
+                    Usuario usuario = usuarios.FirstOrDefault(u => u.NombreUsuario == userLogueado);
+                    guidUsuario = usuario.id;
+                    string guidUsuarioString = guidUsuario.ToString();
+
+                    usuarioNegocio.agregarUsuario(guidUsuarioString, valorPerfil, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, nombreUsuario, contraseña);
                     usuarioNegocio.agregarUsuarioDBLocal(nombreUsuario, contraseña);
-                    MessageBox.Show("Usuario agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    lblAlertaAltaUsuario.Visible = true;
+                    lblAlertaAltaUsuario.ForeColor = Color.Green;
+                    lblAlertaAltaUsuario.Text = "Usuario creado correctamente";                    
+
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    txtDNI.Text = "";
+                    txtDireccion.Text = "";
+                    txtTelefono.Text = "";
+                    txtEmail.Text = "";
+                    dateTimeFechaNacimiento.Value = dateTimeFechaNacimiento.MaxDate;
+                    txtUsuario.Text = "";                   
+                    
                 }
                 else
                 {
-                    MessageBox.Show(errorMensaje, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblAlertaAltaUsuario.Visible = true;
+                    lblAlertaAltaUsuario.ForeColor = Color.Red;
+                    lblAlertaAltaUsuario.Text = errorMensaje;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblAlertaAltaUsuario.Visible = true;
+                lblAlertaAltaUsuario.ForeColor = Color.Red;
+                lblAlertaAltaUsuario.Text = "Se ha producido un error. Vuelva a intentarlo, \nsi persiste contacte a su administrador del Sistema";
             }
         }
 
@@ -119,9 +193,7 @@ namespace Presentacion
 
         private void FrmAltaUsuario_Load(object sender, EventArgs e)
         {
-
-        }
-
-        
+            lblAlertaAltaUsuario.Visible = false;
+        }        
     }
 }   

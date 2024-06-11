@@ -35,3 +35,7 @@ C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresenta
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.pdb
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\ref\Presentacion.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmComprobante.resources
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\bin\Debug\net6.0-windows\itextsharp.dll
+C:\Users\lucas\OneDrive\Documentos\Facultad\1C 2024\CAI\Practica\TP\CapaPresentacion\obj\Debug\net6.0-windows\Presentacion.FrmDevolverVenta.resources

@@ -11,8 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-
-
 namespace Persistencia
 {
     public class UsuarioService
@@ -62,14 +60,15 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
             }
         }
+
 
         public void EscribirUsuarioDBLocal(UsuarioDBLocal usuario)
         {
@@ -130,7 +129,6 @@ namespace Persistencia
             File.Move(tempFile, docpath);
         }
 
-
         public void EliminarUsuarioDBLocal(string nombreUsuario)
         {
             string docpath = @"/ElectroHogarDB/Usuario.txt";
@@ -183,7 +181,7 @@ namespace Persistencia
             return false;
         }
 
-        public bool VerificarExpiracionContraseña(string nombreUsuario)
+        public bool VerificarExpiracionContraseña(string usuario)
         {
             String docpath = @"/ElectroHogarDB/Usuario.txt";
 
@@ -197,12 +195,12 @@ namespace Persistencia
                         string[] datos = ln.Split(';');
                         if (datos.Length >= 4)
                         {
-                            string usuario = datos[0].Trim();
+                            string user = datos[0].Trim();
                             string contraseña = datos[1].Trim();
                             bool estado = Convert.ToBoolean(datos[2].Trim());
                             DateTime fechaCambioClave;
 
-                            if (DateTime.TryParse(datos[3].Trim(), out fechaCambioClave))
+                            if (user == usuario && estado && DateTime.TryParse(datos[3].Trim(), out fechaCambioClave))
                             {
                                 if ((DateTime.Now - fechaCambioClave).TotalDays > 30)
                                 {
@@ -269,12 +267,12 @@ namespace Persistencia
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception("Error al cambiar la contraseña en la capa de servicio.", ex);
             }
         }
 
@@ -294,12 +292,44 @@ namespace Persistencia
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
+            }
+        }
+
+        public void ReactivarUsuario(string idUsuario, string guidUsuario)
+        {
+            String path = "/api/Usuario/ReactivarUsuario";            
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", guidUsuario);            
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                    throw new Exception($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al comunicarse con el servicio: {ex.Message}", ex);
             }
         }
 

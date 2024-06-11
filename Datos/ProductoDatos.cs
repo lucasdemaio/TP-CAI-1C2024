@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
+
     public class ProductoDatos
     {
         Guid _id;
@@ -16,7 +17,10 @@ namespace Datos
         double _precio;
         int _stock;
         Guid _idUsuario;
-        Guid _idProveedor;
+        Guid _idProveedor;        
+        public int _cantidad;
+        string _nombreProveedor;
+        string _apellidoProveedor;
 
         public ProductoDatos(Guid id, int idCategoria, string nombre, double precio, int stock, Guid idUsuario, Guid idProveedor)
         {
@@ -26,7 +30,11 @@ namespace Datos
             _precio = precio;
             _stock = stock;
             _idUsuario = idUsuario;
-            _idProveedor = idProveedor;
+            _idProveedor = idProveedor;            
+        }
+
+        public ProductoDatos()
+        {
         }
 
         public Guid Id { get => _id; set => _id = value; }
@@ -38,6 +46,9 @@ namespace Datos
         public int Stock { get => _stock; set => _stock = value; }
         public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public Guid IdProveedor { get => _idProveedor; set => _idProveedor = value; }
+        public string NombreProveedor { get => _nombreProveedor; set => _nombreProveedor = value; }
+        public string ApellidoProveedor { get => _apellidoProveedor; set => _apellidoProveedor = value; }
+        public int Cantidad { get => _cantidad; set => _cantidad = value; }
 
     }
 }

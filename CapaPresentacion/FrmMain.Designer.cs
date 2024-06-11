@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             menuStrip1 = new MenuStrip();
-            strpProductosMenu = new ToolStripMenuItem();
             strpVentasMenu = new ToolStripMenuItem();
             strpNuevaVenta = new ToolStripMenuItem();
             strpDevolucionVenta = new ToolStripMenuItem();
+            strpClientesMenu = new ToolStripMenuItem();
+            strpProductosMenu = new ToolStripMenuItem();
             strpProveedoresMenu = new ToolStripMenuItem();
             strpReportesMenu = new ToolStripMenuItem();
-            strpClientesMenu = new ToolStripMenuItem();
             strpUsuariosMenu = new ToolStripMenuItem();
             strpAltaUsuariosMenu = new ToolStripMenuItem();
             strpBajaUsuariosMenu = new ToolStripMenuItem();
             btnLogOut = new Button();
             lblBienvenido = new Label();
+            lblStockCritico = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             menuStrip1.BackColor = Color.Transparent;
             menuStrip1.BackgroundImage = (Image)resources.GetObject("menuStrip1.BackgroundImage");
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { strpProductosMenu, strpVentasMenu, strpProveedoresMenu, strpReportesMenu, strpClientesMenu, strpUsuariosMenu });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { strpVentasMenu, strpClientesMenu, strpProductosMenu, strpProveedoresMenu, strpReportesMenu, strpUsuariosMenu });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(10, 2, 0, 2);
@@ -58,17 +59,6 @@
             menuStrip1.Size = new Size(1540, 29);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
-            // 
-            // strpProductosMenu
-            // 
-            strpProductosMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpProductosMenu.ForeColor = Color.White;
-            strpProductosMenu.Name = "strpProductosMenu";
-            strpProductosMenu.RightToLeft = RightToLeft.Yes;
-            strpProductosMenu.Size = new Size(118, 25);
-            strpProductosMenu.Text = "PRODUCTOS";
-            strpProductosMenu.Click += strpProductosMenu_Click;
             // 
             // strpVentasMenu
             // 
@@ -79,7 +69,6 @@
             strpVentasMenu.RightToLeft = RightToLeft.Yes;
             strpVentasMenu.Size = new Size(84, 25);
             strpVentasMenu.Text = "VENTAS";
-            strpVentasMenu.Click += strpVentasMenu_Click;
             // 
             // strpNuevaVenta
             // 
@@ -93,6 +82,26 @@
             strpDevolucionVenta.Name = "strpDevolucionVenta";
             strpDevolucionVenta.Size = new Size(193, 26);
             strpDevolucionVenta.Text = "DEVOLUCION";
+            strpDevolucionVenta.Click += strpDevolucionVenta_Click;
+            // 
+            // strpClientesMenu
+            // 
+            strpClientesMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            strpClientesMenu.ForeColor = Color.White;
+            strpClientesMenu.Name = "strpClientesMenu";
+            strpClientesMenu.Size = new Size(94, 25);
+            strpClientesMenu.Text = "CLIENTES";
+            strpClientesMenu.Click += strpClientesMenu_Click;
+            // 
+            // strpProductosMenu
+            // 
+            strpProductosMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            strpProductosMenu.ForeColor = Color.White;
+            strpProductosMenu.Name = "strpProductosMenu";
+            strpProductosMenu.RightToLeft = RightToLeft.Yes;
+            strpProductosMenu.Size = new Size(118, 25);
+            strpProductosMenu.Text = "PRODUCTOS";
+            strpProductosMenu.Click += strpProductosMenu_Click;
             // 
             // strpProveedoresMenu
             // 
@@ -114,15 +123,6 @@
             strpReportesMenu.Text = "REPORTES";
             strpReportesMenu.Click += strpReportesMenu_Click;
             // 
-            // strpClientesMenu
-            // 
-            strpClientesMenu.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            strpClientesMenu.ForeColor = Color.White;
-            strpClientesMenu.Name = "strpClientesMenu";
-            strpClientesMenu.Size = new Size(94, 25);
-            strpClientesMenu.Text = "CLIENTES";
-            strpClientesMenu.Click += strpClientesMenu_Click;
-            // 
             // strpUsuariosMenu
             // 
             strpUsuariosMenu.BackColor = Color.Transparent;
@@ -137,15 +137,15 @@
             // strpAltaUsuariosMenu
             // 
             strpAltaUsuariosMenu.Name = "strpAltaUsuariosMenu";
-            strpAltaUsuariosMenu.Size = new Size(194, 26);
-            strpAltaUsuariosMenu.Text = "ALTA USUARIO";
+            strpAltaUsuariosMenu.Size = new Size(211, 26);
+            strpAltaUsuariosMenu.Text = "ALTA";
             strpAltaUsuariosMenu.Click += strpAltaUsuariosMenu_Click;
             // 
             // strpBajaUsuariosMenu
             // 
             strpBajaUsuariosMenu.Name = "strpBajaUsuariosMenu";
-            strpBajaUsuariosMenu.Size = new Size(194, 26);
-            strpBajaUsuariosMenu.Text = "BAJA USUARIO";
+            strpBajaUsuariosMenu.Size = new Size(211, 26);
+            strpBajaUsuariosMenu.Text = "BAJA-REACTIVAR";
             strpBajaUsuariosMenu.Click += strpBajaUsuariosMenu_Click;
             // 
             // btnLogOut
@@ -171,6 +171,18 @@
             lblBienvenido.Text = "Bienvenido al Sistema de ElectroHogar";
             lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // lblStockCritico
+            // 
+            lblStockCritico.AutoSize = true;
+            lblStockCritico.BackColor = Color.Transparent;
+            lblStockCritico.Font = new Font("Ebrima", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStockCritico.ForeColor = Color.Red;
+            lblStockCritico.Location = new Point(672, 447);
+            lblStockCritico.Name = "lblStockCritico";
+            lblStockCritico.Size = new Size(76, 30);
+            lblStockCritico.TabIndex = 3;
+            lblStockCritico.Text = "label1";
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -178,6 +190,7 @@
             BackColor = SystemColors.MenuBar;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1540, 845);
+            Controls.Add(lblStockCritico);
             Controls.Add(lblBienvenido);
             Controls.Add(btnLogOut);
             Controls.Add(menuStrip1);
@@ -213,5 +226,6 @@
         private Label lblBienvenido;
         private ToolStripMenuItem strpNuevaVenta;
         private ToolStripMenuItem strpDevolucionVenta;
+        private Label lblStockCritico;
     }
 }
