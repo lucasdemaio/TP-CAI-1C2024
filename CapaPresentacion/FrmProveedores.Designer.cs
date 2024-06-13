@@ -68,7 +68,7 @@
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
             btnVolverInicio.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolverInicio.Location = new Point(1308, 800);
+            btnVolverInicio.Location = new Point(1302, 755);
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(220, 33);
             btnVolverInicio.TabIndex = 43;
@@ -96,11 +96,11 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewProveedores.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewProveedores.Location = new Point(13, 380);
+            dataGridViewProveedores.Location = new Point(7, 392);
             dataGridViewProveedores.MultiSelect = false;
             dataGridViewProveedores.Name = "dataGridViewProveedores";
             dataGridViewProveedores.RowTemplate.Height = 25;
-            dataGridViewProveedores.Size = new Size(1515, 406);
+            dataGridViewProveedores.Size = new Size(1515, 323);
             dataGridViewProveedores.TabIndex = 44;
             dataGridViewProveedores.CellContentClick += dataGridViewProveedores_CellContentClick;
             // 
@@ -269,7 +269,7 @@
             btnAltaProveedor.BackColor = SystemColors.ActiveCaptionText;
             btnAltaProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAltaProveedor.ForeColor = Color.White;
-            btnAltaProveedor.Location = new Point(26, 256);
+            btnAltaProveedor.Location = new Point(26, 271);
             btnAltaProveedor.Margin = new Padding(4, 3, 4, 3);
             btnAltaProveedor.Name = "btnAltaProveedor";
             btnAltaProveedor.Size = new Size(160, 50);
@@ -321,9 +321,9 @@
             btnLimpiar.BackColor = SystemColors.Highlight;
             btnLimpiar.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(576, 185);
+            btnLimpiar.Location = new Point(576, 164);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(160, 41);
+            btnLimpiar.Size = new Size(160, 50);
             btnLimpiar.TabIndex = 63;
             btnLimpiar.Text = "Limpiar Campos";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -334,7 +334,7 @@
             btnEliminarProveedor.BackColor = Color.FromArgb(192, 0, 0);
             btnEliminarProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarProveedor.ForeColor = Color.White;
-            btnEliminarProveedor.Location = new Point(576, 256);
+            btnEliminarProveedor.Location = new Point(576, 271);
             btnEliminarProveedor.Margin = new Padding(4, 3, 4, 3);
             btnEliminarProveedor.Name = "btnEliminarProveedor";
             btnEliminarProveedor.Size = new Size(160, 50);
@@ -348,7 +348,7 @@
             btnModificarProveedor.BackColor = SystemColors.ActiveCaptionText;
             btnModificarProveedor.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarProveedor.ForeColor = Color.White;
-            btnModificarProveedor.Location = new Point(204, 256);
+            btnModificarProveedor.Location = new Point(204, 271);
             btnModificarProveedor.Margin = new Padding(4, 3, 4, 3);
             btnModificarProveedor.Name = "btnModificarProveedor";
             btnModificarProveedor.Size = new Size(160, 50);

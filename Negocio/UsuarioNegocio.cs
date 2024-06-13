@@ -99,6 +99,7 @@ namespace Negocio
             try
             {
                 usuarioService.ReactivarUsuario(idUsuario, guidUsuario);
+                EliminarUsuarioDeBajasJson(idUsuario);
             }
             catch (Exception ex)
             {

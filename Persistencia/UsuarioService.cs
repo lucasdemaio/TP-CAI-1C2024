@@ -98,36 +98,89 @@ namespace Persistencia
                 }
                 file.Close();
             }
-        }        
+        }
+
+        //public void ActualizarDBLocal(string usuario, string nuevaContraseña)
+        //{
+        //    String docpath = @"/ElectroHogarDB/Usuario.txt";
+        //    String tempFile = Path.GetTempFileName();
+
+        //    using (StreamReader reader = new StreamReader(docpath))
+        //    using (StreamWriter writer = new StreamWriter(tempFile))
+        //    {
+        //        string ln;
+        //        while ((ln = reader.ReadLine()) != null)
+        //        {
+        //            string[] datos = ln.Split(';');
+        //            string usuarioArchivo = datos[0].Trim();
+        //            string contraseña = datos[1].Trim();
+
+        //            if (usuarioArchivo == usuario)
+        //            {
+        //                writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now.ToString()}");
+        //            }
+        //            else
+        //            {
+        //                writer.WriteLine(ln);
+        //            }
+        //        }
+        //    }
+        //    File.Delete(docpath);
+        //    File.Move(tempFile, docpath);
+        //}
 
         public void ActualizarDBLocal(string usuario, string nuevaContraseña)
         {
-            String docpath = @"/ElectroHogarDB/Usuario.txt";
+            String docpath = @"C:\ElectroHogarDB\Usuario.txt";
             String tempFile = Path.GetTempFileName();
 
-            using (StreamReader reader = new StreamReader(docpath))
-            using (StreamWriter writer = new StreamWriter(tempFile))
+            try
             {
-                string ln;
-                while ((ln = reader.ReadLine()) != null)
+                if (!File.Exists(docpath))
                 {
-                    string[] datos = ln.Split(';');
-                    string usuarioArchivo = datos[0].Trim();
-                    string contraseña = datos[1].Trim();
+                    throw new FileNotFoundException("El archivo de base de datos local no existe.");
+                }
 
-                    if (usuarioArchivo == usuario)
+                using (StreamReader reader = new StreamReader(docpath))
+                using (StreamWriter writer = new StreamWriter(tempFile))
+                {
+                    string ln;
+                    bool usuarioEncontrado = false;
+                    while ((ln = reader.ReadLine()) != null)
                     {
-                        writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now.ToString()}");
+                        string[] datos = ln.Split(';');
+                        string usuarioArchivo = datos[0].Trim();
+
+                        if (usuarioArchivo == usuario)
+                        {
+                            writer.WriteLine($"{usuario};{nuevaContraseña};True;{DateTime.Now}");
+                            usuarioEncontrado = true;
+                        }
+                        else
+                        {
+                            writer.WriteLine(ln);
+                        }
                     }
-                    else
+
+                    if (!usuarioEncontrado)
                     {
-                        writer.WriteLine(ln);
+                        throw new Exception("El usuario no fue encontrado en la base de datos local.");
                     }
                 }
+
+                File.Delete(docpath);
+                File.Move(tempFile, docpath);
             }
-            File.Delete(docpath);
-            File.Move(tempFile, docpath);
+            catch (Exception ex)
+            {
+                File.Delete(tempFile);
+                throw new Exception("Error al actualizar la base de datos local.", ex);
+            }
         }
+
+
+
+
 
         public void EliminarUsuarioDBLocal(string nombreUsuario)
         {

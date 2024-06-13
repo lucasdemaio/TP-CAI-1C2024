@@ -245,7 +245,7 @@
             // 
             btnVolverInicio.BackColor = SystemColors.Info;
             btnVolverInicio.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolverInicio.Location = new Point(667, 486);
+            btnVolverInicio.Location = new Point(721, 561);
             btnVolverInicio.Name = "btnVolverInicio";
             btnVolverInicio.Size = new Size(225, 51);
             btnVolverInicio.TabIndex = 20;
@@ -316,7 +316,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1540, 703);
+            ClientSize = new Size(1540, 636);
             Controls.Add(lblAlertaAltaUsuario);
             Controls.Add(lblAltaUsuarios);
             Controls.Add(cbPerfiles);

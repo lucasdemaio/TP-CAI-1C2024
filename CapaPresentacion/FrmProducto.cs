@@ -52,6 +52,8 @@ namespace Presentacion
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {
+            btnConfirmarModificacion.Visible = false;
+            btnCancelarModificacion.Visible = false;
             productoNegocio.InicializarProductosDesdeAPI();
             cargarProductos();
             cargarProveedores();
@@ -92,7 +94,7 @@ namespace Presentacion
         }
 
         private void dataGridViewProducto_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {    
+        {
             ProductoDatos productoSeleccionado = (ProductoDatos)dataGridViewProducto.Rows[dataGridViewProducto.CurrentCell.RowIndex].DataBoundItem;
             txtNombre.Text = productoSeleccionado.Nombre;
             txtPrecio.Text = productoSeleccionado.Precio.ToString();
@@ -125,7 +127,7 @@ namespace Presentacion
             {
                 checkBoxSmartTv.Checked = true;
             }
-        }        
+        }
 
         private void btnEliminarProducto_Click_1(object sender, EventArgs e)
         {
@@ -164,7 +166,7 @@ namespace Presentacion
             {
                 lblalertaProductos.ForeColor = Color.Red;
                 lblalertaProductos.Text = "Se ha producido un error. Vuelva a intentarlo, \nsi persiste contacte a su administrador del Sistema.";
-                
+
             }
         }
 
@@ -207,25 +209,21 @@ namespace Presentacion
 
                 int stock = (int)numericUpDownStock.Value;
 
-                if (stockModificado)
+                if (stock != productoSeleccionado.Stock || precio != productoSeleccionado.Precio)
                 {
-                    productoNegocio.ActualizarProductoEnJson(nombreProducto, precio, stock);
-                    productoNegocio.modificarProducto(idProducto, guidUsuarioString, precio, stock);
+                    btnAltaProducto.Visible = false;
+                    btnEliminarProducto.Visible = false;
+                    btnModificarProducto.Visible = false;
+                    btnConfirmarModificacion.Visible = true;
+                    btnCancelarModificacion.Visible = true;
+                    lblalertaProductos.ForeColor = Color.Blue;
+                    lblalertaProductos.Text = "Confirme la modificación del producto. Tener en cuenta que el Stock ingresado \nse sumara al ya existente";
                 }
                 else
                 {
-                    stock = 0;
-                    productoNegocio.ActualizarProductoEnJson(nombreProducto, precio, stock);
-                    productoNegocio.modificarProducto(idProducto, guidUsuarioString, precio, stock);
+                    lblalertaProductos.ForeColor = Color.Red;
+                    lblalertaProductos.Text = "No se detectaron cambios en el producto.";
                 }
-
-                cargarProductos();
-
-                txtNombre.Text = "";
-                txtPrecio.Text = "";
-                numericUpDownStock.Value = numericUpDownStock.Minimum;
-                lblalertaProductos.ForeColor = Color.Green;
-                lblalertaProductos.Text = "Producto modificado con éxito.";
             }
             catch (Exception ex)
             {
@@ -234,6 +232,9 @@ namespace Presentacion
 
             }
         }
+
+
+
 
         private void btnAltaProducto_Click(object sender, EventArgs e)
         {
@@ -373,7 +374,7 @@ namespace Presentacion
             try
             {
                 var productosDadosDeBaja = productoNegocio.LeerProductosDadosDeBaja();
-                    
+
                 var productosOrdenados = productosDadosDeBaja.OrderBy(p => p.Nombre).ToList();
 
                 listViewProductosBaja.Items.Clear();
@@ -430,7 +431,7 @@ namespace Presentacion
                 {
                     var productos = productoNegocio.GetProductosPorCategoria(categoriaSeleccionada);
                     productos = productos.OrderBy(p => p.Nombre).ToList();
-                    dataGridViewProductoporCategoria.DataSource = productos;                    
+                    dataGridViewProductoporCategoria.DataSource = productos;
 
                     dataGridViewProductoporCategoria.Columns["Id"].Visible = false;
                     dataGridViewProductoporCategoria.Columns["IdCategoria"].Visible = false;
@@ -466,7 +467,7 @@ namespace Presentacion
             }
         }
         private void numericUpDownStock_ValueChanged(object sender, EventArgs e)
-        {            
+        {
             stockModificado = true;
         }
 
@@ -475,7 +476,7 @@ namespace Presentacion
             if (listViewProductosBaja.SelectedItems.Count > 0)
             {
                 var selectedItem = listViewProductosBaja.SelectedItems[0];
-                idProductoReactivar = (Guid)selectedItem.Tag;                
+                idProductoReactivar = (Guid)selectedItem.Tag;
             }
         }
 
@@ -500,7 +501,7 @@ namespace Presentacion
             groupBoxStock.Visible = false;
 
             groupBoxToShow.Visible = true;
-        }               
+        }
 
         private void btnReactivarProducto_Click(object sender, EventArgs e)
         {
@@ -535,9 +536,64 @@ namespace Presentacion
             {
                 lblalertaProductos.ForeColor = Color.Red;
                 lblalertaProductos.Text = "Se ha producido un error. Vuelva a intentarlo, \nsi persiste contacte a su administrador del Sistema.";
-               
+
             }
         }
 
+        private void btnConfirmarModificacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProductoDatos productoSeleccionado = (ProductoDatos)dataGridViewProducto.Rows[dataGridViewProducto.CurrentCell.RowIndex].DataBoundItem;
+                string idProducto = productoSeleccionado.Id.ToString();
+                string nombreProducto = productoSeleccionado.Nombre;
+
+                string precioTexto = txtPrecio.Text;
+                if (!double.TryParse(precioTexto, out double precio))
+                {
+                    lblalertaProductos.ForeColor = Color.Red;
+                    lblalertaProductos.Text = "Ingrese un precio válido.";
+                    return;
+                }
+
+                int stock = (int)numericUpDownStock.Value;
+
+                productoNegocio.ActualizarProductoEnJson(nombreProducto, precio, stock);
+                productoNegocio.modificarProducto(idProducto, guidUsuario.ToString(), precio, stock);
+
+                cargarProductos();
+
+                txtNombre.Text = "";
+                txtPrecio.Text = "";
+                numericUpDownStock.Value = numericUpDownStock.Minimum;
+                lblalertaProductos.ForeColor = Color.Green;
+                lblalertaProductos.Text = "Producto modificado con éxito.";
+
+                btnConfirmarModificacion.Visible = false;
+                btnCancelarModificacion.Visible = false;
+                btnModificarProducto.Visible = true;
+                btnAltaProducto.Visible = true;
+                btnEliminarProducto.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                lblalertaProductos.ForeColor = Color.Red;
+                lblalertaProductos.Text = "Se ha producido un error. Vuelva a intentarlo, \nsi persiste contacte a su administrador del Sistema.";
+            }
+        }
+
+        private void btnCancelarModificacion_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+            numericUpDownStock.Value = numericUpDownStock.Minimum;
+            lblalertaProductos.Text = "";
+
+            btnConfirmarModificacion.Visible = false;
+            btnCancelarModificacion.Visible = false;
+            btnModificarProducto.Visible = true;
+            btnAltaProducto.Visible = true;
+            btnEliminarProducto.Visible = true;
+        }
     }
 }

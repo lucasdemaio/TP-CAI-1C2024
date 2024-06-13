@@ -27,7 +27,7 @@ namespace Negocio
             try
             {
                 proveedorService.AgregarProveedor(altaProveedor);
-                GuardarProveedorLocal(new ProveedoresDatos(Guid.Parse(guidUsuarioString), nombre, DateTime.Now, null, cuit, email, apellido, categorias, Guid.Empty));
+                GuardarProveedorLocal(new ProveedoresDatos(Guid.Empty, nombre, DateTime.Now, null, cuit, email, apellido, categorias, Guid.Parse(guidUsuarioString)));
             }
             catch (Exception ex)
             {

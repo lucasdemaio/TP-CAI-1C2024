@@ -86,6 +86,7 @@
             // 
             // dateTimePickerVenta
             // 
+            dateTimePickerVenta.Enabled = false;
             dateTimePickerVenta.Location = new Point(61, 38);
             dateTimePickerVenta.Name = "dateTimePickerVenta";
             dateTimePickerVenta.Size = new Size(309, 29);

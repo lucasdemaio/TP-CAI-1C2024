@@ -33,9 +33,9 @@ namespace Presentacion
                 return "Error: La contraseña debe contener al menos una letra mayúscula y un número.";
             }
             
-            if (dni < 0 || dni > 99999999 || dni == null)
+            if (dni < 1000000 || dni > 99999999 || dni == null)
             {
-                return "Error: El DNI debe estar entre 0 y 99999999.";
+                return "Error: El DNI debe estar entre 1.000.000 y 99.999.999.";
             }
            return string.Empty;
         }

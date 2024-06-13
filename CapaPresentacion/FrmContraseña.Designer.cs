@@ -168,12 +168,13 @@
             lblContraseñaCambiada.BackColor = Color.Transparent;
             lblContraseñaCambiada.Font = new Font("Ebrima", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblContraseñaCambiada.ForeColor = Color.White;
-            lblContraseñaCambiada.Location = new Point(330, 208);
+            lblContraseñaCambiada.Location = new Point(274, 268);
             lblContraseñaCambiada.Name = "lblContraseñaCambiada";
             lblContraseñaCambiada.Size = new Size(83, 20);
             lblContraseñaCambiada.TabIndex = 23;
             lblContraseñaCambiada.Text = "CambioOK";
             lblContraseñaCambiada.Visible = false;
+            lblContraseñaCambiada.Click += lblContraseñaCambiada_Click;
             // 
             // btnVolverInicio
             // 

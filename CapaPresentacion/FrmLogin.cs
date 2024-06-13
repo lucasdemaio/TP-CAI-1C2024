@@ -54,7 +54,7 @@ namespace PresentacionLayer
                 bool primerlogueo = usuarioNegocio.VerificarPrimerLogin(usuario);
                 if (primerlogueo)
                 {
-                    lblLoginIncorrecto.Text = $"Es su primer Login, debe cambiar la clave para ingresar";
+                    lblLoginIncorrecto.Text = $"Es su primer Login, \ndebe cambiar la clave para ingresar";
                     lblLoginIncorrecto.Visible = true;
                     return;
                 }
@@ -62,7 +62,7 @@ namespace PresentacionLayer
                 bool contraseñaExpirada = usuarioNegocio.VerificarExpiracionContraseña(usuario);
                 if (contraseñaExpirada)
                 {
-                    lblLoginIncorrecto.Text = $"Su contraseña ha expirado. Debe cambiarla para ingresar.";
+                    lblLoginIncorrecto.Text = $"Su contraseña ha expirado. \nDebe cambiarla para ingresar.";
                     lblLoginIncorrecto.Visible = true;
                     return;
                 }
@@ -84,10 +84,14 @@ namespace PresentacionLayer
                     txtUsuario.Text = "";
                     txtClave.Text = "";
                 }
+                if (intentosFallidos == 2)
+                {
+                    lblLoginIncorrecto.Text = $"Ante un nuevo ingreso erroneo, su usuario sera bloqueado";
+                }
                 if (intentosFallidos >= 3)
                 {
                     usuarioNegocio.borrarUsuarioPorLoginFallido(usuario);
-                    lblLoginIncorrecto.Text = $"Ha superado el limite de intentos. \nContacte a un Administrador para Reactivar su usuario";
+                    lblLoginIncorrecto.Text = $"Ha superado el limite de intentos. Contacte a \nsu Administrador para Reactivar su usuario";
                 }
             }
             catch (Exception ex)

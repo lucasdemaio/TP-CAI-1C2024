@@ -76,7 +76,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCliente.RowTemplate.Height = 25;
-            dataGridViewCliente.Size = new Size(1516, 474);
+            dataGridViewCliente.Size = new Size(1516, 422);
             dataGridViewCliente.TabIndex = 0;
             dataGridViewCliente.CellContentClick += dataGridViewCliente_CellContentClick;
             // 
@@ -371,7 +371,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1540, 845);
+            ClientSize = new Size(1540, 796);
             Controls.Add(lblAlertaClientes);
             Controls.Add(groupBox1);
             Controls.Add(btnLimpiar);

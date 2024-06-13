@@ -66,6 +66,8 @@
             dataGridViewProductoporCategoria = new DataGridView();
             cbProductosporCategoria = new ComboBox();
             linkLabelStock = new LinkLabel();
+            btnConfirmarModificacion = new Button();
+            btnCancelarModificacion = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdProv).BeginInit();
@@ -256,7 +258,7 @@
             btnEliminarProducto.BackColor = Color.FromArgb(192, 0, 0);
             btnEliminarProducto.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarProducto.ForeColor = Color.White;
-            btnEliminarProducto.Location = new Point(376, 783);
+            btnEliminarProducto.Location = new Point(373, 745);
             btnEliminarProducto.Margin = new Padding(4, 3, 4, 3);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(160, 50);
@@ -270,7 +272,7 @@
             btnModificarProducto.BackColor = SystemColors.ActiveCaptionText;
             btnModificarProducto.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarProducto.ForeColor = Color.White;
-            btnModificarProducto.Location = new Point(195, 783);
+            btnModificarProducto.Location = new Point(194, 745);
             btnModificarProducto.Margin = new Padding(4, 3, 4, 3);
             btnModificarProducto.Name = "btnModificarProducto";
             btnModificarProducto.Size = new Size(160, 50);
@@ -284,7 +286,7 @@
             btnAltaProducto.BackColor = SystemColors.ActiveCaptionText;
             btnAltaProducto.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAltaProducto.ForeColor = Color.White;
-            btnAltaProducto.Location = new Point(12, 783);
+            btnAltaProducto.Location = new Point(12, 745);
             btnAltaProducto.Margin = new Padding(4, 3, 4, 3);
             btnAltaProducto.Name = "btnAltaProducto";
             btnAltaProducto.Size = new Size(160, 50);
@@ -422,7 +424,7 @@
             lblalertaProductos.BackColor = Color.Transparent;
             lblalertaProductos.Font = new Font("Ebrima", 12F, FontStyle.Italic, GraphicsUnit.Point);
             lblalertaProductos.ForeColor = Color.FromArgb(192, 0, 0);
-            lblalertaProductos.Location = new Point(15, 733);
+            lblalertaProductos.Location = new Point(15, 705);
             lblalertaProductos.Margin = new Padding(4, 0, 4, 0);
             lblalertaProductos.Name = "lblalertaProductos";
             lblalertaProductos.Size = new Size(0, 21);
@@ -507,12 +509,44 @@
             linkLabelStock.Text = "Volver al Stock actual";
             linkLabelStock.LinkClicked += linkLabelStock_LinkClicked;
             // 
+            // btnConfirmarModificacion
+            // 
+            btnConfirmarModificacion.BackColor = Color.Green;
+            btnConfirmarModificacion.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfirmarModificacion.ForeColor = Color.White;
+            btnConfirmarModificacion.Location = new Point(75, 745);
+            btnConfirmarModificacion.Margin = new Padding(4, 3, 4, 3);
+            btnConfirmarModificacion.Name = "btnConfirmarModificacion";
+            btnConfirmarModificacion.Size = new Size(182, 50);
+            btnConfirmarModificacion.TabIndex = 85;
+            btnConfirmarModificacion.Text = "CONFIRMAR";
+            btnConfirmarModificacion.UseVisualStyleBackColor = false;
+            btnConfirmarModificacion.Click += btnConfirmarModificacion_Click;
+            // 
+            // btnCancelarModificacion
+            // 
+            btnCancelarModificacion.BackColor = Color.Black;
+            btnCancelarModificacion.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelarModificacion.ForeColor = Color.White;
+            btnCancelarModificacion.Location = new Point(283, 745);
+            btnCancelarModificacion.Margin = new Padding(4, 3, 4, 3);
+            btnCancelarModificacion.Name = "btnCancelarModificacion";
+            btnCancelarModificacion.Size = new Size(182, 50);
+            btnCancelarModificacion.TabIndex = 86;
+            btnCancelarModificacion.Text = "CANCELAR";
+            btnCancelarModificacion.UseVisualStyleBackColor = false;
+            btnCancelarModificacion.Click += btnCancelarModificacion_Click;
+            // 
             // FrmProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1540, 845);
+            Controls.Add(btnCancelarModificacion);
+            Controls.Add(btnConfirmarModificacion);
             Controls.Add(linkLabelStock);
             Controls.Add(groupBoxProdporCategoria);
             Controls.Add(linkLabelProductosporCategoria);
@@ -589,5 +623,7 @@
         private ComboBox cbProductosporCategoria;
         private LinkLabel linkLabelStock;
         private Button btnReactivarProducto;
+        private Button btnConfirmarModificacion;
+        private Button btnCancelarModificacion;
     }
 }

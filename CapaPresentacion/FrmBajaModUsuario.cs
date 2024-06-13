@@ -91,30 +91,6 @@ namespace Presentacion
             txtUsername.Text = usuarioSeleccionado.NombreUsuario;
         }
 
-        //private void btnBajaUsuario_Click(object sender, EventArgs e)
-        //{
-        //    List<Usuario> usuarios = usuarioNegocio.listarUsuarios();
-        //    Usuario usuario = usuarios.FirstOrDefault(u => u.NombreUsuario == userLogueado);
-        //    guidUsuario = usuario.id;
-        //    string guidUsuarioString = guidUsuario.ToString();
-
-        //    Usuario usuarioSeleccionado = (Usuario)dataGridViewUsuario.Rows[dataGridViewUsuario.CurrentCell.RowIndex].DataBoundItem;
-        //    string idUsuario = usuarioSeleccionado.id.ToString();
-        //    string nombreUsuario = usuarioSeleccionado.NombreUsuario;
-        //    string nombre = usuarioSeleccionado.Nombre;
-        //    string apellido = usuarioSeleccionado.Apellido;
-
-        //    usuarioNegocio.borrarUsuario(idUsuario, guidUsuarioString, nombreUsuario, nombre, apellido);
-        //    usuarioNegocio.borrarUsuarioDBLocal(nombreUsuario);
-
-        //    cargarUsuarios();
-        //    cargarUsuariosDadosDeBaja();
-        //    txtNombre.Text = "";
-        //    txtApellido.Text = "";
-        //    txtDNI.Text = "";
-        //    txtUsername.Text = "";
-        //}
-
         private void btnBajaUsuario_Click(object sender, EventArgs e)
         {
             try

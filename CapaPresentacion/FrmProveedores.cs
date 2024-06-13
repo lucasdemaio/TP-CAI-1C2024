@@ -145,6 +145,14 @@ namespace Presentacion
                     if (checkBoxInformatica.Checked) categorias.Add(4);
                     if (checkBoxSmartTv.Checked) categorias.Add(5);
 
+                    if (categorias.Count == 0)
+                    {
+                        lblAlertaProveedores.Visible = true;
+                        lblAlertaProveedores.ForeColor = Color.Red;
+                        lblAlertaProveedores.Text = "Debe seleccionar al menos una categoría.";
+                        return;
+                    }
+
                     proveedorNegocio.agregarProveedor(guidUsuarioString, nombre, apellido, email, cuit, categorias);
                     lblAlertaProveedores.Visible = true;
                     lblAlertaProveedores.ForeColor = Color.Green;
@@ -391,6 +399,20 @@ namespace Presentacion
                     return;
                 }
 
+                List<ProveedoresDatos> proveedores = proveedorNegocio.listarProveedores();
+                ProveedoresDatos proveedor = proveedores.FirstOrDefault(p => p.Nombre == proveedorSeleccionado.Nombre && p.Apellido == proveedorSeleccionado.Apellido);
+
+                if (proveedor == null)
+                {
+                    lblAlertaProveedores.Visible = true;
+                    lblAlertaProveedores.Text = "No se pudo encontrar el proveedor en la base de datos.";
+                    lblAlertaProveedores.ForeColor = Color.Red;
+                    return;
+                }
+
+                Guid idProveedor = proveedor.Id;
+                string cuit = proveedor.CUIT;
+
                 List<Usuario> usuarios = usuarioNegocio.listarUsuarios();
                 Usuario usuario = usuarios.FirstOrDefault(u => u.NombreUsuario == userLogueado);
 
@@ -402,9 +424,10 @@ namespace Presentacion
                     return;
                 }
 
+
                 guidUsuario = usuario.id;
-                Guid idProveedor = proveedorSeleccionado.Id;
-                string cuit = proveedorSeleccionado.CUIT;
+                
+                
 
                 proveedorNegocio.reactivarProveedor(idProveedor, guidUsuario, cuit);
 
@@ -429,7 +452,7 @@ namespace Presentacion
             {
                 lblAlertaProveedores.Visible = true;
                 lblAlertaProveedores.ForeColor = Color.Red;
-                lblAlertaProveedores.Text = "Se ha producido un error. Vuelva a intentarlo, si persiste contacte a su administrador.";
+                lblAlertaProveedores.Text = "No fue posible el alta de proveedor, \no bien el Proveedor que intenta agregar ya existe";
             }
         }
     }

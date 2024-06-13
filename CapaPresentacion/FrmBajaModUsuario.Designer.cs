@@ -282,7 +282,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1540, 845);
+            ClientSize = new Size(1540, 827);
             Controls.Add(lblAlertaUsuarios);
             Controls.Add(btnReactivar);
             Controls.Add(dataGridViewReactivar);

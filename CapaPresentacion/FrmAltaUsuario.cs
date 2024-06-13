@@ -152,7 +152,7 @@ namespace Presentacion
                     txtDireccion.Text = "";
                     txtTelefono.Text = "";
                     txtEmail.Text = "";
-                    dateTimeFechaNacimiento.Value = dateTimeFechaNacimiento.MaxDate;
+                    dateTimeFechaNacimiento.Value = DateTime.Now;
                     txtUsuario.Text = "";                   
                     
                 }

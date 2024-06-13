@@ -123,18 +123,19 @@
             // 
             lblLoginIncorrecto.Font = new Font("Ebrima", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblLoginIncorrecto.ForeColor = Color.Red;
-            lblLoginIncorrecto.Location = new Point(30, 172);
+            lblLoginIncorrecto.Location = new Point(13, 172);
             lblLoginIncorrecto.Name = "lblLoginIncorrecto";
-            lblLoginIncorrecto.Size = new Size(325, 19);
+            lblLoginIncorrecto.Size = new Size(373, 51);
             lblLoginIncorrecto.TabIndex = 6;
             lblLoginIncorrecto.Text = "lblLoginIncorrecto";
+            lblLoginIncorrecto.TextAlign = ContentAlignment.MiddleCenter;
             lblLoginIncorrecto.Visible = false;
             // 
             // linklblCambioClave
             // 
             linklblCambioClave.Font = new Font("Ebrima", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linklblCambioClave.LinkColor = Color.WhiteSmoke;
-            linklblCambioClave.Location = new Point(13, 257);
+            linklblCambioClave.Location = new Point(13, 264);
             linklblCambioClave.Name = "linklblCambioClave";
             linklblCambioClave.Size = new Size(323, 41);
             linklblCambioClave.TabIndex = 5;
@@ -147,7 +148,7 @@
             // 
             btnLogin.BackColor = Color.FromArgb(0, 0, 192);
             btnLogin.Font = new Font("Ebrima", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogin.Location = new Point(127, 213);
+            btnLogin.Location = new Point(127, 225);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(126, 29);

@@ -115,6 +115,13 @@ namespace Presentacion
                     lblAlertaClientes.Text = "El campo 'DNI' debe ser un número válido.";
                     return;
                 }
+                if (dni < 1000000 || dni > 99999999)
+                {
+                    lblAlertaClientes.Visible = true;
+                    lblAlertaClientes.ForeColor = Color.Red;
+                    lblAlertaClientes.Text = "El 'DNI' debe ser entre 1.000.000 y 99.999.999.";
+                    return;
+                }
 
                 string direccion = txtDireccion.Text;
                 string telefono = txtTelefono.Text;

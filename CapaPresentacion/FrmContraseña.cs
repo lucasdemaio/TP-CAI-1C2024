@@ -59,8 +59,9 @@ namespace Presentacion
             try
             {
                 usuarioNegocio.CambiarContraseña(usuario, contraseñaActual, nuevaContraseña);
+                lblContraseñaError.Text = "";
                 lblContraseñaError.ForeColor = Color.White;
-                lblContraseñaCambiada.Text = "Contraseña cambiada exitosamente";
+                lblContraseñaCambiada.Text = "Contraseña modificada exitosamente";
                 lblContraseñaCambiada.Visible = true;
                 txtUsername.Text = "";
                 txtContraseñaActual.Text = "";
@@ -70,8 +71,8 @@ namespace Presentacion
             catch (Exception ex)
             {
                 lblContraseñaError.ForeColor = Color.OrangeRed;
-                lblContraseñaError.Text = "Error al cambiar la contraseña. Vuelva a intentarlo. \nSi persiste, contacte a su administrador del sistema.";
-                lblContraseñaError.Visible = true;                
+                lblContraseñaError.Text = "La contraseña actual ingresada no es correcta. Vuelva a intentarlo.\nSi persiste, contacte a su administrador del sistema.";
+                lblContraseñaError.Visible = true;
             }
         }
 
@@ -80,6 +81,11 @@ namespace Presentacion
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.Show();
             this.Hide();
+        }
+
+        private void lblContraseñaCambiada_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

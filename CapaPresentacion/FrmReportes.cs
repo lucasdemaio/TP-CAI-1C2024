@@ -69,6 +69,8 @@ namespace Presentacion
                 cbReportes.Items.Add("Productos con Stock Critico");
             }            
             cbReportes.SelectedIndex = -1;
+
+            lblReporteserror.Visible = false;
         }
 
         private void cbReportes_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,24 +91,61 @@ namespace Presentacion
             }
         }
 
+
         private void GenerarReporteVentasPorVendedor()
         {
+            lblReporteserror.Visible = false;
             var informe = reporteNegocio.GenerarReporteVentasPorVendedor();
-            dataGridViewReportes.DataSource = informe;
-            dataGridViewReportes.Columns["MontoTotal"].DefaultCellStyle.Format = "C";
-            dataGridViewReportes.Columns["MontoTotal"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("es-AR");
+            if (informe != null && informe.Count > 0)
+            {
+                dataGridViewReportes.DataSource = informe;
+                if (dataGridViewReportes.Columns["MontoTotal"] != null)
+                {
+                    dataGridViewReportes.Columns["MontoTotal"].DefaultCellStyle.Format = "C";
+                    dataGridViewReportes.Columns["MontoTotal"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("es-AR");
+                }
+            }
+            else
+            {
+                lblReporteserror.Visible = true;
+                lblReporteserror.Text = "No hay datos disponibles para el informe seleccionado. \nNo han realizado ninguna venta por el momento";
+                lblReporteserror.Visible = true;
+                dataGridViewReportes.DataSource = null;
+            }
         }
 
         private void GenerarReporteProductosMasVendidos()
         {
+            lblReporteserror.Visible = false;
             var informe = reporteNegocio.GenerarReporteProductosMasVendidos();
-            dataGridViewReportes.DataSource = informe;
+            if (informe != null && informe.Count > 0)
+            {
+                dataGridViewReportes.DataSource = informe;
+            }
+            else
+            {
+                lblReporteserror.Visible = true;
+                lblReporteserror.Text = "No hay datos disponibles para el informe seleccionado. \nNo existen ventas por el momento";
+                lblReporteserror.Visible = true;
+                dataGridViewReportes.DataSource = null;
+            }
         }
 
         private void GenerarReporteProductosConStockCritico()
         {
+            lblReporteserror.Visible = false;
             var informe = reporteNegocio.GenerarReporteProductosConStockCritico();
-            dataGridViewReportes.DataSource = informe;
+            if (informe != null && informe.Count > 0)
+            {
+                dataGridViewReportes.DataSource = informe;
+            }
+            else
+            {
+                lblReporteserror.Visible = true;
+                lblReporteserror.Text = "No hay productos con Stock Critico por el momento";
+                lblReporteserror.Visible = true;
+                dataGridViewReportes.DataSource = null;
+            }
         }
 
     }

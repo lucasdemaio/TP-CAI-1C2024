@@ -35,6 +35,7 @@
             cbReportes = new ComboBox();
             dataGridViewReportes = new DataGridView();
             lblReportes = new Label();
+            lblReporteserror = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReportes).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             dataGridViewReportes.Location = new Point(36, 104);
             dataGridViewReportes.Name = "dataGridViewReportes";
             dataGridViewReportes.RowTemplate.Height = 25;
-            dataGridViewReportes.Size = new Size(760, 294);
+            dataGridViewReportes.Size = new Size(760, 267);
             dataGridViewReportes.TabIndex = 45;
             // 
             // lblReportes
@@ -98,16 +99,29 @@
             lblReportes.TabIndex = 46;
             lblReportes.Text = "REPORTES";
             // 
+            // lblReporteserror
+            // 
+            lblReporteserror.AutoSize = true;
+            lblReporteserror.BackColor = Color.Transparent;
+            lblReporteserror.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblReporteserror.ForeColor = Color.Black;
+            lblReporteserror.Location = new Point(189, 385);
+            lblReporteserror.Name = "lblReporteserror";
+            lblReporteserror.Size = new Size(52, 21);
+            lblReporteserror.TabIndex = 47;
+            lblReporteserror.Text = "label1";
+            // 
             // FrmReportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(821, 459);
+            Controls.Add(btnVolverInicio);
+            Controls.Add(lblReporteserror);
             Controls.Add(lblReportes);
             Controls.Add(dataGridViewReportes);
             Controls.Add(cbReportes);
-            Controls.Add(btnVolverInicio);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmReportes";
             StartPosition = FormStartPosition.CenterScreen;
@@ -123,5 +137,6 @@
         private ComboBox cbReportes;
         private DataGridView dataGridViewReportes;
         private Label lblReportes;
+        private Label lblReporteserror;
     }
 }
