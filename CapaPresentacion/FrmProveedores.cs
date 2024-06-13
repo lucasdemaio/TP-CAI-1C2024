@@ -79,7 +79,7 @@ namespace Presentacion
             dataGridViewProveedores.Columns["FechaAlta"].Visible = false;
             dataGridViewProveedores.Columns["FechaBaja"].Visible = false;
             dataGridViewProveedores.Columns["IdUsuario"].Visible = false;
-        }        
+        }
 
         private void cargarProveedoresCategoria()
         {
@@ -252,7 +252,7 @@ namespace Presentacion
                 lblAlertaProveedores.Text = "Se ha producido un error. Vuelva a intentarlo, si persiste contacte a su administrador.";
             }
         }
-                
+
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
@@ -351,8 +351,8 @@ namespace Presentacion
                 lblAlertaProveedores.Visible = true;
                 lblAlertaProveedores.ForeColor = Color.Red;
                 lblAlertaProveedores.Text = "Se ha producido un error. Vuelva a intentarlo, si persiste contacte a su administrador.";
-             }
-        }     
+            }
+        }
 
         private void cbCategorias_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -426,8 +426,8 @@ namespace Presentacion
 
 
                 guidUsuario = usuario.id;
-                
-                
+
+
 
                 proveedorNegocio.reactivarProveedor(idProveedor, guidUsuario, cuit);
 
@@ -454,6 +454,11 @@ namespace Presentacion
                 lblAlertaProveedores.ForeColor = Color.Red;
                 lblAlertaProveedores.Text = "No fue posible el alta de proveedor, \no bien el Proveedor que intenta agregar ya existe";
             }
+        }
+
+        private void dataGridViewProveedoresCat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

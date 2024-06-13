@@ -20,9 +20,6 @@ namespace Presentacion
             FrmLogin frm = new FrmLogin();
             Application.Run(frm);
 
-            //FrmMain frmMain = new FrmMain();
-            //Application.Run(frmMain);
-
             UsuarioNegocio usuario = new UsuarioNegocio();
 
         }

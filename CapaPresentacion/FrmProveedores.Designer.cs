@@ -418,6 +418,7 @@
             dataGridViewProveedoresCat.RowTemplate.Height = 25;
             dataGridViewProveedoresCat.Size = new Size(607, 205);
             dataGridViewProveedoresCat.TabIndex = 62;
+            dataGridViewProveedoresCat.CellContentClick += dataGridViewProveedoresCat_CellContentClick;
             // 
             // label1
             // 
